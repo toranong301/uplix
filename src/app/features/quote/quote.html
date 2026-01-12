@@ -1,1 +1,62 @@
-<p>quote works!</p>
+<div class="container">
+  <div class="card pad">
+    <h1 class="h1" style="font-size:32px;">ขอใบเสนอราคา</h1>
+    <p class="p">กรอกข้อมูล ทีมงานจะติดต่อกลับโดยเร็ว</p>
+
+    <form class="form" [formGroup]="form" (ngSubmit)="submit()">
+      <div class="row">
+        <div class="field">
+          <label>Business Unit</label>
+          <select formControlName="bu">
+            <option *ngFor="let b of buOptions" [value]="b.key">{{ b.label }}</option>
+          </select>
+          <small class="hint">ตอนนี้เปิดให้บริการเต็มรูปแบบ: PPE</small>
+        </div>
+
+        <div class="field" *ngIf="isPpe">
+          <label>หมวดสินค้า (PPE)</label>
+          <select formControlName="category">
+            <option value="">— เลือกหมวด —</option>
+            <option *ngFor="let c of ppeCategories" [value]="c">{{ c }}</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label>บริษัท</label>
+          <input type="text" formControlName="company" placeholder="ชื่อบริษัท (ถ้ามี)">
+        </div>
+        <div class="field">
+          <label>จำนวนโดยประมาณ</label>
+          <input type="text" formControlName="quantity" placeholder="เช่น 20 ชุด / 50 ชิ้น">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label>ชื่อ-นามสกุล *</label>
+          <input type="text" formControlName="name" placeholder="ชื่อผู้ติดต่อ">
+        </div>
+        <div class="field">
+          <label>เบอร์โทร *</label>
+          <input type="text" formControlName="phone" placeholder="0xx-xxx-xxxx">
+        </div>
+        <div class="field">
+          <label>อีเมล *</label>
+          <input type="email" formControlName="email" placeholder="name@company.com">
+        </div>
+      </div>
+
+      <div class="field">
+        <label>รายละเอียดเพิ่มเติม</label>
+        <textarea rows="5" formControlName="detail" placeholder="เช่น งานสารเคมี / งานเชื่อม / ต้องการมาตรฐานอะไร / รุ่นที่สนใจ"></textarea>
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-primary" type="submit" [disabled]="form.invalid">ส่งคำขอ</button>
+        <a class="btn btn-secondary" routerLink="/bu/ppe">กลับหน้า PPE</a>
+      </div>
+    </form>
+  </div>
+</div>

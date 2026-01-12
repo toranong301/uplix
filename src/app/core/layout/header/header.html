@@ -1,21 +1,45 @@
 <header class="header">
   <div class="container row">
     <a class="brand" routerLink="/" (click)="close()">
-      <img src="assets/brand/uplix-logo.png" alt="UPLIX" />
+      <img src="assets/brand/UPLIX_LOGO.png" alt="UPLIX" />
     </a>
 
     <nav class="nav">
       <a routerLink="/" routerLinkActive="active">Home</a>
 
-      <div class="dropdown">
-        <button class="link" type="button">Business Units ▾</button>
-        <div class="panel card">
-          <a routerLink="/bu/firefighting-training">Firefighting Training</a>
-          <a routerLink="/bu/ppe">PPE</a>
-          <a routerLink="/bu/hrd">HRD</a>
-          <a routerLink="/bu/waste-management">Waste Management</a>
-        </div>
-      </div>
+      <div class="dropdown" tabindex="0">
+  <button class="link" type="button">Business Units ▾</button>
+
+  <div class="panel card">
+  <ng-container *ngFor="let item of buItems">
+    <!-- enabled -->
+    <a *ngIf="item.enabled; else disabledItem"
+       class="menu-item"
+       [routerLink]="item.route">
+      <span>{{ item.label }}</span>
+    </a>
+
+    <!-- disabled -->
+    <ng-template #disabledItem>
+  <button type="button"
+          class="menu-item is-disabled"
+          aria-disabled="true">
+    <span class="title">{{ item.label }}</span>
+    <span class="badge">{{ item.badge || 'Coming soon' }}</span>
+  </button>
+</ng-template>
+
+  </ng-container>
+
+  <div class="divider"></div>
+
+  <a class="menu-item helper" routerLink="/contact">
+    อยากใช้บริการอื่น? ติดต่อเรา
+  </a>
+</div>
+
+</div>
+
 
       <a routerLink="/resources" routerLinkActive="active">Resources</a>
       <a routerLink="/about" routerLinkActive="active">About</a>

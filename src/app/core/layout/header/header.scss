@@ -5,7 +5,7 @@
   border-bottom: 1px solid rgba(0,0,0,.06);
 }
 .row{ display:flex; align-items:center; justify-content:space-between; gap:16px; padding:12px 0; }
-.brand img{ height:34px; display:block; }
+.brand img{ height:auto;width: auto; display:block; }
 
 .nav{ display:flex; align-items:center; gap:18px; }
 .nav a, .link{
@@ -20,18 +20,123 @@
 }
 .nav a.active{ background: rgba(0,0,64,.08); }
 
-.dropdown{ position:relative; }
+.dropdown{
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* “สะพาน” กันเมาส์หลุดตอนลากลง */
+.dropdown::after{
+  content:"";
+  position:absolute;
+  left:0;
+  top:100%;
+  width:100%;
+  height:10px;     /* ปรับได้ 8-14px */
+}
+
 .panel{
-  position:absolute; top:44px; left:0;
-  width:260px;
-  padding:10px;
-  display:none;
+  position: absolute;
+  top: calc(100% + 8px);  /* ชิดปุ่มขึ้น ลดช่องว่าง */
+  left: 0;
+  width: 260px;
+  padding: 10px;
+  z-index: 9999;
+
+  /* แทน display:none */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px);
+  pointer-events: none;
+  transition: opacity .12s ease, transform .12s ease, visibility .12s ease;
 }
-.dropdown:hover .panel{ display:block; }
+
+/* เปิดเมนูเมื่อ hover หรือ focus-within (ช่วยให้คลิกได้ดีขึ้น) */
+.dropdown:hover .panel,
+.dropdown:focus-within .panel{
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
 .panel a{
-  display:block; padding:10px 12px; border-radius:12px;
+  display:block;
+  padding:10px 12px;
+  border-radius:12px;
+  text-decoration:none;
+  color: var(--uplix-navy);
 }
-.panel a:hover{ background: rgba(0,0,0,.04); }
+.panel a:hover{
+  background: rgba(0,0,0,.04);
+}
+
+.menu-item{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  padding:10px 12px;
+  border-radius:12px;
+  text-decoration:none;
+  color: var(--uplix-navy);
+  font-weight:600;
+  background:transparent;
+  border:1px solid transparent;
+}
+
+.menu-item:hover{
+  background: rgba(0,0,0,.04);
+}
+
+.menu-item.is-disabled{
+  opacity: .55;
+  cursor: not-allowed;
+  pointer-events: none;
+  background: rgba(0,0,0,.02);
+  border: 1px dashed rgba(0,0,0,.18);
+
+  flex-direction: column;      /* ✅ จากแนวนอน -> แนวตั้ง */
+  align-items: flex-start;     /* ✅ ชิดซ้าย (ถ้าอยากกึ่งกลางดูตัวเลือกด้านล่าง) */
+  justify-content: flex-start;
+  gap: 6px;
+}
+
+.menu-item.is-disabled .title{
+  line-height: 1.2;
+}
+
+.menu-item.is-disabled .badge{
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(0,0,0,.06);
+  color: rgba(0,0,0,.65);
+  font-weight: 700;
+}
+
+.badge{
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(0,0,0,.06);
+  color: rgba(0,0,0,.65);
+  font-weight: 700;
+}
+
+.divider{
+  height:1px;
+  background: rgba(0,0,0,.08);
+  margin: 8px 6px;
+}
+
+.helper{
+  color: var(--uplix-soft);
+  font-weight: 700;
+}
+
+
 @media (max-width: 900px){
   .nav{ display:none; } /* ถ้าจะทำมือถือจริง แนะนำทำ drawer แยก */
 }

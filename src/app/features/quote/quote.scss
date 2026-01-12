@@ -1,0 +1,34 @@
+.pad{ padding:16px; }
+
+.form{ margin-top:14px; display:grid; gap:12px; }
+
+.row{
+  display:grid;
+  gap:12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+@media (max-width: 900px){
+  .row{ grid-template-columns: 1fr; }
+}
+
+.field{ display:grid; gap:6px; }
+label{ font-weight:700; color: var(--uplix-navy); }
+
+input, select, textarea{
+  width:100%;
+  padding:12px 14px;
+  border-radius: 12px;
+  border:1px solid rgba(0,0,0,.12);
+  outline:none;
+  font: inherit;
+  background:#fff;
+}
+
+input:focus, select:focus, textarea:focus{
+  border-color: var(--uplix-navy);
+  box-shadow: 0 0 0 3px rgba(0,0,64,.12);
+}
+
+.hint{ color: rgba(0,0,0,.55); }
+
+.actions{ display:flex; gap:10px; flex-wrap:wrap; margin-top:6px; }

@@ -35,8 +35,12 @@ export const BU: Record<string, BuConfig> = {
     title: 'PPE',
     tagline: 'อุปกรณ์เซฟตี้ครบหมวด พร้อมแนะนำรุ่นให้เหมาะกับงาน',
     heroImage: 'assets/hero/ppe.jpg',
-    primaryCta: { label: 'ขอใบเสนอราคา', link: '/quote?bu=ppe' },
-    secondaryCta: { label: 'ดาวน์โหลด Catalog', link: '/resources' },
+    primaryCta: { label: 'ขอใบเสนอราคา', link: '/quote', queryParams: { bu: 'ppe' } },
+    secondaryCta: {
+  label: 'ดาวน์โหลด Catalog',
+  link: '/downloads/2025-PPE-Catalogue-UPLIX-Safety.pdf'
+}
+,
     painSolutions: [
       { title: 'เลือกให้ตรงงาน', desc: 'ลดการซื้อผิดรุ่น/ผิดมาตรฐาน' },
       { title: 'คุมงบง่าย', desc: 'จัดชุดแพ็กเกจตามหน่วยงาน/ไซต์งาน' },

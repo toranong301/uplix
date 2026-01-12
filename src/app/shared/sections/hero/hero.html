@@ -4,13 +4,30 @@
     <p class="p">{{ tagline }}</p>
 
     <div class="cta">
-      <a class="btn btn-primary" [routerLink]="primaryCta.link">{{ primaryCta.label }}</a>
-
-      <a *ngIf="secondaryCta as sc"
-         class="btn btn-secondary"
-         [routerLink]="sc.link">
-        {{ sc.label }}
+      <a class="btn btn-primary"
+         [routerLink]="primaryCta.link"
+         [queryParams]="primaryCta.queryParams">
+        {{ primaryCta.label }}
       </a>
+
+      <ng-container *ngIf="secondaryCta as sc">
+        <a *ngIf="!isDownloadLink(sc.link); else downloadBtn"
+           class="btn btn-secondary"
+           [routerLink]="sc.link"
+           [queryParams]="sc.queryParams">
+          {{ sc.label }}
+        </a>
+
+        <ng-template #downloadBtn>
+          <a class="btn btn-secondary"
+             [attr.href]="sc.link"
+             download
+             target="_blank"
+             rel="noopener">
+            {{ sc.label }}
+          </a>
+        </ng-template>
+      </ng-container>
     </div>
   </div>
 
@@ -18,3 +35,4 @@
     <img [src]="heroImage" [alt]="title" />
   </div>
 </section>
+

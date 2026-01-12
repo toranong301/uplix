@@ -5,6 +5,7 @@ import { RouterLink } from '@angular/router';
 export interface Cta {
   label: string;
   link: string;
+  queryParams?: Record<string, any>;
 }
 
 @Component({
@@ -21,4 +22,9 @@ export class HeroComponent {
 
   @Input({ required: true }) primaryCta!: Cta;
   @Input() secondaryCta?: Cta;
+  isDownloadLink(link: string): boolean {
+  return link.endsWith('.pdf') || link.includes('/downloads/');
+}
+
+
 }
