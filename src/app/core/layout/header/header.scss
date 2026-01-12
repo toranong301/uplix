@@ -1,0 +1,37 @@
+.header{
+  position: sticky; top:0; z-index:50;
+  background: rgba(248,248,248,.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0,0,0,.06);
+}
+.row{ display:flex; align-items:center; justify-content:space-between; gap:16px; padding:12px 0; }
+.brand img{ height:34px; display:block; }
+
+.nav{ display:flex; align-items:center; gap:18px; }
+.nav a, .link{
+  color: var(--uplix-navy);
+  text-decoration:none;
+  font-weight:600;
+  background:transparent;
+  border:0;
+  cursor:pointer;
+  padding:10px 10px;
+  border-radius:999px;
+}
+.nav a.active{ background: rgba(0,0,64,.08); }
+
+.dropdown{ position:relative; }
+.panel{
+  position:absolute; top:44px; left:0;
+  width:260px;
+  padding:10px;
+  display:none;
+}
+.dropdown:hover .panel{ display:block; }
+.panel a{
+  display:block; padding:10px 12px; border-radius:12px;
+}
+.panel a:hover{ background: rgba(0,0,0,.04); }
+@media (max-width: 900px){
+  .nav{ display:none; } /* ถ้าจะทำมือถือจริง แนะนำทำ drawer แยก */
+}

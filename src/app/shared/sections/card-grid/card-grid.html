@@ -1,0 +1,13 @@
+<div class="grid-3">
+  <article class="card pad" *ngFor="let item of items">
+    <h3 style="margin:0; color:var(--uplix-navy)">{{ item.title }}</h3>
+    <p class="p">{{ item.desc }}</p>
+
+    <a *ngIf="item.link"
+       class="btn btn-secondary"
+       [routerLink]="item.link"
+       style="margin-top:10px;">
+      {{ item.ctaLabel || 'ขอข้อมูล' }}
+    </a>
+  </article>
+</div>

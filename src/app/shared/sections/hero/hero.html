@@ -1,0 +1,20 @@
+<section class="hero card">
+  <div class="hero-text">
+    <h1 class="h1">{{ title }}</h1>
+    <p class="p">{{ tagline }}</p>
+
+    <div class="cta">
+      <a class="btn btn-primary" [routerLink]="primaryCta.link">{{ primaryCta.label }}</a>
+
+      <a *ngIf="secondaryCta as sc"
+         class="btn btn-secondary"
+         [routerLink]="sc.link">
+        {{ sc.label }}
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-img">
+    <img [src]="heroImage" [alt]="title" />
+  </div>
+</section>

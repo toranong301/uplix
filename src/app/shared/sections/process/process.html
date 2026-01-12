@@ -1,0 +1,9 @@
+<section class="card pad">
+  <h2 style="margin:0;">{{ title }}</h2>
+  <ol class="steps">
+    <li *ngFor="let s of steps">
+      <b>{{ s.title }}</b>
+      <div class="p">{{ s.desc }}</div>
+    </li>
+  </ol>
+</section>

@@ -1,0 +1,50 @@
+<div class="container" *ngIf="bu() as b; else notFound">
+
+  <uplix-hero
+    [title]="b.title"
+    [tagline]="b.tagline"
+    [heroImage]="b.heroImage"
+    [primaryCta]="b.primaryCta"
+    [secondaryCta]="b.secondaryCta">
+  </uplix-hero>
+
+  <section style="margin-top:18px;">
+    <uplix-card-grid [items]="b.painSolutions"></uplix-card-grid>
+  </section>
+
+  <section style="margin-top:18px;">
+    <div class="row2">
+      <h2 style="margin:0;">Highlights</h2>
+      <a class="btn btn-ghost" routerLink="/quote">ดูทั้งหมด →</a>
+    </div>
+
+    <div style="margin-top:12px;">
+      <uplix-card-grid [items]="highlightCards()"></uplix-card-grid>
+    </div>
+  </section>
+
+  <section style="margin-top:18px;">
+    <uplix-process [steps]="b.process"></uplix-process>
+  </section>
+
+  <section style="margin-top:18px;">
+    <uplix-faq [faqs]="b.faqs"></uplix-faq>
+  </section>
+
+  <section style="margin-top:18px;">
+    <uplix-final-cta
+      title="คุยกับทีม UPLIX เพื่อออกแบบแพ็กเกจให้เหมาะกับงาน"
+      subtitle="ตอบไว พร้อมแนะนำทางเลือก 2–3 แบบ"
+      buttonLabel="เริ่มขอใบเสนอราคา"
+      buttonLink="/quote">
+    </uplix-final-cta>
+  </section>
+</div>
+
+<ng-template #notFound>
+  <div class="container card" style="padding:16px;">
+    <h2 style="margin:0;">ไม่พบบริการนี้</h2>
+    <p class="p">ลองกลับไปหน้า Home หรือเลือก Business Unit ใหม่</p>
+    <a class="btn btn-secondary" routerLink="/">กลับหน้าแรก</a>
+  </div>
+</ng-template>

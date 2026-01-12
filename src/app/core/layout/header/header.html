@@ -1,0 +1,27 @@
+<header class="header">
+  <div class="container row">
+    <a class="brand" routerLink="/" (click)="close()">
+      <img src="assets/brand/uplix-logo.png" alt="UPLIX" />
+    </a>
+
+    <nav class="nav">
+      <a routerLink="/" routerLinkActive="active">Home</a>
+
+      <div class="dropdown">
+        <button class="link" type="button">Business Units ▾</button>
+        <div class="panel card">
+          <a routerLink="/bu/firefighting-training">Firefighting Training</a>
+          <a routerLink="/bu/ppe">PPE</a>
+          <a routerLink="/bu/hrd">HRD</a>
+          <a routerLink="/bu/waste-management">Waste Management</a>
+        </div>
+      </div>
+
+      <a routerLink="/resources" routerLinkActive="active">Resources</a>
+      <a routerLink="/about" routerLinkActive="active">About</a>
+      <a routerLink="/contact" routerLinkActive="active">Contact</a>
+    </nav>
+
+    <a class="btn btn-primary" routerLink="/quote">ขอใบเสนอราคา</a>
+  </div>
+</header>
