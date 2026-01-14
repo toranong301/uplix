@@ -1,8 +1,8 @@
 <section class="card pad">
-  <h2 style="margin:0;">{{ title }}</h2>
+  <h2 style="margin:0;">{{ title | translate }}</h2>
 
   <details *ngFor="let f of faqs" class="faq">
-    <summary>{{ f.q }}</summary>
-    <p class="p" style="margin-top:8px;">{{ f.a }}</p>
+    <summary>{{ f.q | translate }}</summary>
+    <p class="p" style="margin-top:8px;">{{ f.a | translate }}</p>
   </details>
 </section>

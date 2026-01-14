@@ -1,1 +1,12 @@
 .pad{ padding:16px; }
+.card-item{
+  display:flex;
+  flex-direction:column;
+  min-height: 170px; /* ปรับได้ */
+}
+
+.card-actions{
+  margin-top:auto;
+}
+.clickable{ cursor:pointer; }
+.clickable:hover{ box-shadow: 0 14px 40px rgba(0,0,0,.08); }

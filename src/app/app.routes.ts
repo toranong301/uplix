@@ -9,6 +9,10 @@ export const routes: Routes = [
   { path: 'quote', loadComponent: () => import('./features/quote/quote').then(m => m.QuoteComponent) },
 
   { path: 'bu/:key', loadComponent: () => import('./features/bu/bu-landing/bu-landing').then(m => m.BuLandingComponent) },
+  {
+  path: 'learning/fire-fighting-training', loadComponent: () =>import('./features/learning/fire-fighting-training/fire-fighting-training').then(m => m.FireFightingTrainingComponent),
+},
+
 
   { path: '**', redirectTo: '' }
 ];

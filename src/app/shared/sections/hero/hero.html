@@ -1,30 +1,47 @@
 <section class="hero card">
   <div class="hero-text">
-    <h1 class="h1">{{ title }}</h1>
-    <p class="p">{{ tagline }}</p>
-
-    <div class="cta">
-      <a class="btn btn-primary"
-         [routerLink]="primaryCta.link"
-         [queryParams]="primaryCta.queryParams">
-        {{ primaryCta.label }}
+    <h1 class="h1">{{ title | translate }}</h1>
+    <p class="p">{{ tagline | translate }}</p>
+    <div class="cta" *ngIf="primaryCta as pc">
+      <!-- primary -->
+      <a
+        *ngIf="pc.link.startsWith('#'); else primaryRouter"
+        class="btn btn-primary"
+        [attr.href]="pc.link"
+      >
+        {{ pc.label | translate }}
       </a>
 
+      <ng-template #primaryRouter>
+        <a
+          class="btn btn-primary"
+          [routerLink]="pc.link"
+          [queryParams]="pc.queryParams"
+        >
+          {{ pc.label | translate }}
+        </a>
+      </ng-template>
+
+      <!-- secondary -->
       <ng-container *ngIf="secondaryCta as sc">
-        <a *ngIf="!isDownloadLink(sc.link); else downloadBtn"
-           class="btn btn-secondary"
-           [routerLink]="sc.link"
-           [queryParams]="sc.queryParams">
-          {{ sc.label }}
+        <a
+          *ngIf="!isDownloadLink(sc.link); else downloadBtn"
+          class="btn btn-secondary"
+          [routerLink]="sc.link"
+          [queryParams]="sc.queryParams"
+        >
+          {{ sc.label | translate }}
         </a>
 
         <ng-template #downloadBtn>
-          <a class="btn btn-secondary"
-             [attr.href]="sc.link"
-             download
-             target="_blank"
-             rel="noopener">
-            {{ sc.label }}
+          <a
+            class="btn btn-secondary"
+            [attr.href]="sc.link"
+            download
+            target="_blank"
+            rel="noopener"
+          >
+            {{ sc.label | translate }}
           </a>
         </ng-template>
       </ng-container>
@@ -32,7 +49,6 @@
   </div>
 
   <div class="hero-img">
-    <img [src]="heroImage" [alt]="title" />
+    <img [src]="heroImage" [alt]="(title | translate)" />
   </div>
 </section>
-

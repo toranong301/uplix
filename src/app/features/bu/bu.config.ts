@@ -1,120 +1,163 @@
 import { BuConfig } from './bu.types';
 
 export const BU: Record<string, BuConfig> = {
-  'firefighting-training': {
-    key: 'firefighting-training',
-    title: 'Firefighting Training',
-    tagline: 'ฝึกอบรมดับเพลิง/อพยพ/ความปลอดภัย พร้อม In-house และตารางอบรม',
-    heroImage: 'assets/hero/firefighting.jpg',
-    primaryCta: { label: 'เช็คตารางอบรม', link: '/quote?bu=firefighting-training' },
-    secondaryCta: { label: 'ขอทีมไปอบรม In-house', link: '/quote?bu=firefighting-training&mode=inhouse' },
-    painSolutions: [
-      { title: 'เพิ่มความพร้อมของทีม', desc: 'ฝึกจริง-ใช้งานจริง ลดความเสี่ยงหน้างาน' },
-      { title: 'สอดคล้องข้อกำหนด', desc: 'จัดชุดคอร์ส/เอกสารประกอบให้ตรวจได้' },
-      { title: 'วัดผลได้', desc: 'มีแนวทางประเมินก่อน-หลังอบรม' },
-    ],
-    previewItems: [
-      { title: 'Basic Firefighting', desc: 'พื้นฐานดับเพลิง + อุปกรณ์', link: '/quote?course=basic-firefighting' },
-      { title: 'Evacuation Drill', desc: 'ซ้อมอพยพตามแผน', link: '/quote?course=evacuation' },
-      { title: 'Fire Warden', desc: 'หัวหน้าประจำชั้น/พื้นที่', link: '/quote?course=warden' },
-    ],
-    process: [
-      { title: 'เก็บข้อมูลหน้างาน', desc: 'ประเภทพื้นที่/จำนวนคน/ความเสี่ยง' },
-      { title: 'ออกแบบหลักสูตร', desc: 'เนื้อหา + station ฝึก' },
-      { title: 'ฝึกอบรม', desc: 'Theory + Practical' },
-      { title: 'สรุปผล', desc: 'รายงาน/ข้อเสนอแนะ' },
-    ],
-    faqs: [
-      { q: 'รับอบรม In-house ไหม?', a: 'รับ ทั้งในโรงงาน/ออฟฟิศ และจัดอุปกรณ์ประกอบได้' },
-      { q: 'มีใบประกาศไหม?', a: 'มีตามรูปแบบคอร์สที่เลือก' },
-    ]
-  },
+  learning: {
+    key: 'learning',
+    title: 'bu.learning.title',
+    tagline: 'bu.learning.tagline',
+    heroImage: 'assets/hero/learning.png',
 
-  'ppe': {
-    key: 'ppe',
-    title: 'PPE',
-    tagline: 'อุปกรณ์เซฟตี้ครบหมวด พร้อมแนะนำรุ่นให้เหมาะกับงาน',
-    heroImage: 'assets/hero/ppe.jpg',
-    primaryCta: { label: 'ขอใบเสนอราคา', link: '/quote', queryParams: { bu: 'ppe' } },
-    secondaryCta: {
-  label: 'ดาวน์โหลด Catalog',
-  link: '/downloads/2025-PPE-Catalogue-UPLIX-Safety.pdf'
+    primaryCta: { label: 'common.request_quote', link: '/quote', queryParams: { bu: 'learning' } },
+
+    painSolutions: [
+      { title: 'bu.learning.pain.1.title', desc: 'bu.learning.pain.1.desc' },
+      { title: 'bu.learning.pain.2.title', desc: 'bu.learning.pain.2.desc' },
+      { title: 'bu.learning.pain.3.title', desc: 'bu.learning.pain.3.desc' },
+    ],
+
+    serviceGroups: [
+      {
+        title: 'bu.learning.groups.11.title',
+        items: [
+          { title: 'bu.learning.groups.11.items.111.title', desc: 'bu.learning.groups.11.items.111.desc' },
+        ]
+      },
+      {
+        title: 'bu.learning.groups.12.title',
+        items: [
+          { title: 'bu.learning.groups.12.items.1.title', desc: 'bu.learning.groups.12.items.1.desc' },
+        ]
+      },
+      {
+  title: 'bu.learning.groups.13.title',
+  items: [
+    { title: 'bu.learning.groups.13.items.1.title', desc: 'bu.learning.groups.13.items.1.desc' },
+    {
+      title: 'bu.learning.groups.13.items.2.title',
+      desc: 'bu.learning.groups.13.items.2.desc',
+      enabled: true,
+      link: '/learning/fire-fighting-training',
+      queryParams: { bu: 'learning', topic: 'learning.fire_training' },
+      ctaLabel: 'common.request_quote'
+    },
+  ]
 }
 ,
-    painSolutions: [
-      { title: 'เลือกให้ตรงงาน', desc: 'ลดการซื้อผิดรุ่น/ผิดมาตรฐาน' },
-      { title: 'คุมงบง่าย', desc: 'จัดชุดแพ็กเกจตามหน่วยงาน/ไซต์งาน' },
-      { title: 'ส่งไว/มีสต็อก', desc: 'ประสานการจัดส่งและใบเสนอราคา' },
+      {
+        title: 'bu.learning.groups.14.title',
+        items: [
+          { title: 'bu.learning.groups.14.items.141.title', desc: 'bu.learning.groups.14.items.141.desc' },
+          { title: 'bu.learning.groups.14.items.142.title', desc: 'bu.learning.groups.14.items.142.desc' },
+        ]
+      }
     ],
-    previewItems: [
-      { title: 'Head Protection', desc: 'หมวกนิรภัย', link: '/quote?cat=head' },
-      { title: 'Hand Protection', desc: 'ถุงมือ', link: '/quote?cat=hand' },
-      { title: 'Respirator', desc: 'หน้ากาก/ตลับกรอง', link: '/quote?cat=respirator' },
-    ],
+
     process: [
-      { title: 'บอกประเภทงาน', desc: 'สารเคมี/ฝุ่น/งานสูง/ความร้อน ฯลฯ' },
-      { title: 'คัดรุ่นที่เหมาะ', desc: 'เสนอ 2-3 ตัวเลือก' },
-      { title: 'เสนอราคา', desc: 'พร้อม lead time' },
-      { title: 'จัดส่ง', desc: 'ออกเอกสารครบ' },
+      { title: 'bu.learning.process.1.title', desc: 'bu.learning.process.1.desc' },
+      { title: 'bu.learning.process.2.title', desc: 'bu.learning.process.2.desc' },
+      { title: 'bu.learning.process.3.title', desc: 'bu.learning.process.3.desc' },
+      { title: 'bu.learning.process.4.title', desc: 'bu.learning.process.4.desc' },
     ],
+
     faqs: [
-      { q: 'ช่วยแนะนำรุ่นได้ไหม?', a: 'ได้ ส่งรูปงาน/ความเสี่ยง/จำนวนใช้งาน' },
-    ]
+      { q: 'bu.learning.faq.1.q', a: 'bu.learning.faq.1.a' },
+      { q: 'bu.learning.faq.2.q', a: 'bu.learning.faq.2.a' },
+    ],
   },
 
-  'hrd': {
-    key: 'hrd',
-    title: 'HRD',
-    tagline: 'พัฒนาคนและองค์กร: โปรแกรมอบรม/โค้ช/ประเมินสมรรถนะ',
-    heroImage: 'assets/hero/hrd.jpg',
-    primaryCta: { label: 'นัดคุยที่ปรึกษา', link: '/quote?bu=hrd' },
-    secondaryCta: { label: 'ดูโปรแกรม', link: '/bu/hrd' },
+  ppe: {
+    key: 'ppe',
+    title: 'bu.ppe.title',
+    tagline: 'bu.ppe.tagline',
+    heroImage: 'assets/hero/ppe.jpg',
+
+    primaryCta: { label: 'common.request_quote', link: '/quote', queryParams: { bu: 'ppe' } },
+    secondaryCta: { label: 'bu.ppe.catalog', link: '/downloads/2025-PPE-Catalogue-UPLIX-Safety.pdf' },
+
     painSolutions: [
-      { title: 'Upskill/Reskill', desc: 'ออกแบบตามเป้าหมายองค์กร' },
-      { title: 'วัดผลได้', desc: 'มีกรอบประเมินและ KPI' },
-      { title: 'ต่อยอดเป็นแผนปี', desc: 'Roadmap การพัฒนา' },
+      { title: 'bu.ppe.pain.1.title', desc: 'bu.ppe.pain.1.desc' },
+      { title: 'bu.ppe.pain.2.title', desc: 'bu.ppe.pain.2.desc' },
+      { title: 'bu.ppe.pain.3.title', desc: 'bu.ppe.pain.3.desc' },
     ],
-    previewItems: [
-      { title: 'Leadership Program', desc: 'พัฒนาผู้นำ', link: '/quote?program=leadership' },
-      { title: 'Soft Skills', desc: 'สื่อสาร/ทำงานเป็นทีม', link: '/quote?program=softskills' },
-      { title: 'Competency Assessment', desc: 'ประเมินสมรรถนะ', link: '/quote?program=assessment' },
+
+    serviceGroups: [
+      {
+        title: 'bu.ppe.groups.ppe.title',
+        items: [
+          { title: 'bu.ppe.items.head.title',        desc: 'bu.ppe.items.head.desc',        enabled: true, link: '/quote', queryParams: { bu: 'ppe', cat: 'ppe.head' }, ctaLabel: 'common.request_quote' },
+          { title: 'bu.ppe.items.respiratory.title', desc: 'bu.ppe.items.respiratory.desc', enabled: true, link: '/quote', queryParams: { bu: 'ppe', cat: 'ppe.respiratory' }, ctaLabel: 'common.request_quote' },
+          { title: 'bu.ppe.items.eye_face.title',    desc: 'bu.ppe.items.eye_face.desc',    enabled: true, link: '/quote', queryParams: { bu: 'ppe', cat: 'ppe.eye_face' }, ctaLabel: 'common.request_quote' },
+          { title: 'bu.ppe.items.hand_foot.title',   desc: 'bu.ppe.items.hand_foot.desc',   enabled: true, link: '/quote', queryParams: { bu: 'ppe', cat: 'ppe.hand_foot' }, ctaLabel: 'common.request_quote' },
+          { title: 'bu.ppe.items.fall.title',        desc: 'bu.ppe.items.fall.desc',        enabled: true, link: '/quote', queryParams: { bu: 'ppe', cat: 'ppe.fall' }, ctaLabel: 'common.request_quote' },
+          { title: 'bu.ppe.items.energy.title',      desc: 'bu.ppe.items.energy.desc',      enabled: true, link: '/quote', queryParams: { bu: 'ppe', cat: 'ppe.energy_electrical' }, ctaLabel: 'common.request_quote' },
+          { title: 'bu.ppe.items.hygiene.title',     desc: 'bu.ppe.items.hygiene.desc',     enabled: true, link: '/quote', queryParams: { bu: 'ppe', cat: 'ppe.hygiene' }, ctaLabel: 'common.request_quote' },
+        ]
+      },
+      {
+        title: 'bu.ppe.groups.fire.title',
+        items: [
+          { title: 'bu.ppe.items.fire_tank.title',     desc: 'bu.ppe.items.fire_tank.desc',     enabled: true, link: '/quote', queryParams: { bu: 'ppe', cat: 'ppe.fire_tank' }, ctaLabel: 'common.request_quote' },
+          { title: 'bu.ppe.items.refill_service.title',desc: 'bu.ppe.items.refill_service.desc',enabled: true, link: '/quote', queryParams: { bu: 'ppe', cat: 'ppe.refill_service' }, ctaLabel: 'common.request_quote' },
+        ]
+      }
     ],
+
     process: [
-      { title: 'Pre-assessment', desc: 'เป้าหมาย/ช่องว่างทักษะ' },
-      { title: 'ออกแบบโปรแกรม', desc: 'โครงหลักสูตร/กิจกรรม' },
-      { title: 'ดำเนินการ', desc: 'อบรม/โค้ช/เวิร์กชอป' },
-      { title: 'สรุปผล', desc: 'แผนต่อยอด' },
+      { title: 'bu.ppe.process.1.title', desc: 'bu.ppe.process.1.desc' },
+      { title: 'bu.ppe.process.2.title', desc: 'bu.ppe.process.2.desc' },
+      { title: 'bu.ppe.process.3.title', desc: 'bu.ppe.process.3.desc' },
     ],
+
     faqs: [
-      { q: 'ทำได้ทั้ง In-house และ Public ไหม?', a: 'ทำได้ ตามรูปแบบโปรแกรม' },
-    ]
+      { q: 'bu.ppe.faq.1.q', a: 'bu.ppe.faq.1.a' },
+      { q: 'bu.ppe.faq.2.q', a: 'bu.ppe.faq.2.a' },
+    ],
   },
 
-  'waste-management': {
-    key: 'waste-management',
-    title: 'Waste Management',
-    tagline: 'บริหารจัดการของเสีย/ตรวจหน้างาน/จัดทำแผนและบริการต่อเนื่อง',
-    heroImage: 'assets/hero/waste.jpg',
-    primaryCta: { label: 'นัดตรวจหน้างาน (Site Survey)', link: '/quote?bu=waste-management&mode=survey' },
-    secondaryCta: { label: 'ดูแพ็กเกจบริการ', link: '/bu/waste-management' },
+  waste: {
+    key: 'waste',
+    title: 'bu.waste.title',
+    tagline: 'bu.waste.tagline',
+    heroImage: 'assets/hero/waste.png',
+
+    primaryCta: { label: 'common.request_quote', link: '/quote', queryParams: { bu: 'waste' } },
+
     painSolutions: [
-      { title: 'ลดความเสี่ยงด้านกฎหมาย', desc: 'ช่วยจัดระบบเอกสารและกระบวนการ' },
-      { title: 'คุมต้นทุน', desc: 'แยกประเภท/ปรับวิธีจัดเก็บ/ส่งกำจัด' },
-      { title: 'ทำให้ตรวจได้', desc: 'ทำ SOP/Checklist/Training' },
+      { title: 'bu.waste.pain.1.title', desc: 'bu.waste.pain.1.desc' },
+      { title: 'bu.waste.pain.2.title', desc: 'bu.waste.pain.2.desc' },
+      { title: 'bu.waste.pain.3.title', desc: 'bu.waste.pain.3.desc' },
     ],
-    previewItems: [
-      { title: 'Waste Audit', desc: 'สำรวจและวิเคราะห์ของเสีย', link: '/quote?service=audit' },
-      { title: 'Waste Segregation Plan', desc: 'แผนแยกของเสีย', link: '/quote?service=plan' },
-      { title: 'On-going Service', desc: 'ติดตามรายเดือน/ไตรมาส', link: '/quote?service=ongoing' },
+
+    serviceGroups: [
+      {
+        title: 'bu.waste.groups.31.title',
+        items: [
+          { title: 'bu.waste.groups.31.items.1.title', desc: 'bu.waste.groups.31.items.1.desc' },
+        ]
+      },
+      {
+        title: 'bu.waste.groups.32.title',
+        items: [
+          { title: 'bu.waste.groups.32.items.1.title', desc: 'bu.waste.groups.32.items.1.desc' },
+        ]
+      },
+      {
+        title: 'bu.waste.groups.33.title',
+        items: [
+          { title: 'bu.waste.groups.33.items.1.title', desc: 'bu.waste.groups.33.items.1.desc' },
+        ]
+      },
     ],
+
     process: [
-      { title: 'Site Survey', desc: 'เก็บข้อมูลจริงหน้างาน' },
-      { title: 'วิเคราะห์ & ออกแบบระบบ', desc: 'ประเภท/จุดกำเนิด/การจัดเก็บ' },
-      { title: 'นำไปใช้', desc: 'SOP + Training' },
-      { title: 'ติดตามผล', desc: 'รายงานและปรับปรุง' },
+      { title: 'bu.waste.process.1.title', desc: 'bu.waste.process.1.desc' },
+      { title: 'bu.waste.process.2.title', desc: 'bu.waste.process.2.desc' },
+      { title: 'bu.waste.process.3.title', desc: 'bu.waste.process.3.desc' },
     ],
+
     faqs: [
-      { q: 'ต้องเตรียมอะไรตอนสำรวจ?', a: 'แปลนพื้นที่/รูปหน้างาน/ข้อมูลการกำจัดที่ใช้อยู่' },
-    ]
-  }
+      { q: 'bu.waste.faq.1.q', a: 'bu.waste.faq.1.a' },
+      { q: 'bu.waste.faq.2.q', a: 'bu.waste.faq.2.a' },
+    ],
+  },
 };

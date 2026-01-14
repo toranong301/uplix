@@ -1,8 +1,8 @@
 <div class="container" *ngIf="bu() as b; else notFound">
 
   <uplix-hero
-    [title]="b.title"
-    [tagline]="b.tagline"
+    [title]="b.title | translate"
+    [tagline]="b.tagline | translate"
     [heroImage]="b.heroImage"
     [primaryCta]="b.primaryCta"
     [secondaryCta]="b.secondaryCta">
@@ -13,14 +13,12 @@
   </section>
 
   <section style="margin-top:18px;">
-    <div class="row2">
-      <h2 style="margin:0;">Highlights</h2>
-      <a class="btn btn-ghost" routerLink="/quote">ดูทั้งหมด →</a>
-    </div>
+    <h2 style="margin:0;">{{ 'bu.landing.services' | translate }}</h2>
 
-    <div style="margin-top:12px;">
-      <uplix-card-grid [items]="highlightCards()"></uplix-card-grid>
-    </div>
+    <section *ngFor="let g of b.serviceGroups" style="margin-top:12px;">
+      <h3 style="margin:0 0 10px 0;">{{ g.title | translate }}</h3>
+      <uplix-card-grid [items]="g.items"></uplix-card-grid>
+    </section>
   </section>
 
   <section style="margin-top:18px;">
@@ -33,9 +31,9 @@
 
   <section style="margin-top:18px;">
     <uplix-final-cta
-      title="คุยกับทีม UPLIX เพื่อออกแบบแพ็กเกจให้เหมาะกับงาน"
-      subtitle="ตอบไว พร้อมแนะนำทางเลือก 2–3 แบบ"
-      buttonLabel="เริ่มขอใบเสนอราคา"
+      [title]="'bu.landing.final.title' | translate"
+      [subtitle]="'bu.landing.final.subtitle' | translate"
+      [buttonLabel]="'bu.landing.final.button' | translate"
       buttonLink="/quote">
     </uplix-final-cta>
   </section>
@@ -43,8 +41,8 @@
 
 <ng-template #notFound>
   <div class="container card" style="padding:16px;">
-    <h2 style="margin:0;">ไม่พบบริการนี้</h2>
-    <p class="p">ลองกลับไปหน้า Home หรือเลือก Business Unit ใหม่</p>
-    <a class="btn btn-secondary" routerLink="/">กลับหน้าแรก</a>
+    <h2 style="margin:0;">{{ 'bu.landing.not_found.title' | translate }}</h2>
+    <p class="p">{{ 'bu.landing.not_found.desc' | translate }}</p>
+    <a class="btn btn-secondary" routerLink="/">{{ 'bu.landing.not_found.back' | translate }}</a>
   </div>
 </ng-template>

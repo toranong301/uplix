@@ -1,51 +1,49 @@
-<header class="header">
-  <div class="container row">
-    <a class="brand" routerLink="/" (click)="close()">
-      <img src="assets/brand/UPLIX_LOGO.png" alt="UPLIX" />
+<header class="uplix-header">
+  <div class="uplix-header__inner container">
+    <!-- Brand -->
+    <a routerLink="/" class="uplix-brand" aria-label="UPLIX Home">
+      <img class="uplix-brand__logo" src="assets/brand/UPLIX_LOGO.png" alt="UPLIX" />
     </a>
 
-    <nav class="nav">
-      <a routerLink="/" routerLinkActive="active">Home</a>
-
-      <div class="dropdown" tabindex="0">
-  <button class="link" type="button">Business Units ▾</button>
-
-  <div class="panel card">
-  <ng-container *ngFor="let item of buItems">
-    <!-- enabled -->
-    <a *ngIf="item.enabled; else disabledItem"
-       class="menu-item"
-       [routerLink]="item.route">
-      <span>{{ item.label }}</span>
-    </a>
-
-    <!-- disabled -->
-    <ng-template #disabledItem>
-  <button type="button"
-          class="menu-item is-disabled"
-          aria-disabled="true">
-    <span class="title">{{ item.label }}</span>
-    <span class="badge">{{ item.badge || 'Coming soon' }}</span>
-  </button>
-</ng-template>
-
-  </ng-container>
-
-  <div class="divider"></div>
-
-  <a class="menu-item helper" routerLink="/contact">
-    อยากใช้บริการอื่น? ติดต่อเรา
+    <!-- Nav -->
+    <nav class="uplix-nav">
+  <a class="uplix-nav__link" routerLink="/" routerLinkActive="is-active" [routerLinkActiveOptions]="{ exact: true }">
+    {{ 'nav.home' | translate }}
   </a>
-</div>
 
-</div>
+  <div class="uplix-nav__dropdown">
+    <button class="uplix-nav__link uplix-nav__btn"
+            type="button"
+            [class.is-active]="isBuRoute()">
+      {{ 'nav.bu' | translate }} <span class="uplix-nav__chev">▾</span>
+    </button>
 
+    <div class="uplix-nav__panel">
+      <a class="menu-item" *ngFor="let item of buItems" [routerLink]="item.route">
+        <span class="title">{{ item.label }}</span>
+      </a>
+    </div>
+  </div>
 
-      <a routerLink="/resources" routerLinkActive="active">Resources</a>
-      <a routerLink="/about" routerLinkActive="active">About</a>
-      <a routerLink="/contact" routerLinkActive="active">Contact</a>
-    </nav>
+  <a class="uplix-nav__link" routerLink="/resources" routerLinkActive="is-active">
+    {{ 'nav.resources' | translate }}
+  </a>
+  <a class="uplix-nav__link" routerLink="/about" routerLinkActive="is-active">
+    {{ 'nav.about' | translate }}
+  </a>
+  <a class="uplix-nav__link" routerLink="/contact" routerLinkActive="is-active">
+    {{ 'nav.contact' | translate }}
+  </a>
 
-    <a class="btn btn-primary" routerLink="/quote">ขอใบเสนอราคา</a>
+  <div class="lang-switch" role="group" aria-label="Language">
+    <button type="button" class="lang-btn" [class.is-active]="lang==='th'" (click)="setLang('th')">TH</button>
+    <button type="button" class="lang-btn" [class.is-active]="lang==='en'" (click)="setLang('en')">EN</button>
+  </div>
+</nav>
+
+<a class="btn btn-primary uplix-cta-btn" routerLink="/quote">
+  {{ 'nav.quote' | translate }}
+</a>
+
   </div>
 </header>

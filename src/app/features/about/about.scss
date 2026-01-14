@@ -1,0 +1,82 @@
+.page { padding: 24px; max-width: 1100px; margin: 0 auto; }
+
+.hero {
+  border-radius: 16px;
+  padding: 24px;
+  background: rgba(0,0,0,.04);
+}
+.hero__title { font-size: 32px; margin: 0 0 8px; }
+.hero__subtitle { margin: 0 0 16px; opacity: .85; }
+.hero__actions { display: flex; gap: 10px; flex-wrap: wrap; }
+
+.section { margin-top: 22px; }
+.section__title { font-size: 22px; margin: 0 0 8px; }
+.section__desc { margin: 0 0 14px; opacity: .85; }
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 12px;
+}
+.stat {
+  grid-column: span 12;
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 16px;
+  padding: 14px;
+  background: #fff;
+}
+@media (min-width: 720px) { .stat { grid-column: span 4; } }
+.stat__num { font-size: 22px; font-weight: 700; }
+.stat__label { opacity: .85; margin-top: 4px; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 14px;
+}
+.card {
+  grid-column: span 12;
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 16px;
+  padding: 16px;
+  background: #fff;
+}
+@media (min-width: 720px) { .card { grid-column: span 6; } }
+@media (min-width: 1024px) { .card { grid-column: span 4; } }
+
+.card__title { margin: 0 0 8px; font-size: 18px; }
+.card__desc { margin: 0 0 10px; opacity: .85; }
+
+.link { text-decoration: none; border-bottom: 1px solid rgba(0,0,0,.25); padding-bottom: 2px; }
+
+.timeline { list-style: none; padding: 0; margin: 0; border-left: 2px solid rgba(0,0,0,.12); }
+.timeline__item { display: flex; gap: 12px; padding: 10px 0 10px 12px; position: relative; }
+.timeline__dot {
+  width: 10px; height: 10px; border-radius: 999px;
+  background: rgba(0,0,0,.35);
+  position: absolute; left: -6px; top: 16px;
+}
+.timeline__title { font-weight: 700; }
+.timeline__desc { opacity: .85; margin-top: 3px; }
+
+.final {
+  margin-top: 26px;
+  border-radius: 16px;
+  padding: 20px;
+  background: rgba(0,0,0,.04);
+}
+.final__title { margin: 0 0 6px; font-size: 22px; }
+.final__subtitle { margin: 0 0 14px; opacity: .85; }
+.final__actions { display: flex; gap: 10px; flex-wrap: wrap; }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  padding: 10px 14px;
+  border: 1px solid rgba(0,0,0,.12);
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn--ghost { background: transparent; }

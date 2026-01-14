@@ -1,9 +1,24 @@
-export type BuKey = 'firefighting-training' | 'ppe' | 'hrd' | 'waste-management';
+export type BuKey = 'learning' | 'ppe' | 'waste';
 
 export interface CtaLink {
   label: string;
   link: string;
-  queryParams?: Record<string, any>; // ✅ เพิ่ม
+  queryParams?: Record<string, any>;
+}
+
+export interface ServiceItem {
+  title: string;
+  desc: string;
+  link?: string;
+  queryParams?: Record<string, any>;
+  ctaLabel?: string;
+  enabled?: boolean;
+  badge?: string;
+}
+
+export interface ServiceGroup {
+  title: string;
+  items: ServiceItem[];
 }
 
 export interface BuConfig {
@@ -11,10 +26,10 @@ export interface BuConfig {
   title: string;
   tagline: string;
   heroImage: string;
-  primaryCta: CtaLink;              
-  secondaryCta?: CtaLink;           
-  painSolutions: Array<{ title: string; desc: string; }>;
-  previewItems: Array<{ title: string; desc: string; link: string; }>;
-  process: Array<{ title: string; desc: string; }>;
-  faqs: Array<{ q: string; a: string; }>;
+  primaryCta: CtaLink;
+  secondaryCta?: CtaLink;
+  painSolutions: Array<{ title: string; desc: string }>;
+  serviceGroups: ServiceGroup[];  
+  process: Array<{ title: string; desc: string }>;
+  faqs: Array<{ q: string; a: string }>;
 }

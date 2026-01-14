@@ -1,1 +1,98 @@
-<p>about works!</p>
+<section class="page">
+  <header class="hero">
+    <div class="hero__inner">
+      <h1 class="hero__title">{{ 'about.title' | translate }}</h1>
+      <p class="hero__subtitle">{{ 'about.subtitle' | translate }}</p>
+
+      <div class="hero__actions">
+        <a class="btn btn--ghost" routerLink="/resources">
+          {{ 'about.actions.view_resources' | translate }}
+        </a>
+        <a class="btn" routerLink="/quote">
+          {{ 'common.request_quote' | translate }}
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <h2 class="section__title">{{ 'about.overview.title' | translate }}</h2>
+    <p class="section__desc">{{ 'about.overview.desc' | translate }}</p>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat__num">{{ 'about.stats.1.num' | translate }}</div>
+        <div class="stat__label">{{ 'about.stats.1.label' | translate }}</div>
+      </div>
+      <div class="stat">
+        <div class="stat__num">{{ 'about.stats.2.num' | translate }}</div>
+        <div class="stat__label">{{ 'about.stats.2.label' | translate }}</div>
+      </div>
+      <div class="stat">
+        <div class="stat__num">{{ 'about.stats.3.num' | translate }}</div>
+        <div class="stat__label">{{ 'about.stats.3.label' | translate }}</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section__title">{{ 'about.values.title' | translate }}</h2>
+    <p class="section__desc">{{ 'about.values.subtitle' | translate }}</p>
+
+    <div class="grid">
+      <article class="card" *ngFor="let v of values(); trackBy: trackByKey">
+        <h3 class="card__title">{{ v.titleKey | translate }}</h3>
+        <p class="card__desc">{{ v.descKey | translate }}</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section__title">{{ 'about.bu.title' | translate }}</h2>
+    <p class="section__desc">{{ 'about.bu.subtitle' | translate }}</p>
+
+    <div class="grid">
+      <article class="card">
+        <h3 class="card__title">{{ 'about.bu.items.learning.title' | translate }}</h3>
+        <p class="card__desc">{{ 'about.bu.items.learning.desc' | translate }}</p>
+        <a class="link" routerLink="/bu/learning">{{ 'common.view_detail' | translate }}</a>
+      </article>
+
+      <article class="card">
+        <h3 class="card__title">{{ 'about.bu.items.ppe.title' | translate }}</h3>
+        <p class="card__desc">{{ 'about.bu.items.ppe.desc' | translate }}</p>
+        <a class="link" routerLink="/bu/ppe">{{ 'common.view_detail' | translate }}</a>
+      </article>
+
+      <article class="card">
+        <h3 class="card__title">{{ 'about.bu.items.waste.title' | translate }}</h3>
+        <p class="card__desc">{{ 'about.bu.items.waste.desc' | translate }}</p>
+        <a class="link" routerLink="/bu/waste">{{ 'common.view_detail' | translate }}</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section__title">{{ 'about.timeline.title' | translate }}</h2>
+    <p class="section__desc">{{ 'about.timeline.subtitle' | translate }}</p>
+
+    <ol class="timeline">
+      <li class="timeline__item" *ngFor="let t of timeline(); trackBy: trackByKey">
+        <div class="timeline__dot"></div>
+        <div class="timeline__content">
+          <div class="timeline__title">{{ t.titleKey | translate }}</div>
+          <div class="timeline__desc">{{ t.descKey | translate }}</div>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section class="final">
+    <h2 class="final__title">{{ 'about.final.title' | translate }}</h2>
+    <p class="final__subtitle">{{ 'about.final.subtitle' | translate }}</p>
+    <div class="final__actions">
+      <a class="btn" routerLink="/quote">{{ 'common.request_quote' | translate }}</a>
+      <a class="btn btn--ghost" routerLink="/bu/ppe">{{ 'about.actions.view_ppe' | translate }}</a>
+    </div>
+  </section>
+</section>

@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, signal } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Component, inject, signal } from '@angular/core';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 type BuItem = {
   label: string;
@@ -12,18 +13,33 @@ type BuItem = {
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule,RouterLink, RouterLinkActive],
+  imports: [CommonModule,RouterLink, RouterLinkActive,TranslateModule],
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })
 export class HeaderComponent {
+  private router = inject(Router);
+  private t = inject(TranslateService);
+   get lang(): string {
+    return this.t.currentLang || this.t.defaultLang || 'th';
+  }
+
+  setLang(lang: 'th' | 'en') {
+    this.t.use(lang);
+    localStorage.setItem('uplix_lang', lang);
+    document.documentElement.lang = lang;
+  }
   open = signal(false);
   toggle(){ this.open.update(v => !v); }
   close(){ this.open.set(false); }
+  isBuRoute(): boolean {
+    return this.router.url.startsWith('/bu');
+  }
+  
   buItems: BuItem[] = [
-    { label: 'Firefighting Training', route: '/bu/firefighting-training', enabled: false, badge: 'Coming soon' },
-    { label: 'PPE', route: '/bu/ppe', enabled: true },
-    { label: 'HRD', route: '/bu/hrd', enabled: false, badge: 'Coming soon' },
-    { label: 'Waste Management', route: '/bu/waste-management', enabled: false, badge: 'Coming soon' },
+    { label: 'Experience & Innovative Learning', route: '/bu/learning', enabled: true, },
+    { label: 'Personal protection equipment (PPE) & Fire Tank & Refill Service', route: '/bu/ppe', enabled: true },
+    { label: 'Waste Management Solution & Technology', route: '/bu/waste', enabled: true,  },
   ];
+  
 }

@@ -1,1 +1,80 @@
-<p>resources works!</p>
+<section class="page">
+  <header class="hero">
+    <div class="hero__inner">
+      <h1 class="hero__title">{{ 'resources.title' | translate }}</h1>
+      <p class="hero__subtitle">{{ 'resources.subtitle' | translate }}</p>
+
+      <div class="hero__actions">
+        <a class="btn btn--ghost" routerLink="/quote">
+          {{ 'common.request_quote' | translate }}
+        </a>
+        <a class="btn" routerLink="/bu/ppe">
+          {{ 'resources.view_ppe' | translate }}
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div class="toolbar">
+    <span class="toolbar__label">{{ 'resources.filter.label' | translate }}</span>
+
+    <button
+      type="button"
+      class="chip"
+      [class.is-active]="filter() === 'all'"
+      (click)="setFilter('all')">
+      {{ 'resources.filter.all' | translate }}
+    </button>
+
+    <button
+      type="button"
+      class="chip"
+      [class.is-active]="filter() === 'downloads'"
+      (click)="setFilter('downloads')">
+      {{ 'resources.filter.downloads' | translate }}
+    </button>
+
+    <button
+      type="button"
+      class="chip"
+      [class.is-active]="filter() === 'guides'"
+      (click)="setFilter('guides')">
+      {{ 'resources.filter.guides' | translate }}
+    </button>
+  </div>
+
+  <section class="grid" *ngIf="items().length > 0; else emptyState">
+    <article class="card" *ngFor="let item of items(); trackBy: trackByTitleKey">
+      <div class="card__head">
+        <h2 class="card__title">{{ item.titleKey | translate }}</h2>
+
+        <span class="badge" *ngIf="item.badgeKey">
+          {{ item.badgeKey | translate }}
+        </span>
+      </div>
+
+      <p class="card__desc">{{ item.descKey | translate }}</p>
+
+      <div class="card__actions">
+        <a
+          class="btn btn--small"
+          [href]="item.href"
+          [attr.target]="item.external ? '_blank' : null"
+          [attr.rel]="item.external ? 'noopener noreferrer' : null">
+          {{ item.ctaKey | translate }}
+        </a>
+      </div>
+    </article>
+  </section>
+
+  <ng-template #emptyState>
+    <div class="empty">
+      <p class="empty__title">{{ 'resources.empty.title' | translate }}</p>
+      <p class="empty__desc">{{ 'resources.empty.desc' | translate }}</p>
+    </div>
+  </ng-template>
+
+  <footer class="hint">
+    <p class="hint__text">{{ 'resources.hint' | translate }}</p>
+  </footer>
+</section>

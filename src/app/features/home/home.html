@@ -1,1 +1,33 @@
-<p>home works!</p>
+<div class="container">
+
+  <uplix-hero
+  [title]="'home.hero.title' | translate"
+  [tagline]="'home.hero.tagline' | translate"
+  [heroImage]="hero.heroImage">
+  </uplix-hero>
+
+  <section class="section" id="bu">
+    <div class="row2">
+      <h2 style="margin:0;">{{ 'home.bu.title' | translate }}</h2>
+    </div>
+
+    <uplix-card-grid [items]="buCards()"></uplix-card-grid>
+  </section>
+
+  <section class="section">
+    <uplix-process
+      [title]="'home.process.title' | translate"
+      [steps]="process">
+    </uplix-process>
+  </section>
+
+  <section class="section">
+    <uplix-final-cta
+      [title]="'home.final.title' | translate"
+      [subtitle]="'home.final.subtitle' | translate"
+      [buttonLabel]="'home.final.button' | translate"
+      buttonLink="/quote">
+    </uplix-final-cta>
+  </section>
+
+</div>

@@ -1,1 +1,61 @@
-<p>footer works!</p>
+<footer class="uplix-footer">
+  <div class="container">
+
+    <div class="footer-card">
+      <!-- Left: brand -->
+      <div class="brand">
+        <img class="logo" src="assets/brand/UPLIX_LOGO.png" alt="UPLIX" />
+        <p class="tagline">
+          {{ 'footer.tagline' | translate }}
+        </p>
+      </div>
+
+      <!-- BU -->
+      <div class="col">
+        <h4 class="h">{{ 'footer.bu' | translate }}</h4>
+        <a class="link" *ngFor="let x of buLinks" [routerLink]="x.route">
+          {{ x.label | translate }}
+        </a>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col">
+        <h4 class="h">{{ 'footer.quick' | translate }}</h4>
+        <a class="link" *ngFor="let x of quickLinks" [routerLink]="x.route">
+          {{ x.label | translate }}
+        </a>
+      </div>
+
+      <!-- Contact -->
+      <div class="col">
+        <h4 class="h">{{ 'footer.contact' | translate }}</h4>
+
+        <div class="meta">
+          {{ 'footer.email' | translate }}:
+          <span class="mono">{{ email }}</span>
+        </div>
+
+        <div class="meta">
+          {{ 'footer.telephone' | translate }}: {{ telephone }}
+        </div>
+
+        <a class="link helper" routerLink="/contact">
+          {{ 'footer.contact_team' | translate }}
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="copy">
+        © {{ year }} {{ 'footer.rights' | translate }}
+      </div>
+
+      <div class="mini">
+        <a class="mini-link" routerLink="/privacy">{{ 'footer.privacy' | translate }}</a>
+        <span class="dot">•</span>
+        <a class="mini-link" routerLink="/terms">{{ 'footer.terms' | translate }}</a>
+      </div>
+    </div>
+
+  </div>
+</footer>

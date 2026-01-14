@@ -1,75 +1,132 @@
-.header{
-  position: sticky; top:0; z-index:50;
-  background: rgba(248,248,248,.85);
+.uplix-header{
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255,255,255,.88);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(0,0,0,.06);
 }
-.row{ display:flex; align-items:center; justify-content:space-between; gap:16px; padding:12px 0; }
-.brand img{ height:auto;width: auto; display:block; }
 
-.nav{ display:flex; align-items:center; gap:18px; }
-.nav a, .link{
-  color: var(--uplix-navy);
-  text-decoration:none;
-  font-weight:600;
-  background:transparent;
-  border:0;
-  cursor:pointer;
-  padding:10px 10px;
-  border-radius:999px;
+.uplix-header__inner{
+  height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
 }
-.nav a.active{ background: rgba(0,0,64,.08); }
 
-.dropdown{
+/* Brand */
+.uplix-brand{
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 6px;
+  border-radius: 14px;
+}
+.uplix-brand__logo{
+  height: 64px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* Nav pill bar */
+.uplix-nav{
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px;
+  border-radius: 999px;
+  background: rgba(0,0,0,.03);
+  border: 1px solid rgba(0,0,0,.04);
+  overflow: visible;
+}
+
+.uplix-nav__link{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 14px;
+  color: var(--uplix-navy);
+  transition: background .15s ease, transform .15s ease;
+}
+
+.uplix-nav__link:hover{
+  background: rgba(0,0,0,.06);
+}
+
+.uplix-nav__link.is-active{
+  background: rgba(255,255,255,.9);
+  box-shadow: 0 8px 18px rgba(0,0,0,.08);
+  border: 1px solid rgba(0,0,0,.06);
+}
+
+.uplix-nav__btn{
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.uplix-nav__chev{ opacity: .75; }
+
+/* Dropdown: hover + focus-within = ไม่หายไว */
+.uplix-nav__dropdown{
   position: relative;
   display: inline-flex;
   align-items: center;
 }
 
-/* “สะพาน” กันเมาส์หลุดตอนลากลง */
-.dropdown::after{
+.uplix-nav__dropdown::after{
   content:"";
-  position:absolute;
-  left:0;
-  top:100%;
-  width:100%;
-  height:10px;     /* ปรับได้ 8-14px */
-}
-
-.panel{
   position: absolute;
-  top: calc(100% + 8px);  /* ชิดปุ่มขึ้น ลดช่องว่าง */
+  left: -8px;
+  right: -8px;
+  top: 100%;
+  height: 12px;         
+}
+
+.uplix-nav__panel{
+  position: absolute;
+  top: calc(100% + 10px);
   left: 0;
-  width: 260px;
+  min-width: 280px;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 18px;
+  box-shadow: 0 18px 48px rgba(0,0,0,.14);
   padding: 10px;
-  z-index: 9999;
-
-  /* แทน display:none */
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-4px);
-  pointer-events: none;
-  transition: opacity .12s ease, transform .12s ease, visibility .12s ease;
+  display: none;
 }
 
-/* เปิดเมนูเมื่อ hover หรือ focus-within (ช่วยให้คลิกได้ดีขึ้น) */
-.dropdown:hover .panel,
-.dropdown:focus-within .panel{
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-  pointer-events: auto;
+.uplix-nav__dropdown:hover .uplix-nav__panel,
+.uplix-nav__dropdown:focus-within .uplix-nav__panel{
+  display: block;
 }
 
-.panel a{
-  display:block;
-  padding:10px 12px;
-  border-radius:12px;
-  text-decoration:none;
-  color: var(--uplix-navy);
+/* CTA button */
+.uplix-cta-btn{
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-weight: 900;
+  box-shadow: 0 12px 26px rgba(0,0,0,.12);
 }
-.panel a:hover{
-  background: rgba(0,0,0,.04);
+
+/* Mobile */
+@media (max-width: 900px){
+  .uplix-header__inner{ height: 66px; }
+  .uplix-brand__logo{ height: 28px; }
+
+  .uplix-nav{
+    gap: 4px;
+    padding: 4px;
+  }
+  .uplix-nav__link{
+    padding: 8px 10px;
+    font-size: 13px;
+  }
 }
 
 .menu-item{
@@ -77,66 +134,59 @@
   align-items:center;
   justify-content:space-between;
   gap:10px;
-  padding:10px 12px;
-  border-radius:12px;
+  padding: 10px 12px;
+  border-radius: 12px;
   text-decoration:none;
   color: var(--uplix-navy);
-  font-weight:600;
-  background:transparent;
-  border:1px solid transparent;
+  font-weight: 700;
+  transition: background .15s ease;
 }
 
 .menu-item:hover{
-  background: rgba(0,0,0,.04);
-}
-
-.menu-item.is-disabled{
-  opacity: .55;
-  cursor: not-allowed;
-  pointer-events: none;
-  background: rgba(0,0,0,.02);
-  border: 1px dashed rgba(0,0,0,.18);
-
-  flex-direction: column;      /* ✅ จากแนวนอน -> แนวตั้ง */
-  align-items: flex-start;     /* ✅ ชิดซ้าย (ถ้าอยากกึ่งกลางดูตัวเลือกด้านล่าง) */
-  justify-content: flex-start;
-  gap: 6px;
-}
-
-.menu-item.is-disabled .title{
-  line-height: 1.2;
-}
-
-.menu-item.is-disabled .badge{
-  font-size: 12px;
-  padding: 2px 8px;
-  border-radius: 999px;
-  background: rgba(0,0,0,.06);
-  color: rgba(0,0,0,.65);
-  font-weight: 700;
-}
-
-.badge{
-  font-size: 12px;
-  padding: 2px 8px;
-  border-radius: 999px;
-  background: rgba(0,0,0,.06);
-  color: rgba(0,0,0,.65);
-  font-weight: 700;
+  background: rgba(0,0,0,.05);
 }
 
 .divider{
-  height:1px;
+  height: 1px;
   background: rgba(0,0,0,.08);
   margin: 8px 6px;
 }
 
-.helper{
-  color: var(--uplix-soft);
-  font-weight: 700;
+.menu-item.helper{
+  font-weight: 800;
 }
 
 
 @media (max-width: 900px){
   .nav{ display:none; } /* ถ้าจะทำมือถือจริง แนะนำทำ drawer แยก */
+}
+
+/* Language Switch */
+.lang-switch{
+  display:flex;
+  gap:6px;
+  padding-left: 6px;
+}
+
+.lang-btn{
+  border: 1px solid rgba(0,0,0,.10);
+  background: rgba(119, 114, 114, 0.65);
+  border-radius: 999px;
+  padding: 8px 10px;
+  font-weight: 900;
+  font-size: 12px;
+  cursor: pointer;
+  color: var(--uplix-navy);
+  transition: background .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+
+.lang-btn:hover{
+  background: rgba(255,255,255,.9);
+}
+
+.lang-btn.is-active{
+  background: #fff;
+  border-color: rgba(0,0,0,.12);
+  box-shadow: 0 8px 18px rgba(0,0,0,.08);
+  color: var(--uplix-navy);
 }

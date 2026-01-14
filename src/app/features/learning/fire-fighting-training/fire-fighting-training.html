@@ -1,0 +1,124 @@
+<section class="hero">
+  <div class="container">
+    <div class="copy">
+      <h1>{{ 'learning.fire_training.hero.title' | translate }}</h1>
+      <p class="subtitle">{{ 'learning.fire_training.hero.subtitle' | translate }}</p>
+
+      <div class="actions">
+        <a class="btn primary" [routerLink]="quoteLink().link" [queryParams]="quoteLink().queryParams">
+          {{ 'common.request_quote' | translate }}
+        </a>
+        <a class="btn ghost" href="#outline">{{ 'learning.fire_training.actions.view_outline' | translate }}</a>
+      </div>
+
+      <div class="meta">
+        <span class="chip">{{ 'learning.fire_training.meta.inhouse' | translate }}</span>
+        <span class="chip">{{ 'learning.fire_training.meta.yearly_drill' | translate }}</span>
+        <span class="chip">{{ 'learning.fire_training.meta.practice' | translate }}</span>
+      </div>
+    </div>
+
+    <div class="media">
+      <img [src]="heroImage" alt="Fire Fighting Training" />
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container narrow">
+    <h2>{{ 'learning.fire_training.intro.title' | translate }}</h2>
+    <p class="lead">{{ 'learning.fire_training.intro.desc' | translate }}</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="grid-3">
+      <div class="pill" *ngFor="let p of featurePills()">
+        <h3>{{ p.titleKey | translate }}</h3>
+        <ul>
+          <li *ngFor="let k of p.items">{{ k | translate }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section band">
+  <div class="container">
+    <div class="stats">
+      <div class="stat" *ngFor="let s of stats()">
+        <div class="value">{{ s.valueKey | translate }}</div>
+        <div class="label">{{ s.labelKey | translate }}</div>
+      </div>
+    </div>
+    <p class="note">{{ 'learning.fire_training.stats.note' | translate }}</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="two-col" *ngFor="let h of highlights()">
+      <div class="img">
+        <img [src]="h.image" alt="highlight" />
+      </div>
+      <div class="txt">
+        <h2>{{ h.titleKey | translate }}</h2>
+        <p>{{ h.descKey | translate }}</p>
+        <a class="btn ghost" [href]="h.ctaLink">{{ h.ctaKey | translate }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="gallery">
+      <img [src]="galleryImage" alt="group photo" />
+      <div class="caption">{{ 'learning.fire_training.gallery.caption' | translate }}</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="outline">
+  <div class="container">
+    <h2>{{ 'learning.fire_training.outline.title' | translate }}</h2>
+    <div class="outline">
+      <div class="box" *ngFor="let o of outline()">
+        <h3>{{ o.titleKey | translate }}</h3>
+        <ul>
+          <li *ngFor="let p of o.points">{{ p | translate }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section band light">
+  <div class="container narrow">
+    <h2>{{ 'learning.fire_training.compliance.title' | translate }}</h2>
+    <p>{{ 'learning.fire_training.compliance.desc' | translate }}</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>{{ 'common.faq' | translate }}</h2>
+    <div class="faq">
+      <details *ngFor="let f of faqs()">
+        <summary>{{ f.q | translate }}</summary>
+        <p>{{ f.a | translate }}</p>
+      </details>
+    </div>
+
+    <div class="final">
+      <div class="final-copy">
+        <h2>{{ 'learning.fire_training.final.title' | translate }}</h2>
+        <p>{{ 'learning.fire_training.final.subtitle' | translate }}</p>
+      </div>
+      <a class="btn primary" [routerLink]="quoteLink().link" [queryParams]="quoteLink().queryParams">
+        {{ 'common.request_quote' | translate }}
+      </a>
+    </div>
+  </div>
+</section>

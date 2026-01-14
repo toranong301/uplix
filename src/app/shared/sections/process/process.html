@@ -1,9 +1,10 @@
 <section class="card pad">
-  <h2 style="margin:0;">{{ title }}</h2>
+  <h2 style="margin:0;">{{ title | translate }}</h2>
+
   <ol class="steps">
     <li *ngFor="let s of steps">
-      <b>{{ s.title }}</b>
-      <div class="p">{{ s.desc }}</div>
+      <b>{{ s.title | translate }}</b>
+      <div class="p">{{ s.desc | translate }}</div>
     </li>
   </ol>
 </section>
