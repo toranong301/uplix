@@ -1,5 +1,4 @@
 <div class="container" *ngIf="bu() as b; else notFound">
-
   <uplix-hero
     [title]="b.title | translate"
     [tagline]="b.tagline | translate"
@@ -12,14 +11,16 @@
     <uplix-card-grid [items]="b.painSolutions"></uplix-card-grid>
   </section>
 
+  <!-- ✅ Services -->
   <section style="margin-top:18px;">
     <h2 style="margin:0;">{{ 'bu.landing.services' | translate }}</h2>
 
-    <section *ngFor="let g of b.serviceGroups" style="margin-top:12px;">
+    <section *ngFor="let g of serviceGroups()" style="margin-top:12px;">
       <h3 style="margin:0 0 10px 0;">{{ g.title | translate }}</h3>
       <uplix-card-grid [items]="g.items"></uplix-card-grid>
     </section>
   </section>
+  <!-- ✅ /Services -->
 
   <section style="margin-top:18px;">
     <uplix-process [steps]="b.process"></uplix-process>

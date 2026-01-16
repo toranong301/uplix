@@ -483,12 +483,12 @@
         "hep101": {
           "name": "HEP101 หมวกนิรภัยปีกหน้า",
           "desc": "วัสดุ: HDPE \n• ปรับสายแบบ Ratchet 4 จุด \n• มีช่องติดอุปกรณ์ (Side-slots) \n• ไม่มีช่องระบายอากาศ \n• มีสายรัดคาง",
-          "standards": "มาตรฐาน CE EN397: 2012+A1:2012"
+          "standards": "CE EN397: 2012+A1:2012"
         },
         "hep102": {
           "name": "HEP102 หมวกนิรภัยปีกหน้า",
           "desc": "วัสดุ: HDPE/ABS \n• ปรับสายแบบ Ratchet 6 จุด \n• มีช่องติดอุปกรณ์ (Side-slots) \n• ไม่มีช่องระบายอากาศ \n• มีสายรัดคาง",
-          "standards": "มาตรฐาน CE EN397: 2012+A1:2012; ANSI Z89.1 Type I Class E"
+          "standards": "CE EN397: 2012+A1:2012; ANSI Z89.1 Type I Class E"
         }
       }
     },

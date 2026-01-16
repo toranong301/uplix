@@ -1,0 +1,122 @@
+/* ===== Fire Training (ft- prefix) ===== */
+.ft-container { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+.ft-narrow { max-width: 860px; }
+.ft-section { padding: 64px 0; }
+.ft-lead { font-size: 1.05rem; opacity: .85; }
+
+.ft-hero {
+  padding: 72px 0 48px;
+  background: linear-gradient(180deg, rgba(12,18,30,.04), transparent);
+
+  .ft-container {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 28px;
+    align-items: center;
+  }
+
+  h1 { font-size: clamp(2rem, 3.2vw, 3rem); line-height: 1.1; margin: 0 0 10px; }
+  .ft-subtitle { opacity: .85; margin: 0 0 18px; }
+  .ft-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; }
+  .ft-meta { display: flex; gap: 8px; flex-wrap: wrap; }
+  .ft-chip { padding: 8px 10px; border: 1px solid rgba(0,0,0,.1); border-radius: 999px; font-size: .9rem; background: rgba(255,255,255,.7); }
+
+  img { width: 100%; border-radius: 20px; display: block; box-shadow: 0 14px 40px rgba(0,0,0,.12); }
+
+  @media (max-width: 900px) {
+    .ft-container { grid-template-columns: 1fr; }
+  }
+}
+
+.ft-grid-3 {
+  display: grid; gap: 14px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  @media (max-width: 900px) { grid-template-columns: 1fr; }
+}
+
+.ft-pill {
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 18px;
+  padding: 18px;
+  background: #fff;
+  h3 { margin: 0 0 10px; }
+  ul { margin: 0; padding-left: 18px; opacity: .9; }
+}
+
+.ft-band { background: rgba(12,18,30,.04); }
+.ft-band.ft-light { background: rgba(12,18,30,.03); }
+
+.ft-stats {
+  display: grid; gap: 14px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  @media (max-width: 900px) { grid-template-columns: 1fr; }
+}
+
+.ft-stat {
+  background: #fff; border-radius: 18px; padding: 18px;
+  border: 1px solid rgba(0,0,0,.06);
+
+  .ft-value { font-size: 1.8rem; font-weight: 800; }
+  .ft-label { opacity: .8; }
+}
+
+.ft-note { margin-top: 10px; opacity: .75; }
+
+.ft-two-col {
+  display: grid; gap: 18px; align-items: center;
+  grid-template-columns: 1.1fr 1fr;
+  padding: 18px; border-radius: 22px;
+  border: 1px solid rgba(0,0,0,.06); background: #fff;
+  margin-bottom: 14px;
+
+  @media (max-width: 900px) { grid-template-columns: 1fr; }
+  img { width: 100%; border-radius: 18px; display: block; }
+}
+
+.ft-gallery {
+  border-radius: 26px; overflow: hidden;
+  border: 1px solid rgba(0,0,0,.06);
+
+  img { width: 100%; display: block; }
+  .ft-caption { padding: 12px 14px; opacity: .75; background: #fff; }
+}
+
+.ft-outline {
+  display: grid; gap: 14px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  @media (max-width: 900px) { grid-template-columns: 1fr; }
+}
+
+.ft-box {
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 18px;
+  padding: 18px;
+  background: #fff;
+}
+
+.ft-faq {
+  display: grid; gap: 10px;
+
+  details {
+    border: 1px solid rgba(0,0,0,.08);
+    border-radius: 16px;
+    padding: 12px 14px;
+    background: #fff;
+
+    summary { cursor: pointer; font-weight: 700; }
+    p { margin: 10px 0 0; opacity: .85; }
+  }
+}
+
+.ft-final {
+  margin-top: 18px;
+  border-radius: 22px;
+  border: 1px solid rgba(0,0,0,.08);
+  padding: 18px;
+  display: flex; align-items: center; justify-content: space-between; gap: 14px;
+  background: #fff;
+
+  @media (max-width: 900px) { flex-direction: column; align-items: stretch; }
+  h2 { margin: 0 0 6px; }
+  p { margin: 0; opacity: .8; }
+}

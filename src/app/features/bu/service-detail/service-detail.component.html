@@ -1,0 +1,190 @@
+<!-- src/app/features/bu/service-detail/service-detail.component.html -->
+
+<!-- ✅ Special: Fire Drill & Evacuation (reuse old training page) -->
+<ng-container *ngIf="isFireTraining(); else normalDetail">
+  <section class="ft-hero">
+    <div class="ft-container">
+      <div class="ft-copy">
+        <h1>{{ 'bu.learning.fire_training.hero.title' | translate }}</h1>
+        <p class="ft-subtitle">{{ 'bu.learning.fire_training.hero.subtitle' | translate }}</p>
+
+        <div class="ft-actions">
+          <a class="btn primary" [routerLink]="quoteLink().link" [queryParams]="quoteLink().queryParams">
+            {{ 'common.request_quote' | translate }}
+          </a>
+          <a class="btn ghost" href="#outline">{{ 'bu.learning.fire_training.actions.view_outline' | translate }}</a>
+        </div>
+
+        <div class="ft-meta">
+          <span class="ft-chip">{{ 'bu.learning.fire_training.meta.inhouse' | translate }}</span>
+          <span class="ft-chip">{{ 'bu.learning.fire_training.meta.yearly_drill' | translate }}</span>
+          <span class="ft-chip">{{ 'bu.learning.fire_training.meta.practice' | translate }}</span>
+        </div>
+      </div>
+
+      <div class="ft-media">
+        <img [src]="fireHeroImage" alt="Fire Fighting Training" />
+      </div>
+    </div>
+  </section>
+
+  <section class="ft-section">
+    <div class="ft-container ft-narrow">
+      <h2>{{ 'bu.learning.fire_training.intro.title' | translate }}</h2>
+      <p class="ft-lead">{{ 'bu.learning.fire_training.intro.desc' | translate }}</p>
+    </div>
+  </section>
+
+  <section class="ft-section">
+    <div class="ft-container">
+      <div class="ft-grid-3">
+        <div class="ft-pill" *ngFor="let p of featurePills()">
+          <h3>{{ p.titleKey | translate }}</h3>
+          <ul>
+            <li *ngFor="let k of p.items">{{ k | translate }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ft-section ft-band">
+    <div class="ft-container">
+      <div class="ft-stats">
+        <div class="ft-stat" *ngFor="let s of stats()">
+          <div class="ft-value">{{ s.valueKey | translate }}</div>
+          <div class="ft-label">{{ s.labelKey | translate }}</div>
+        </div>
+      </div>
+      <p class="ft-note">{{ 'bu.learning.fire_training.stats.note' | translate }}</p>
+    </div>
+  </section>
+
+  <section class="ft-section">
+    <div class="ft-container">
+      <div class="ft-two-col" *ngFor="let h of highlights()">
+        <div class="ft-img">
+          <img [src]="h.image" alt="highlight" />
+        </div>
+        <div class="ft-txt">
+          <h2>{{ h.titleKey | translate }}</h2>
+          <p>{{ h.descKey | translate }}</p>
+          <a class="btn ghost" [href]="h.ctaLink">{{ h.ctaKey | translate }}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ft-section">
+    <div class="ft-container">
+      <div class="ft-gallery">
+        <img [src]="fireGalleryImage" alt="group photo" />
+        <div class="ft-caption">{{ 'bu.learning.fire_training.gallery.caption' | translate }}</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ft-section" id="outline">
+    <div class="ft-container">
+      <h2>{{ 'bu.learning.fire_training.outline.title' | translate }}</h2>
+      <div class="ft-outline">
+        <div class="ft-box" *ngFor="let o of outline()">
+          <h3>{{ o.titleKey | translate }}</h3>
+          <ul>
+            <li *ngFor="let p of o.points">{{ p | translate }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ft-section ft-band ft-light">
+    <div class="ft-container ft-narrow">
+      <h2>{{ 'bu.learning.fire_training.compliance.title' | translate }}</h2>
+      <p>{{ 'bu.learning.fire_training.compliance.desc' | translate }}</p>
+    </div>
+  </section>
+
+  <section class="ft-section">
+    <div class="ft-container">
+      <h2>{{ 'common.faq' | translate }}</h2>
+      <div class="ft-faq">
+        <details *ngFor="let f of faqs()">
+          <summary>{{ f.q | translate }}</summary>
+          <p>{{ f.a | translate }}</p>
+        </details>
+      </div>
+
+      <div class="ft-final">
+        <div class="ft-final-copy">
+          <h2>{{ 'bu.learning.fire_training.final.title' | translate }}</h2>
+          <p>{{ 'bu.learning.fire_training.final.subtitle' | translate }}</p>
+        </div>
+        <a class="btn primary" [routerLink]="quoteLink().link" [queryParams]="quoteLink().queryParams">
+          {{ 'common.request_quote' | translate }}
+        </a>
+      </div>
+    </div>
+  </section>
+</ng-container>
+
+<!-- ✅ Default detail page (your original) -->
+<ng-template #normalDetail>
+  <section class="page" *ngIf="vm() as v; else notFound">
+    <div class="container">
+      <nav class="crumbs">
+        <a class="crumb" routerLink="/">{{ 'nav.home' | translate }}</a>
+        <span class="sep">/</span>
+        <a class="crumb" [routerLink]="backToBuLink()">{{ v.buTitleKey | translate }}</a>
+        <span class="sep">/</span>
+        <span class="current">{{ v.titleKey | translate }}</span>
+      </nav>
+
+      <div class="hero">
+        <div class="left">
+          <div class="badge" *ngIf="v.badge">{{ v.badge | translate }}</div>
+          <h1 class="h1">{{ v.titleKey | translate }}</h1>
+          <p class="p">{{ v.descKey | translate }}</p>
+
+          <div class="actions">
+            <a class="btn primary" routerLink="/quote" [queryParams]="quoteQueryParams()">
+              {{ 'common.request_quote' | translate }}
+            </a>
+            <a class="btn ghost" [routerLink]="backToBuLink()">
+              {{ 'common.view_detail' | translate }}
+            </a>
+          </div>
+        </div>
+
+        <div class="right" *ngIf="v.heroImage">
+          <img class="img" [src]="v.heroImage" [alt]="(v.titleKey | translate)" />
+        </div>
+      </div>
+
+      <div class="section" *ngIf="v.bullets?.length">
+        <h2 class="h2">{{ 'common.view_detail' | translate }}</h2>
+        <ul class="bullets">
+          <li *ngFor="let b of v.bullets">{{ b | translate }}</li>
+        </ul>
+      </div>
+
+      <div class="section note" *ngIf="v.notes">
+        <p class="note-text">{{ v.notes | translate }}</p>
+      </div>
+    </div>
+  </section>
+
+  <ng-template #notFound>
+    <div class="container card">
+      <h2 class="h2">{{ 'bu.landing.not_found.title' | translate }}</h2>
+      <p class="p">{{ 'bu.landing.not_found.desc' | translate }}</p>
+
+      <div class="actions">
+        <a class="btn primary" [routerLink]="backToBuLink()">
+          {{ 'common.view_detail' | translate }}
+        </a>
+        <a class="btn ghost" routerLink="/">{{ 'nav.home' | translate }}</a>
+      </div>
+    </div>
+  </ng-template>
+</ng-template>

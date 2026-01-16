@@ -55,7 +55,7 @@ export class PpeCategoryComponent {
         descKey: 'ppe_catalog.head.items.hep101.desc',
         image: 'assets/products/ppe/head/HEP101.png',
         colors: ['White', 'Green', 'Red', 'Orange', 'Yellow', 'Blue'],
-        standardsKey: 'ppe_catalog.common.standards_ce_en397',
+        standardsKey: 'ppe_catalog.head.items.hep101.standards',
       },
       {
         code: 'HEP102',
@@ -63,7 +63,7 @@ export class PpeCategoryComponent {
         descKey: 'ppe_catalog.head.items.hep102.desc',
         image: 'assets/products/ppe/head/HEP102.png',
         colors: ['White', 'Green', 'Red', 'Orange', 'Yellow', 'Blue'],
-        standardsKey: 'ppe_catalog.common.standards_ce_en397_ansi',
+        standardsKey: 'ppe_catalog.head.items.hep102.standards',
       },
     ];
   }

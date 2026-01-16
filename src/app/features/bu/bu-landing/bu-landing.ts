@@ -36,25 +36,27 @@ export class BuLandingComponent {
   bu = computed(() => BU[this.key()]);
 
   // ✅ แปลง serviceGroups -> ให้ CardGrid ใช้ได้
-  serviceGroups = computed(() => {
-    const b = this.bu();
-    if (!b) return [];
+ serviceGroups = computed(() => {
+  const b = this.bu();
+  if (!b) return [];
 
-    return (b.serviceGroups ?? []).map(g => ({
-      title: g.title,
-      items: (g.items ?? []).map((x: any) => {
+  return (b.serviceGroups ?? []).map(g => ({
+    title: g.title,
+    items: (g.items ?? []).map((x: any) => {
+      const link = x.link ?? `/bu/${b.key}/service/${x.key}`;
 
-        return {
-  title: x.title,
-  desc: x.desc,
-  link: x.link,
-  queryParams: x.queryParams,
-  ctaLabel: x.ctaLabel ?? 'ดูรายละเอียด',
-} as GridCard;
+      return {
+        title: x.title,
+        desc: x.desc,
+        link,
+        queryParams: x.queryParams,
+        ctaLabel: x.ctaLabel ?? 'common.view_detail',
+        badge: x.badge
+      } as GridCard;
+    })
+  }));
+});
 
-      })
-    }));
-  });
 
   constructor() {
     this.route.paramMap
