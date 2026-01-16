@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, signal } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { QuoteCartService } from '../../../shared/services/quote-cart.service';
 
 type BuItem = {
   label: string;
@@ -9,6 +10,8 @@ type BuItem = {
   enabled: boolean;
   badge?: string;
 };
+
+
 
 @Component({
   selector: 'app-header',
@@ -23,6 +26,9 @@ export class HeaderComponent {
    get lang(): string {
     return this.t.currentLang || this.t.defaultLang || 'th';
   }
+
+  cart = inject(QuoteCartService);
+  cartCount = computed(() => this.cart.count());
 
   setLang(lang: 'th' | 'en') {
     this.t.use(lang);

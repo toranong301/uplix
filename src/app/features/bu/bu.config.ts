@@ -81,26 +81,89 @@ export const BU: Record<string, BuConfig> = {
     ],
 
     serviceGroups: [
+  {
+    title: 'bu.ppe.groups.ppe.title',
+    items: [
       {
-        title: 'bu.ppe.groups.ppe.title',
-        items: [
-          { title: 'bu.ppe.items.head.title',        desc: 'bu.ppe.items.head.desc',        enabled: true, link: '/quote', queryParams: { bu: 'ppe', cat: 'ppe.head' }, ctaLabel: 'common.request_quote' },
-          { title: 'bu.ppe.items.respiratory.title', desc: 'bu.ppe.items.respiratory.desc', enabled: true, link: '/quote', queryParams: { bu: 'ppe', cat: 'ppe.respiratory' }, ctaLabel: 'common.request_quote' },
-          { title: 'bu.ppe.items.eye_face.title',    desc: 'bu.ppe.items.eye_face.desc',    enabled: true, link: '/quote', queryParams: { bu: 'ppe', cat: 'ppe.eye_face' }, ctaLabel: 'common.request_quote' },
-          { title: 'bu.ppe.items.hand_foot.title',   desc: 'bu.ppe.items.hand_foot.desc',   enabled: true, link: '/quote', queryParams: { bu: 'ppe', cat: 'ppe.hand_foot' }, ctaLabel: 'common.request_quote' },
-          { title: 'bu.ppe.items.fall.title',        desc: 'bu.ppe.items.fall.desc',        enabled: true, link: '/quote', queryParams: { bu: 'ppe', cat: 'ppe.fall' }, ctaLabel: 'common.request_quote' },
-          { title: 'bu.ppe.items.energy.title',      desc: 'bu.ppe.items.energy.desc',      enabled: true, link: '/quote', queryParams: { bu: 'ppe', cat: 'ppe.energy_electrical' }, ctaLabel: 'common.request_quote' },
-          { title: 'bu.ppe.items.hygiene.title',     desc: 'bu.ppe.items.hygiene.desc',     enabled: true, link: '/quote', queryParams: { bu: 'ppe', cat: 'ppe.hygiene' }, ctaLabel: 'common.request_quote' },
-        ]
+        title: 'bu.ppe.items.head.title',
+        desc: 'bu.ppe.items.head.desc',
+        enabled: true,
+        link: '/bu/ppe/head-protection',
+        ctaLabel: 'common.view_detail'
       },
       {
-        title: 'bu.ppe.groups.fire.title',
-        items: [
-          { title: 'bu.ppe.items.fire_tank.title',     desc: 'bu.ppe.items.fire_tank.desc',     enabled: true, link: '/quote', queryParams: { bu: 'ppe', cat: 'ppe.fire_tank' }, ctaLabel: 'common.request_quote' },
-          { title: 'bu.ppe.items.refill_service.title',desc: 'bu.ppe.items.refill_service.desc',enabled: true, link: '/quote', queryParams: { bu: 'ppe', cat: 'ppe.refill_service' }, ctaLabel: 'common.request_quote' },
-        ]
+        title: 'bu.ppe.items.respiratory.title',
+        desc: 'bu.ppe.items.respiratory.desc',
+        enabled: true,
+        link: '/quote',
+        queryParams: { bu: 'ppe', cat: 'ppe.respiratory' },
+        ctaLabel: 'common.request_quote'
+      },
+      {
+        title: 'bu.ppe.items.eye_face.title',
+        desc: 'bu.ppe.items.eye_face.desc',
+        enabled: true,
+        link: '/quote',
+        queryParams: { bu: 'ppe', cat: 'ppe.eye_face' },
+        ctaLabel: 'common.request_quote'
+      },
+      {
+        title: 'bu.ppe.items.hand_foot.title',
+        desc: 'bu.ppe.items.hand_foot.desc',
+        enabled: true,
+        link: '/quote',
+        queryParams: { bu: 'ppe', cat: 'ppe.hand_foot' },
+        ctaLabel: 'common.request_quote'
+      },
+      {
+        title: 'bu.ppe.items.fall.title',
+        desc: 'bu.ppe.items.fall.desc',
+        enabled: true,
+        link: '/quote',
+        queryParams: { bu: 'ppe', cat: 'ppe.fall' },
+        ctaLabel: 'common.request_quote'
+      },
+      {
+        title: 'bu.ppe.items.energy.title',
+        desc: 'bu.ppe.items.energy.desc',
+        enabled: true,
+        link: '/quote',
+        queryParams: { bu: 'ppe', cat: 'ppe.energy_electrical' },
+        ctaLabel: 'common.request_quote'
+      },
+      {
+        title: 'bu.ppe.items.hygiene.title',
+        desc: 'bu.ppe.items.hygiene.desc',
+        enabled: true,
+        link: '/quote',
+        queryParams: { bu: 'ppe', cat: 'ppe.hygiene' },
+        ctaLabel: 'common.request_quote'
       }
-    ],
+    ]
+  },
+  {
+    title: 'bu.ppe.groups.fire.title',
+    items: [
+      {
+        title: 'bu.ppe.items.fire_tank.title',
+        desc: 'bu.ppe.items.fire_tank.desc',
+        enabled: true,
+        link: '/bu/ppe/fire-tank',
+        queryParams: { bu: 'ppe', cat: 'ppe.fire_tank' },
+        ctaLabel: 'common.view_detail'
+      },
+      {
+        title: 'bu.ppe.items.refill_service.title',
+        desc: 'bu.ppe.items.refill_service.desc',
+        enabled: true,
+        link: '/bu/ppe/refill-service',
+        queryParams: { bu: 'ppe', cat: 'ppe.refill_service' },
+        ctaLabel: 'common.view_detail'
+      }
+    ]
+  }
+],
+
 
     process: [
       { title: 'bu.ppe.process.1.title', desc: 'bu.ppe.process.1.desc' },

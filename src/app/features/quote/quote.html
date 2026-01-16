@@ -25,6 +25,53 @@
         </div>
       </div>
 
+      <!-- ✅ Quote Cart Summary -->
+      <div class="cart-summary" *ngIf="cartItems().length">
+        <div class="cart-head">
+          <h3 class="cart-title">{{ 'quote_cart.summary.title' | translate }}</h3>
+          <button type="button" class="cart-clear" (click)="clearCart()">
+  {{ 'quote_cart.actions.clear' | translate }}
+</button>
+
+        </div>
+
+        <div class="cart-line" *ngFor="let it of cartItems()">
+          <div class="cart-left">
+            <div class="cart-main">
+              <strong>{{ it.titleKey | translate }}</strong>
+            </div>
+
+            <div class="cart-sub">
+              <span *ngIf="it.sku">{{ it.sku }}</span>
+              <span *ngIf="it.colorKey"> • {{ it.colorKey | translate }}</span>
+              <span *ngIf="it.categoryKey"> • {{ it.categoryKey | translate }}</span>
+            </div>
+          </div>
+
+          <div class="cart-right">
+            <input
+              class="cart-qty"
+              type="number"
+              min="1"
+              step="1"
+              inputmode="numeric"
+              [value]="it.qty"
+              (input)="cart.updateQty(it.id, $any($event.target).valueAsNumber)"
+            />
+
+            <button type="button" class="cart-remove" (click)="cart.remove(it.id)">
+              {{ 'quote_cart.actions.remove' | translate }}
+            </button>
+          </div>
+        </div>
+
+        <div class="cart-footer">
+          <span class="cart-total">
+            {{ 'quote_cart.summary.total' | translate }}: {{ cartTotalQty() }}
+          </span>
+        </div>
+      </div>
+
       <div class="row">
         <div class="field">
           <label>{{ 'quote.fields.company' | translate }}</label>

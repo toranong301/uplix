@@ -1,0 +1,140 @@
+<section class="page">
+  <div class="top">
+    <h1>{{ categoryTitleKey() | translate }}</h1>
+
+    <div class="actions">
+      <!-- head-protection: เพิ่มจาก selected -->
+      <button
+        class="btn"
+        type="button"
+        (click)="addSelectedToCart()"
+        [disabled]="selected().length === 0"
+        *ngIf="cat() === 'head-protection'"
+      >
+        {{ 'quote_cart.actions.add_to_cart' | translate }}
+      </button>
+
+      <!-- refill-service: เพิ่มจาก qtyMap -->
+      <button
+        class="btn"
+        type="button"
+        (click)="addRefillToCart()"
+        [disabled]="cartRefillDisabled()"
+        *ngIf="cat() === 'refill-service'"
+      >
+        {{ 'quote_cart.actions.add_to_cart' | translate }}
+      </button>
+
+      <!-- clear -->
+      <button class="btn ghost" type="button" (click)="clearSelection()" *ngIf="cat() === 'head-protection'">
+        {{ 'ppe_catalog.actions.clear' | translate }}
+      </button>
+
+      <button class="btn ghost" type="button" (click)="qtyMap.set({})" *ngIf="cat() === 'refill-service'">
+        {{ 'ppe_catalog.actions.clear' | translate }}
+      </button>
+
+      <!-- view cart -->
+      <a class="btn ghost" routerLink="/quote">
+        {{ 'quote_cart.actions.view_cart' | translate }}
+        <span *ngIf="cart.count() > 0">({{ cart.count() }})</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ========================= -->
+  <!-- Refill Service UI -->
+  <!-- ========================= -->
+  <section class="refill" *ngIf="cat() === 'refill-service'; else normalGrid">
+    <div class="refill-group" *ngFor="let g of refillGroups()">
+      <h2 class="refill-title">{{ g.key | translate }}</h2>
+
+      <div class="refill-row" *ngFor="let it of g.items">
+        <div class="refill-left">
+          <div class="refill-name">
+            <strong>{{ it.nameKey | translate }}</strong>
+          </div>
+
+          <div class="refill-sub">
+            <span *ngIf="it.sizeKey">{{ it.sizeKey | translate }}</span>
+            <span *ngIf="it.descKey"> • {{ it.descKey | translate }}</span>
+          </div>
+        </div>
+
+        <div class="refill-right">
+          <label class="mini">{{ 'ppe_catalog.labels.qty' | translate }}</label>
+          <input
+            class="qty"
+            type="number"
+            min="0"
+            step="1"
+            inputmode="numeric"
+            [value]="getLineQty(it.code)"
+            (input)="setLineQty(it.code, $any($event.target).valueAsNumber)"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- NOTE: ใช้ key ที่มีจริงใน th.json ที่คุณจัดไว้ -->
+    <div class="note">
+      <p>{{ 'ppe_catalog.refill.note.price_hint' | translate }}</p>
+    </div>
+  </section>
+
+  <!-- ========================= -->
+  <!-- Head Protection UI (เดิม) -->
+  <!-- ========================= -->
+  <ng-template #normalGrid>
+    <div class="grid" *ngIf="items().length; else empty">
+      <article class="card" *ngFor="let it of items()">
+        <div class="code">{{ it.code }}</div>
+        <img class="img" [src]="it.image" [alt]="it.code" />
+
+        <h3>{{ it.nameKey | translate }}</h3>
+        <p class="desc preline">{{ it.descKey | translate }}</p>
+        
+        <div class="meta" *ngIf="it.standardsKey">
+          <strong>{{ 'ppe_catalog.labels.standards' | translate }}:</strong>
+          <span>{{ it.standardsKey | translate }}</span>
+        </div>
+
+        <!-- เลือกสี + qty -->
+        <div class="select" *ngIf="it.colors?.length">
+          <div class="select-title">{{ 'ppe_catalog.labels.select' | translate }}</div>
+
+          <div class="color-row" *ngFor="let c of it.colors">
+            <label class="chk">
+              <input
+                type="checkbox"
+                [checked]="isSelected(it.code, c)"
+                (change)="toggleSelect(it.code, c, $any($event.target).checked)"
+              />
+
+              <!-- แปลสีจาก common.colors.(lowercase) -->
+              <span>{{ ('common.colors.' + (c | lowercase)) | translate }}</span>
+            </label>
+
+            <input
+              class="qty"
+              type="number"
+              min="1"
+              step="1"
+              inputmode="numeric"
+              [disabled]="!isSelected(it.code, c)"
+              [value]="getQty(it.code, c)"
+              (input)="setQty(it.code, c, $any($event.target).valueAsNumber)"
+            />
+          </div>
+        </div>
+      </article>
+    </div>
+  </ng-template>
+
+  <ng-template #empty>
+    <div class="empty">
+      <h2>{{ 'ppe_catalog.not_found.title' | translate }}</h2>
+      <p>{{ 'ppe_catalog.not_found.desc' | translate }}</p>
+    </div>
+  </ng-template>
+</section>

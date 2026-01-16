@@ -45,5 +45,11 @@
   {{ 'nav.quote' | translate }}
 </a>
 
+<a class="cart" routerLink="/quote">
+  {{ 'quote_cart.title' | translate }}
+  <span class="badge" *ngIf="cartCount() > 0">{{ cartCount() }}</span>
+</a>
+
+
   </div>
 </header>

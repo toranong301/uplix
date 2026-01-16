@@ -1,37 +1,45 @@
 {
   "common": {
     "request_quote": "Request a Quote",
-    "view_detail": "View details",
+    "view_detail": "View Details",
     "faq": "FAQ",
-    "process": "Process"
-  },
-
-  "footer": {
-    "tagline": "All 3 Business Units — choose a BU to explore services and request a quote instantly.",
-    "bu": "Business Units",
-    "quick": "Quick Links",
-    "contact": "Contact",
-    "email": "Email",
-    "telephone": "Telephone",
-    "contact_team": "Contact UPLIX team →",
-    "rights": "UPLIX. All rights reserved.",
-    "privacy": "Privacy",
-    "terms": "Terms"
+    "process": "Process",
+    "colors": {
+      "white": "White",
+      "green": "Green",
+      "red": "Red",
+      "orange": "Orange",
+      "yellow": "Yellow",
+      "blue": "Blue"
+    }
   },
 
   "nav": {
     "home": "Home",
     "bu": "Business Units",
     "resources": "Resources",
-    "about": "About us",
+    "about": "About Us",
     "contact": "Contact",
     "quote": "Request a Quote"
+  },
+
+  "footer": {
+    "tagline": "All 3 Business Units in one place — choose a BU to view services or request a quote instantly.",
+    "bu": "Business Units",
+    "quick": "Quick Links",
+    "contact": "Contact",
+    "email": "Email",
+    "telephone": "Telephone",
+    "contact_team": "Contact the UPLIX Team →",
+    "rights": "UPLIX. All rights reserved.",
+    "privacy": "Privacy",
+    "terms": "Terms"
   },
 
   "home": {
     "hero": {
       "title": "UPLIX",
-      "tagline": "3 Business Units • Choose a BU to explore services and request a quote instantly",
+      "tagline": "3 Business Units • Choose a BU to view services or request a quote instantly",
       "primary": "View Business Units",
       "secondary": "Request a Quote"
     },
@@ -42,17 +50,17 @@
         "learning": {
           "title": "Experience and Innovative Learning",
           "desc": "Experience Learning Program • SHE Academy • Fire drill & Evacuation • HRD Solution Platform",
-          "cta": "View services"
+          "cta": "View Services"
         },
         "ppe": {
           "title": "PPE + Fire Tank & Refill Service",
-          "desc": "All PPE categories • Fire extinguishers • Refill/inspection • Request a quote instantly",
-          "cta": "View products & services"
+          "desc": "Full PPE categories • Fire extinguishers • Refill/inspection • Request a quote instantly",
+          "cta": "View Products/Services"
         },
         "waste": {
           "title": "Waste Management Solution & Technology",
           "desc": "Non-Hazardous • Hazardous • Waste logistics & transportation",
-          "cta": "View solutions"
+          "cta": "View Solutions"
         }
       }
     },
@@ -60,54 +68,68 @@
       "title": "Process",
       "steps": {
         "1": { "title": "Choose a BU", "desc": "Select the service category that matches your needs" },
-        "2": { "title": "Get recommendations", "desc": "Our team suggests suitable options/solutions" },
-        "3": { "title": "Request a quote", "desc": "Confirm details and submit your request instantly" }
+        "2": { "title": "Get Recommendations", "desc": "Our team suggests the best options/solutions" },
+        "3": { "title": "Request a Quote", "desc": "Summarize details and submit your request instantly" }
       }
     },
     "final": {
-      "title": "Choose a BU and let our team tailor options for your work",
-      "subtitle": "Fast response, with 2–3 recommended approaches",
-      "button": "Start a quote request"
+      "title": "Choose a BU and let our team tailor options for your job",
+      "subtitle": "Fast response with 2–3 recommended approaches",
+      "button": "Start a Quote Request"
     }
   },
 
   "quote": {
     "title": "Request a Quote",
-    "subtitle": "Fill in the details and our team will get back to you soon",
+    "subtitle": "Fill in the form — our team will contact you shortly",
     "fields": {
       "bu": "Business Unit",
-      "category_ppe": "PPE Category",
+      "category_ppe": "Product Category (PPE)",
       "company": "Company",
-      "quantity": "Approx. quantity",
-      "name": "Full name",
-      "phone": "Phone",
+      "quantity": "Estimated Quantity",
+      "name": "Full Name",
+      "phone": "Phone Number",
       "email": "Email",
-      "detail": "Additional details"
+      "detail": "Additional Details"
     },
     "placeholders": {
       "select_category": "— Select a category —",
       "company": "Company name (optional)",
-      "quantity": "e.g. 20 sets / 50 pcs",
+      "quantity": "e.g., 20 sets / 50 pcs",
       "name": "Contact person",
       "phone": "0xx-xxx-xxxx",
       "email": "name@company.com",
-      "detail": "e.g. chemical work / welding / required standards / preferred model"
+      "detail": "e.g., chemical work / welding / required standards / interested model"
     },
     "actions": {
       "email": "Send Email",
-      "line": "Send LINE",
+      "line": "Send via LINE",
       "back_ppe": "Back to PPE"
     }
   },
 
+  "quote_cart": {
+    "title": "Quote Cart",
+    "actions": {
+      "add_to_cart": "Add to Quote",
+      "view_cart": "View Quote",
+      "remove": "Remove",
+      "clear": "Clear All"
+    },
+    "summary": {
+      "title": "Selected Items Summary",
+      "total": "Total Quantity"
+    }
+  },
+
   "ppe": {
-    "head": "Head Protection",
-    "respiratory": "Respiratory Protection",
-    "eye_face": "Eye & Face Protection",
-    "hand_foot": "Hand & Foot Protection",
-    "fall": "Fall Protection",
-    "energy_electrical": "Energy & Electrical Safety",
-    "hygiene": "Hygiene & Sanitation",
+    "head": "Head Protection PPE",
+    "respiratory": "Respiratory Protection PPE",
+    "eye_face": "Eye & Face Protection PPE",
+    "hand_foot": "Hand & Foot Protection PPE",
+    "fall": "Fall Protection PPE",
+    "energy_electrical": "Energy & Electrical PPE",
+    "hygiene": "Hygiene PPE",
     "fire_tank": "Fire Tank",
     "refill_service": "Refill Service"
   },
@@ -116,12 +138,12 @@
     "landing": {
       "services": "Services",
       "final": {
-        "title": "Talk to the UPLIX team to tailor a package for your work",
-        "subtitle": "Fast response, with 2–3 recommended options",
-        "button": "Start a quote request"
+        "title": "Talk to the UPLIX team to tailor a package for your job",
+        "subtitle": "Fast response with 2–3 recommended options",
+        "button": "Start a Quote Request"
       },
       "not_found": {
-        "title": "Service not found",
+        "title": "Service Not Found",
         "desc": "Go back to Home or choose another Business Unit",
         "back": "Back to Home"
       }
@@ -130,201 +152,175 @@
     "learning": {
       "title_short": "Experience & Innovative Learning",
       "title": "Experience and Innovative Learning",
-      "tagline": "Experience-based learning programs + HRD platforms to develop people and organizations",
+      "tagline": "Experience-based learning programs + an HRD platform to develop people and organizations",
       "pain": {
-        "1": { "title": "Upskill your workforce", "desc": "Design learning journeys that match real work needs" },
-        "2": { "title": "Measurable outcomes", "desc": "Clear assessment frameworks and tangible results" },
-        "3": { "title": "Sustainable impact", "desc": "Follow-up plans and post-learning activities" }
+        "1": { "title": "Upskill Your Workforce", "desc": "Design learning pathways that match real work" },
+        "2": { "title": "Measurable Outcomes", "desc": "Clear evaluation frameworks and tangible results" },
+        "3": { "title": "Sustainable Impact", "desc": "Follow-up plans and post-learning activities" }
       },
       "groups": {
         "11": {
           "title": "Experience and Innovative",
           "items": {
-            "111": { "title": "Learning Program", "desc": "Customized experiential learning programs aligned with your organizational goals" }
+            "111": { "title": "Learning Program", "desc": "Customized experiential learning programs aligned with organizational goals" }
           }
         },
         "12": {
           "title": "SHE Academy",
           "items": {
-            "1": { "title": "SHE Academy", "desc": "Safety, Health & Environment courses for organizations" }
+            "1": { "title": "SHE Academy", "desc": "Safety, Health & Environment training programs for organizations" }
           }
         },
         "13": {
           "title": "Fire drill and evacuation Academy",
           "items": {
-            "1": { "title": "Fire drill & Evacuation Academy", "desc": "Structured emergency response and evacuation drills" },
-            "2": {"title": "Basic Fire Fighting & Annual Fire Evacuation Drill","desc": "On-site training combining theory and hands-on practice: fire classes, selecting the right extinguisher, safe response steps, and a full evacuation drill based on your site plan—followed by a debrief with improvement recommendations."
-          }
+            "1": { "title": "Fire drill & Evacuation Academy", "desc": "Structured emergency evacuation drills and exercises" },
+            "2": {
+              "title": "Basic Firefighting Training & Annual Fire Evacuation Drill",
+              "desc": "In-house training covering both theory and practice: fire classes, correct extinguisher selection and use, and evacuation drills based on your real plan — with post-drill summary and recommendations."
+            }
           }
         },
         "14": {
           "title": "HRD Solution platform",
           "items": {
-            "141": { "title": "People Engagement Program", "desc": "Programs to boost engagement and motivation in the workplace" },
-            "142": { "title": "IDP Compass Platform", "desc": "A platform for Individual Development Plans (IDP) and progress tracking" }
+            "141": { "title": "People Engagement Program", "desc": "Engagement programs to boost motivation in organizations" },
+            "142": { "title": "IDP Compass Platform", "desc": "Individual Development Plan (IDP) planning and tracking platform" }
           }
         }
       },
       "process": {
-        "1": { "title": "Discover", "desc": "Align on goals, context, and target learners" },
-        "2": { "title": "Design", "desc": "Design curriculum/activities/tools for measurement" },
-        "3": { "title": "Deliver", "desc": "Run training/activities with an experienced delivery team" },
-        "4": { "title": "Evaluate", "desc": "Summarize results and recommend next steps" }
+        "1": { "title": "Discover", "desc": "Understand needs, goals, and target learners" },
+        "2": { "title": "Design", "desc": "Design curriculum/activities/measurement tools" },
+        "3": { "title": "Deliver", "desc": "Run training/activities with an operation team" },
+        "4": { "title": "Evaluate", "desc": "Summarize outcomes and recommend next steps" }
       },
       "faq": {
-        "1": { "q": "Can you run this in-house?", "a": "Yes. We tailor the program to your workplace and learners." },
-        "2": { "q": "What is the minimum duration?", "a": "It depends on the format—anywhere from half a day to several weeks." }
+        "1": { "q": "Can you run this in-house?", "a": "Yes — we tailor the program to your workplace and audience." },
+        "2": { "q": "What is the minimum duration?", "a": "Depends on the format — from half-day sessions to multi-week programs." }
       },
-
       "fire_training": {
-    "hero": {
-      "title": "Basic Fire Fighting & Annual Fire Evacuation Drill",
-      "subtitle": "On-site (in-house) training tailored to your facility—combining fundamentals, hands-on practice, and an evacuation drill aligned with your site plan."
-    },
-    "actions": { "view_outline": "View course outline" },
-    "meta": {
-      "inhouse": "In-house / On-site",
-      "yearly_drill": "Annual evacuation drill",
-      "practice": "Hands-on practice"
-    },
-    "intro": {
-      "title": "Hands-on basics, designed for real situations",
-      "desc": "Help employees understand fire fundamentals, select and use the right extinguisher safely, and run an evacuation drill so everyone can act systematically—reducing confusion during real incidents."
-    },
-    "pill_1": {
-      "title": "What participants gain",
-      "items": {
-        "1": "Fire basics and prevention principles",
-        "2": "Safe extinguisher handling practice",
-        "3": "Practical site improvement recommendations"
-      }
-    },
-    "pill_2": {
-      "title": "Who this is for",
-      "items": {
-        "1": "Factories, warehouses, and office buildings",
-        "2": "Organizations requiring annual drills",
-        "3": "HS/HR teams seeking a structured drill plan"
-      }
-    },
-    "pill_3": {
-      "title": "How we deliver",
-      "items": {
-        "1": "On-site delivery at your facility",
-        "2": "Activities adapted to your actual layout",
-        "3": "Debrief and improvement recommendations"
-      }
-    },
-    "stats": {
-      "1": { "value": "6 hours", "label": "Typical duration" },
-      "2": { "value": "Theory + Practice", "label": "Learning format" },
-      "3": { "value": "Evacuation drill", "label": "Based on your plan" },
-      "note": "*Duration and format can be adjusted based on participants and site constraints."
-    },
-    "highlights": {
-      "1": {
-        "title": "Basic fire-fighting practice",
-        "desc": "Scenario assessment, selecting the right extinguisher, and safe team-based response."
-      },
-      "2": {
-        "title": "Annual evacuation drill",
-        "desc": "Route walkthrough to the assembly point, headcount, and a structured debrief to identify improvements."
-      }
-    },
-    "gallery": { "caption": "Training and drill atmosphere (sample imagery)" },
-    "outline": {
-      "title": "Course outline",
-      "1": {
-        "title": "Theory session",
-        "points": {
-          "1": "Fire fundamentals and prevention",
-          "2": "Fire classes and response principles",
-          "3": "Readiness and incident reporting"
-        }
-      },
-      "2": {
-        "title": "Hands-on & drill",
-        "points": {
-          "1": "Extinguisher demo and practice",
-          "2": "Roles, communication, and on-site coordination",
-          "3": "Evacuation drill + debrief and recommendations"
+        "hero": {
+          "title": "Basic Firefighting Training & Annual Fire Evacuation Drill",
+          "subtitle": "In-house program tailored to your workplace — fundamentals + hands-on practice + evacuation drill based on your organization’s plan"
+        },
+        "actions": {
+          "view_outline": "View Course Details"
+        },
+        "meta": {
+          "inhouse": "In-house / On-site",
+          "yearly_drill": "Annual Drill",
+          "practice": "Hands-on Practice"
+        },
+        "intro": {
+          "title": "Basic firefighting with a focus on real practice",
+          "desc": "Help employees understand fire types, choose the right extinguisher correctly, and practice evacuation roles in a structured way — reducing confusion during real incidents."
+        },
+        "pill_1": {
+          "title": "What participants will get",
+          "items": { "1": "Fire fundamentals and prevention knowledge", "2": "Safe extinguisher handling practice", "3": "Guidance to improve workplace risk points" }
+        },
+        "pill_2": {
+          "title": "Who it’s for",
+          "items": { "1": "Factories/warehouses/office buildings", "2": "Organizations that need an annual evacuation drill", "3": "HS/HR teams wanting a structured drill plan" }
+        },
+        "pill_3": {
+          "title": "How we run it",
+          "items": { "1": "On-site training at the customer’s location", "2": "Activities adapted to the real layout", "3": "Post-session summary and recommendations" }
+        },
+        "stats": {
+          "1": { "value": "6 hours", "label": "Duration (example)" },
+          "2": { "value": "Theory + Practice", "label": "Learning Format" },
+          "3": { "value": "Evacuation Drill", "label": "Based on your plan" },
+          "note": "*Duration and format can be adjusted to your site and participant count"
+        },
+        "highlights": {
+          "1": {
+            "title": "Hands-on basic firefighting practice",
+            "desc": "Practice situation assessment, selecting the right extinguisher/method, and safe teamwork on-site."
+          },
+          "2": {
+            "title": "Annual fire evacuation drill",
+            "desc": "Walk routes to assembly points, headcount checks, and a debrief to identify improvements."
+          }
+        },
+        "gallery": { "caption": "Training and drill atmosphere (sample images)" },
+        "outline": {
+          "title": "Course Outline",
+          "1": {
+            "title": "Theory",
+            "points": { "1": "Fire fundamentals and prevention", "2": "Fire classes and response guidelines", "3": "Preparedness and incident reporting" }
+          },
+          "2": {
+            "title": "Practice & Drill",
+            "points": { "1": "Extinguisher demo and correct use practice", "2": "Team roles and on-site communication", "3": "Plan-based evacuation drill + post-drill summary" }
+          }
+        },
+        "compliance": {
+          "title": "Related Standards/Requirements",
+          "desc": "Can be tailored to your organization’s policies and relevant safety guidelines."
+        },
+        "faq": {
+          "1": { "q": "What should we prepare before training?", "a": "Provide participant count, site layout, evacuation routes, assembly points, and any site constraints (if any)." },
+          "2": { "q": "Can we run multiple sessions?", "a": "Yes — we can split into rounds to fit headcount and operations." },
+          "3": { "q": "Do you provide a post-drill summary?", "a": "Yes — we conduct a debrief and provide recommendations to improve plans/risk points." }
+        },
+        "final": {
+          "title": "Want us to tailor the training format for your site?",
+          "subtitle": "Share basic info — we’ll recommend 2–3 options with suitable schedules and formats."
         }
       }
-    },
-    "compliance": {
-      "title": "Compliance alignment",
-      "desc": "We can align the training with your internal policies and relevant safety practices required by your organization."
-    },
-    "faq": {
-      "1": {
-        "q": "What do we need to prepare?",
-        "a": "Participant count, site layout, evacuation routes, assembly points, and any area constraints."
-      },
-      "2": {
-        "q": "Can we run multiple sessions?",
-        "a": "Yes. We can split sessions to fit headcount and operational needs."
-      },
-      "3": {
-        "q": "Do you provide a debrief?",
-        "a": "Yes. We provide a structured debrief and improvement recommendations."
-      }
-    },
-    "final": {
-      "title": "Want us to tailor the program to your site?",
-      "subtitle": "Share your basics and we’ll recommend 2–3 suitable options with an appropriate format and timeline."
-    }
-  }
     },
 
     "ppe": {
       "title_short": "PPE & Fire Tank & Refill Service",
       "title": "Personal Protective Equipment (PPE) + Fire Tank & Refill Service",
       "tagline": "Complete PPE categories + fire extinguishers and refill/inspection services",
-      "catalog": "Download Catalogue",
+      "catalog": "Download Catalog",
       "pain": {
-        "1": { "title": "Choose the right PPE", "desc": "Reduce risks by matching standards to your work environment" },
-        "2": { "title": "Sets & packages", "desc": "Save time with job-based PPE sets" },
-        "3": { "title": "After-sales support", "desc": "Refill/inspection services and usage guidance" }
+        "1": { "title": "Choose the right PPE", "desc": "Reduce risk and match standards to your job site" },
+        "2": { "title": "Bundled sets/packages", "desc": "Save time by assembling sets by job type" },
+        "3": { "title": "After-sales support", "desc": "Refill/inspect tanks and usage guidance" }
       },
       "groups": {
         "ppe": { "title": "PPE" },
         "fire": { "title": "Fire Tank & Refill" }
       },
       "items": {
-        "head": { "title": "Head Protection", "desc": "Helmet / Bump cap / Accessories" },
-        "respiratory": { "title": "Respiratory Protection", "desc": "Mask / Respirator / Cartridge" },
-        "eye_face": { "title": "Eye & Face Protection", "desc": "Goggle / Face shield" },
-        "hand_foot": { "title": "Hand & Foot Protection", "desc": "Gloves / Safety shoes" },
-        "fall": { "title": "Fall Protection", "desc": "Harness / Lanyard / Lifeline" },
-        "energy": { "title": "Energy & Electrical Safety", "desc": "Arc / Electrical safety" },
-        "hygiene": { "title": "Hygiene & Sanitation", "desc": "Hygiene / Disposable" },
-        "fire_tank": { "title": "Fire Tank", "desc": "Fire extinguishers and equipment" },
+        "head": { "title": "Head Protection PPE", "desc": "Helmet / Bump cap / Accessories" },
+        "respiratory": { "title": "Respiratory Protection PPE", "desc": "Mask / Respirator / Cartridge" },
+        "eye_face": { "title": "Eye & Face Protection PPE", "desc": "Goggles / Face shield" },
+        "hand_foot": { "title": "Hand & Foot Protection PPE", "desc": "Gloves / Safety shoes" },
+        "fall": { "title": "Fall Protection PPE", "desc": "Harness / Lanyard / Lifeline" },
+        "energy": { "title": "Energy & Electrical PPE", "desc": "Arc / Electrical safety" },
+        "hygiene": { "title": "Hygiene PPE", "desc": "Hygiene / Disposable" },
+        "fire_tank": { "title": "Fire Tank", "desc": "Fire extinguishers and accessories" },
         "refill_service": { "title": "Refill Service", "desc": "Fire extinguisher refill/inspection service" }
       },
       "process": {
         "1": { "title": "Tell us your job type", "desc": "Share job type/risks/required standards" },
         "2": { "title": "Recommend 2–3 options", "desc": "We propose options and price ranges" },
-        "3": { "title": "Quote & delivery", "desc": "Issue a quote and arrange delivery/service" }
+        "3": { "title": "Quote & delivery", "desc": "Issue a quotation and deliver/schedule service" }
       },
       "faq": {
-        "1": { "q": "Can you recommend by standard?", "a": "Yes. Tell us the job type/risks and we’ll recommend suitable categories." },
-        "2": { "q": "Do you provide PPE sets?", "a": "Yes. We can bundle job-based PPE sets." }
+        "1": { "q": "Can you recommend based on standards?", "a": "Yes — tell us your job type/risks and we’ll propose suitable categories." },
+        "2": { "q": "Do you provide PPE sets?", "a": "Yes — we can bundle sets by job function." }
       }
     },
 
     "waste": {
       "title_short": "Waste Management Solution & Technology",
       "title": "Waste Management Solution & Technology",
-      "tagline": "End-to-end waste management solutions supported by technology",
+      "tagline": "End-to-end waste management solutions + operational support technology",
       "pain": {
-        "1": { "title": "Cost control", "desc": "Design a compliant and cost-effective waste system" },
-        "2": { "title": "Legal compliance", "desc": "Support documents and practices aligned with regulations" },
-        "3": { "title": "Trackable", "desc": "Track steps and maintain evidence" }
+        "1": { "title": "Control costs", "desc": "Design a compliant and cost-effective waste system" },
+        "2": { "title": "Compliant", "desc": "Support documents and approaches aligned with regulations" },
+        "3": { "title": "Traceable", "desc": "Track steps and evidence systematically" }
       },
       "groups": {
         "31": {
           "title": "Non-Hazardous waste solution",
-          "items": { "1": { "title": "Non-Hazardous Waste", "desc": "Systematic management for general waste" } }
+          "items": { "1": { "title": "Non-Hazardous Waste", "desc": "Manage general waste in a structured way" } }
         },
         "32": {
           "title": "Hazardous waste solution",
@@ -332,20 +328,21 @@
         },
         "33": {
           "title": "Waste logistic and transportation",
-          "items": { "1": { "title": "Waste Logistics & Transportation", "desc": "Waste transport and document tracking" } }
+          "items": { "1": { "title": "Waste Logistics & Transportation", "desc": "Waste transport and documentation tracking" } }
         }
       },
       "process": {
-        "1": { "title": "Assess", "desc": "Assess waste types, volume, and site context" },
-        "2": { "title": "Design solution", "desc": "Design collection/transport/disposal flow" },
-        "3": { "title": "Operate & track", "desc": "Operate and track evidence and documents" }
+        "1": { "title": "Assess", "desc": "Assess waste types, volumes, and site conditions" },
+        "2": { "title": "Design solution", "desc": "Design storage/transport/disposal workflows" },
+        "3": { "title": "Operate & track", "desc": "Operate and track evidence" }
       },
       "faq": {
-        "1": { "q": "Do you handle hazardous waste?", "a": "Yes—subject to waste type assessment and required documents." },
-        "2": { "q": "Do you provide transportation?", "a": "Yes—depending on conditions and service area." }
+        "1": { "q": "Do you handle hazardous waste?", "a": "Yes — we need to assess types and supporting documents first." },
+        "2": { "q": "Do you provide transportation?", "a": "Yes — subject to service conditions and coverage area." }
       }
     }
   },
+
   "resources": {
     "title": "Resources",
     "subtitle": "Downloads and useful information",
@@ -370,66 +367,68 @@
       "title": "No items in this category yet",
       "desc": "Try another filter or check back later"
     },
-    "hint": "If you want tailored recommendations for your job site, click “Request a Quote”."
+    "hint": "If you want our team to help choose what fits your job site, click “Request a Quote”."
   },
+
   "about": {
     "title": "About UPLIX",
-    "subtitle": "3 Business Units — tailored options for your real job site needs",
+    "subtitle": "All 3 Business Units in one place — we tailor the right options for your job site",
     "actions": {
-      "view_resources": "View resources",
+      "view_resources": "View Resources",
       "view_ppe": "View PPE"
     },
     "overview": {
       "title": "Overview",
-      "desc": "UPLIX brings together learning, safety, and waste management solutions to help organizations operate efficiently and systematically."
+      "desc": "UPLIX combines people development, safety, and waste management services to help organizations operate efficiently and systematically."
     },
     "stats": {
       "1": { "num": "3", "label": "Business Units" },
-      "2": { "num": "Fast", "label": "Quick response" },
+      "2": { "num": "Fast", "label": "Fast response / fast execution" },
       "3": { "num": "2–3", "label": "recommended options" }
     },
     "values": {
       "title": "How we work",
       "subtitle": "Practical, systematic, and measurable",
       "items": {
-        "1": { "title": "Practical", "desc": "Designed for real use and tailored to your context" },
-        "2": { "title": "Systematic", "desc": "Clear steps, consistent delivery, and traceable outcomes" },
-        "3": { "title": "Responsive", "desc": "Fast communication with easy-to-decide options" }
+        "1": { "title": "Practical", "desc": "Designed to fit real use and customer context" },
+        "2": { "title": "Systematic", "desc": "Clear steps with traceability" },
+        "3": { "title": "Responsive", "desc": "Fast communication and easy-to-decide options" }
       }
     },
     "bu": {
       "title": "Business Units",
-      "subtitle": "Choose a BU to explore and request a quote instantly",
+      "subtitle": "Choose a BU to view products/services and request a quote instantly",
       "items": {
         "learning": { "title": "Learning", "desc": "Experience Learning / SHE Academy / Fire Drill / HRD Platform" },
-        "ppe": { "title": "PPE + Fire Tank & Refill", "desc": "All PPE categories + fire extinguishers + refill/inspection" },
-        "waste": { "title": "Waste Management", "desc": "Non-hazardous / Hazardous / Waste logistics" }
+        "ppe": { "title": "PPE + Fire Tank & Refill", "desc": "Complete PPE + fire tanks + refill/inspection" },
+        "waste": { "title": "Waste Management", "desc": "Non-Hazardous / Hazardous / Waste Logistics" }
       }
     },
     "timeline": {
       "title": "Working with us",
-      "subtitle": "From needs → options → quote → delivery",
+      "subtitle": "From needs → options → quotation → delivery",
       "items": {
-        "1": { "title": "Understand", "desc": "Gather requirements and essential site context" },
-        "2": { "title": "Recommend", "desc": "Propose 2–3 options with pros and price range" },
-        "3": { "title": "Deliver", "desc": "Finalize quote and schedule delivery/service" }
+        "1": { "title": "Understand", "desc": "Gather requirements and essential site info" },
+        "2": { "title": "Recommend", "desc": "Propose 2–3 options with pros/price range" },
+        "3": { "title": "Deliver", "desc": "Finalize quotation and schedule delivery/service" }
       }
     },
     "final": {
-      "title": "Need help choosing the right option?",
-      "subtitle": "Share a few details and our team will get back to you soon"
+      "title": "Want tailored recommendations for your job?",
+      "subtitle": "Start with a short form — our team will contact you shortly"
     }
   },
+
   "contact": {
-    "title": "Contact",
-    "subtitle": "Reach the UPLIX team via email or LINE — quick response with tailored options",
+    "title": "Contact Us",
+    "subtitle": "Reach the UPLIX team via email or LINE — fast response with tailored recommendations",
     "actions": {
-      "view_resources": "View resources",
+      "view_resources": "View Resources",
       "view_ppe": "View PPE"
     },
     "direct": {
-      "title": "Contact channels",
-      "desc": "Choose the channel that works best for you"
+      "title": "Contact Channels",
+      "desc": "Choose the most convenient way to reach us"
     },
     "labels": {
       "email": "Email"
@@ -441,11 +440,11 @@
     "cards": {
       "email": {
         "title": "Email the UPLIX team",
-        "desc": "Best for quote requests and sharing detailed requirements or files",
-        "cta": "Open email"
+        "desc": "Best for quotations, attaching details and supporting documents",
+        "cta": "Open Email"
       },
       "line": {
-        "title": "Chat via LINE",
+        "title": "Chat on LINE",
         "desc": "Best for quick questions and sharing photos/site info",
         "cta": "Open LINE"
       }
@@ -453,14 +452,77 @@
     "notes": {
       "title": "Info that helps us respond faster",
       "items": {
-        "1": "Which Business Unit (Learning / PPE / Waste)",
-        "2": "Job type/risks/required standards (if any)",
-        "3": "Approx. quantity and timeline"
+        "1": "Specify the Business Unit you need (Learning / PPE / Waste)",
+        "2": "Share job type/risks/required standards (if any)",
+        "3": "Estimated quantity and desired timeline"
       }
     },
     "final": {
-      "title": "Need tailored recommendations?",
-      "subtitle": "Share a few details on the Quote page and we’ll get back to you soon"
+      "title": "Want our team to recommend what fits your job?",
+      "subtitle": "Start with the Quote page — we’ll get back to you shortly"
     }
+  },
+
+  "ppe_catalog": {
+    "labels": {
+      "standards": "Standards",
+      "select": "Select",
+      "qty": "Qty"
+    },
+    "actions": {
+      "clear": "Clear Selection"
+    },
+    "not_found": {
+      "title": "Category Not Found",
+      "desc": "Please go back and choose another category"
+    },
+
+    "head": {
+      "title": "Head Protection PPE",
+      "items": {
+        "hep101": {
+          "name": "HEP101 Safety Helmet (Front Brim)",
+          "desc": "Material: HDPE \n• 4-point ratchet suspension \n• Side accessory slots \n• No ventilation \n• Chin strap included",
+          "standards": "CE EN397: 2012+A1:2012"
+        },
+        "hep102": {
+          "name": "HEP102 Safety Helmet (Front Brim)",
+          "desc": "Material: HDPE/ABS \n• 6-point ratchet suspension \n• Side accessory slots \n• No ventilation \n• Chin strap included",
+          "standards": "CE EN397: 2012+A1:2012; ANSI Z89.1 Type I Class E"
+        }
+      }
+    },
+
+    "refill": {
+  "title": "Refill Service",
+  "groups": {
+    "dry": "Dry Chemical Powder",
+    "co2": "Carbon Dioxide (CO2)",
+    "foam": "Foam"
+  },
+  "items": {
+    "dry_2":  { "name": "Dry Chemical Refill (2 lb)",  "desc": "Refill service for dry chemical powder fire extinguishers." },
+    "dry_5":  { "name": "Dry Chemical Refill (5 lb)",  "desc": "Refill service for dry chemical powder fire extinguishers." },
+    "dry_10": { "name": "Dry Chemical Refill (10 lb)", "desc": "Refill service for dry chemical powder fire extinguishers." },
+    "dry_15": { "name": "Dry Chemical Refill (15 lb)", "desc": "Refill service for dry chemical powder fire extinguishers." },
+    "dry_20": { "name": "Dry Chemical Refill (20 lb)", "desc": "Refill service for dry chemical powder fire extinguishers." },
+
+    "co2_10": { "name": "CO2 Refill (10 lb)", "desc": "Refill service for carbon dioxide (CO2) fire extinguishers." },
+    "co2_15": { "name": "CO2 Refill (15 lb)", "desc": "Refill service for carbon dioxide (CO2) fire extinguishers." },
+
+    "foam_9l": { "name": "Foam Refill (9 L / 20 lb)", "desc": "Refill service for foam fire extinguishers." }
+  },
+  "sizes": {
+    "2lb": "2 lb",
+    "5lb": "5 lb",
+    "10lb": "10 lb",
+    "15lb": "15 lb",
+    "20lb": "20 lb",
+    "9l": "9 L (20 lb equivalent)"
+  },
+  "note": {
+    "price_hint": "Note: Pricing may vary by distance; upcountry service may incur travel adjustments; free pick-up/delivery may apply when minimum quantity conditions are met."
+  }
+}
   }
 }

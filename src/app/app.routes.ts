@@ -12,6 +12,13 @@ export const routes: Routes = [
   {
   path: 'learning/fire-fighting-training', loadComponent: () =>import('./features/learning/fire-fighting-training/fire-fighting-training').then(m => m.FireFightingTrainingComponent),
 },
+{
+  path: 'bu/ppe/:cat',
+  loadComponent: () =>
+    import('./features/ppe/ppe-category/ppe-category.component')
+      .then(m => m.PpeCategoryComponent),
+},
+
 
 
   { path: '**', redirectTo: '' }
