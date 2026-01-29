@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, computed } from '@angular/core';
 import { RouterLink, RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+import { LangLinkPipe } from '../../shared/pipes/lang-link.pipe';
 
 type ValueCard = { titleKey: string; descKey: string };
 type TimelineItem = { titleKey: string; descKey: string };
@@ -9,7 +10,7 @@ type TimelineItem = { titleKey: string; descKey: string };
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [CommonModule, RouterLink, TranslateModule,RouterModule],
+  imports: [CommonModule, RouterLink, TranslateModule, RouterModule, LangLinkPipe],
   templateUrl: './about.html',
   styleUrl: './about.scss',
 })

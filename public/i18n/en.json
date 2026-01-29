@@ -13,35 +13,70 @@
       "blue": "Blue"
     }
   },
-
   "nav": {
     "home": "Home",
-    "bu": "Business Units",
+    "bu": "Products & Services",
+    "products_services": "Products & Services",
+    "investor_relations": "Investor Relations",
+    "corporate_governance": "Corporate Governance",
+    "sustainability": "Sustainability",
+    "news_articles": "News & Articles",
+    "careers": "Careers",
+    "information_inquiry": "Information Inquiry",
     "resources": "Resources",
     "about": "About Us",
     "contact": "Contact",
-    "quote": "Request a Quote"
+    "quote": "Request a Quote",
+    "view_overview": "View Overview",
+    "products_desc": "Overview of all products and services from UPLIX.",
+    "products_all": "All Products and Services",
+    "products": {
+      "learning_title": "Experience and Innovative Learning",
+      "learning_1": "Experience Learning Program",
+      "learning_2": "SHE Academy",
+      "learning_3": "Fire drill and evacuation Academy",
+      "learning_4": "HRD Solution platform",
+      "ppe_title": "PPE and Fire Tank & Refill Service",
+      "ppe_1": "Head Protection PPE",
+      "ppe_2": "Respiratory Protection PPE",
+      "ppe_3": "Eye & Face Protection PPE",
+      "ppe_4": "Hand & Foot Protection PPE",
+      "ppe_5": "Energy & Electrical PPE",
+      "ppe_6": "Fire Tank",
+      "ppe_7": "Refill Service",
+      "waste_title": "Waste Management Solution & Technology",
+      "waste_1": "Non-Hazardous waste solution",
+      "waste_2": "Hazardous Waste",
+      "waste_3": "Waste Logistics & Transportation"
+    }
   },
-
   "footer": {
-    "tagline": "All 3 Business Units in one place — choose a BU to view services or request a quote instantly.",
-    "bu": "Business Units",
+    "tagline": "Empowering Organization Growth through Experience-Based Learning",
     "quick": "Quick Links",
     "contact": "Contact",
     "email": "Email",
     "telephone": "Telephone",
-    "contact_team": "Contact the UPLIX Team →",
+    "contact_team": "Contact the UPLIX Team",
     "rights": "UPLIX. All rights reserved.",
     "privacy": "Privacy",
-    "terms": "Terms"
+    "terms": "Terms and Conditions",
+    "cookie": "Cookie Policy",
+    "sitemap": "Sitemap",
+    "address": {
+      "line1": "UPLIX (Thailand) Co., Ltd.",
+      "line2": "Bangkok, Thailand",
+      "line3": "Mon?Fri 09:00?18:00"
+    }
   },
-
   "home": {
     "hero": {
-      "title": "UPLIX",
-      "tagline": "3 Business Units • Choose a BU to view services or request a quote instantly",
-      "primary": "View Business Units",
-      "secondary": "Request a Quote"
+      "title": "Empowering Organization",
+      "tagline": "through Experience-Based Learning",
+      "primary": "Explore Products & Services",
+      "secondary": "Inquiry Form",
+      "eyebrow": "UPLIX Group",
+      "company": "UPLIX COMPANY LIMITED",
+      "growth": "GROWTH"
     },
     "bu": {
       "title": "Business Units",
@@ -67,18 +102,119 @@
     "process": {
       "title": "Process",
       "steps": {
-        "1": { "title": "Choose a BU", "desc": "Select the service category that matches your needs" },
-        "2": { "title": "Get Recommendations", "desc": "Our team suggests the best options/solutions" },
-        "3": { "title": "Request a Quote", "desc": "Summarize details and submit your request instantly" }
+        "1": {
+          "title": "Choose a BU",
+          "desc": "Select the service category that matches your needs"
+        },
+        "2": {
+          "title": "Get Recommendations",
+          "desc": "Our team suggests the best options/solutions"
+        },
+        "3": {
+          "title": "Request a Quote",
+          "desc": "Summarize details and submit your request instantly"
+        }
       }
     },
     "final": {
       "title": "Choose a BU and let our team tailor options for your job",
       "subtitle": "Fast response with 2–3 recommended approaches",
       "button": "Start a Quote Request"
+    },
+    "kpi": {
+      "items": {
+        "1": {
+          "label": "Years in operation",
+          "suffix": "+"
+        },
+        "2": {
+          "label": "Clients supported",
+          "suffix": "+"
+        },
+        "3": {
+          "label": "Business units",
+          "unit": "BU"
+        },
+        "4": {
+          "label": "On-time delivery",
+          "suffix": "%"
+        }
+      }
+    },
+    "products": {
+      "title": "Products & Services",
+      "desc": "Integrated people development, safety equipment, and waste management for resilient operations.",
+      "cta": "Explore More"
+    },
+    "ir": {
+      "title": "Investor Relations",
+      "subtitle": "Latest documents and disclosures for stakeholders",
+      "latest_docs": "Latest Documents",
+      "view_online": "View Online",
+      "download": "Download",
+      "set": "SET Announcements",
+      "press": "IR Press Releases",
+      "read_more": "Read More",
+      "docs": {
+        "1": {
+          "title": "Annual Report 2025"
+        },
+        "2": {
+          "title": "Fact Sheet Q4/2025"
+        }
+      },
+      "set_items": {
+        "1": "Disclosure on quarterly performance summary",
+        "2": "Shareholder meeting announcement",
+        "3": "Dividend payment notice"
+      },
+      "press_items": {
+        "1": "UPLIX expands safety solutions portfolio",
+        "2": "Operational update for FY2025",
+        "3": "UPLIX sustainability report released"
+      }
+    },
+    "sustainability": {
+      "title": "Sustainability",
+      "subtitle": "Responsible growth across people, governance, and environment",
+      "cta": "Explore More",
+      "cards": {
+        "social": {
+          "title": "Social",
+          "desc": "Employee well-being, safety culture, and community impact."
+        },
+        "governance": {
+          "title": "Governance & Economic",
+          "desc": "Transparent processes and long-term economic value."
+        },
+        "environment": {
+          "title": "Environmental",
+          "desc": "Waste management, compliance, and resource efficiency."
+        }
+      }
+    },
+    "updates": {
+      "title": "Latest Updates",
+      "subtitle": "News, insights, and recent announcements",
+      "read_more": "Read More",
+      "view_all": "View All",
+      "categories": {
+        "news": "News",
+        "ir": "Investor Relations",
+        "sustainability": "Sustainability"
+      },
+      "items": {
+        "1": "UPLIX launches expanded PPE selection",
+        "2": "New investor update published",
+        "3": "Sustainability training program highlights"
+      }
+    },
+    "certifications": "Certifications",
+    "about": {
+      "title": "About Us",
+      "desc": "Founded in 2025,\nAffiliated company of P.S.P. SPECIALTIES PUBLIC COMPANY LIMITED.\n\nUPLIX is a professional learning and organization development partner specializing in Human Resource & Organization Development.\n\nWe design and deliver practical, experience-based learning solutions that help individuals and organizations adapt, perform, and grow in a rapidly changing world.\n\nOur approach transforms knowledge into actionable experience, ensuring measurable impact at both individual and organizational levels."
     }
   },
-
   "quote": {
     "title": "Request a Quote",
     "subtitle": "Fill in the form — our team will contact you shortly",
@@ -107,7 +243,6 @@
       "back_ppe": "Back to PPE"
     }
   },
-
   "quote_cart": {
     "title": "Quote Cart",
     "actions": {
@@ -121,7 +256,6 @@
       "total": "Total Quantity"
     }
   },
-
   "ppe": {
     "head": "Head Protection PPE",
     "respiratory": "Respiratory Protection PPE",
@@ -133,7 +267,6 @@
     "fire_tank": "Fire Tank",
     "refill_service": "Refill Service"
   },
-
   "bu": {
     "landing": {
       "services": "Services",
@@ -148,33 +281,50 @@
         "back": "Back to Home"
       }
     },
-
     "learning": {
       "title_short": "Experience & Innovative Learning",
       "title": "Experience and Innovative Learning",
       "tagline": "Experience-based learning programs + an HRD platform to develop people and organizations",
       "pain": {
-        "1": { "title": "Upskill Your Workforce", "desc": "Design learning pathways that match real work" },
-        "2": { "title": "Measurable Outcomes", "desc": "Clear evaluation frameworks and tangible results" },
-        "3": { "title": "Sustainable Impact", "desc": "Follow-up plans and post-learning activities" }
+        "1": {
+          "title": "Upskill Your Workforce",
+          "desc": "Design learning pathways that match real work"
+        },
+        "2": {
+          "title": "Measurable Outcomes",
+          "desc": "Clear evaluation frameworks and tangible results"
+        },
+        "3": {
+          "title": "Sustainable Impact",
+          "desc": "Follow-up plans and post-learning activities"
+        }
       },
       "groups": {
         "11": {
           "title": "Experience and Innovative",
           "items": {
-            "111": { "title": "Learning Program", "desc": "Customized experiential learning programs aligned with organizational goals" }
+            "111": {
+              "title": "Learning Program",
+              "desc": "Customized experiential learning programs aligned with organizational goals"
+            }
           }
         },
         "12": {
           "title": "SHE Academy",
           "items": {
-            "1": { "title": "SHE Academy", "desc": "Safety, Health & Environment training programs for organizations" }
+            "1": {
+              "title": "SHE Academy",
+              "desc": "Safety, Health & Environment training programs for organizations"
+            }
           }
         },
         "13": {
           "title": "Fire drill and evacuation Academy",
           "items": {
-            "1": { "title": "Fire drill & Evacuation Academy", "desc": "Structured emergency evacuation drills and exercises" },
+            "1": {
+              "title": "Fire drill & Evacuation Academy",
+              "desc": "Structured emergency evacuation drills and exercises"
+            },
             "2": {
               "title": "Basic Firefighting Training & Annual Fire Evacuation Drill",
               "desc": "In-house training covering both theory and practice: fire classes, correct extinguisher selection and use, and evacuation drills based on your real plan — with post-drill summary and recommendations."
@@ -184,20 +334,44 @@
         "14": {
           "title": "HRD Solution platform",
           "items": {
-            "141": { "title": "People Engagement Program", "desc": "Engagement programs to boost motivation in organizations" },
-            "142": { "title": "IDP Compass Platform", "desc": "Individual Development Plan (IDP) planning and tracking platform" }
+            "141": {
+              "title": "People Engagement Program",
+              "desc": "Engagement programs to boost motivation in organizations"
+            },
+            "142": {
+              "title": "IDP Compass Platform",
+              "desc": "Individual Development Plan (IDP) planning and tracking platform"
+            }
           }
         }
       },
       "process": {
-        "1": { "title": "Discover", "desc": "Understand needs, goals, and target learners" },
-        "2": { "title": "Design", "desc": "Design curriculum/activities/measurement tools" },
-        "3": { "title": "Deliver", "desc": "Run training/activities with an operation team" },
-        "4": { "title": "Evaluate", "desc": "Summarize outcomes and recommend next steps" }
+        "1": {
+          "title": "Discover",
+          "desc": "Understand needs, goals, and target learners"
+        },
+        "2": {
+          "title": "Design",
+          "desc": "Design curriculum/activities/measurement tools"
+        },
+        "3": {
+          "title": "Deliver",
+          "desc": "Run training/activities with an operation team"
+        },
+        "4": {
+          "title": "Evaluate",
+          "desc": "Summarize outcomes and recommend next steps"
+        }
       },
       "faq": {
-        "1": { "q": "Can you run this in-house?", "a": "Yes — we tailor the program to your workplace and audience." },
-        "2": { "q": "What is the minimum duration?", "a": "Depends on the format — from half-day sessions to multi-week programs." }
+        "1": {
+          "q": "Can you run this in-house?",
+          "a": "Yes — we tailor the program to your workplace and audience."
+        },
+        "2": {
+          "q": "What is the minimum duration?",
+          "a": "Depends on the format — from half-day sessions to multi-week programs."
+        }
       },
       "fire_training": {
         "hero": {
@@ -218,20 +392,41 @@
         },
         "pill_1": {
           "title": "What participants will get",
-          "items": { "1": "Fire fundamentals and prevention knowledge", "2": "Safe extinguisher handling practice", "3": "Guidance to improve workplace risk points" }
+          "items": {
+            "1": "Fire fundamentals and prevention knowledge",
+            "2": "Safe extinguisher handling practice",
+            "3": "Guidance to improve workplace risk points"
+          }
         },
         "pill_2": {
           "title": "Who it’s for",
-          "items": { "1": "Factories/warehouses/office buildings", "2": "Organizations that need an annual evacuation drill", "3": "HS/HR teams wanting a structured drill plan" }
+          "items": {
+            "1": "Factories/warehouses/office buildings",
+            "2": "Organizations that need an annual evacuation drill",
+            "3": "HS/HR teams wanting a structured drill plan"
+          }
         },
         "pill_3": {
           "title": "How we run it",
-          "items": { "1": "On-site training at the customer’s location", "2": "Activities adapted to the real layout", "3": "Post-session summary and recommendations" }
+          "items": {
+            "1": "On-site training at the customer’s location",
+            "2": "Activities adapted to the real layout",
+            "3": "Post-session summary and recommendations"
+          }
         },
         "stats": {
-          "1": { "value": "6 hours", "label": "Duration (example)" },
-          "2": { "value": "Theory + Practice", "label": "Learning Format" },
-          "3": { "value": "Evacuation Drill", "label": "Based on your plan" },
+          "1": {
+            "value": "6 hours",
+            "label": "Duration (example)"
+          },
+          "2": {
+            "value": "Theory + Practice",
+            "label": "Learning Format"
+          },
+          "3": {
+            "value": "Evacuation Drill",
+            "label": "Based on your plan"
+          },
           "note": "*Duration and format can be adjusted to your site and participant count"
         },
         "highlights": {
@@ -244,16 +439,26 @@
             "desc": "Walk routes to assembly points, headcount checks, and a debrief to identify improvements."
           }
         },
-        "gallery": { "caption": "Training and drill atmosphere (sample images)" },
+        "gallery": {
+          "caption": "Training and drill atmosphere (sample images)"
+        },
         "outline": {
           "title": "Course Outline",
           "1": {
             "title": "Theory",
-            "points": { "1": "Fire fundamentals and prevention", "2": "Fire classes and response guidelines", "3": "Preparedness and incident reporting" }
+            "points": {
+              "1": "Fire fundamentals and prevention",
+              "2": "Fire classes and response guidelines",
+              "3": "Preparedness and incident reporting"
+            }
           },
           "2": {
             "title": "Practice & Drill",
-            "points": { "1": "Extinguisher demo and correct use practice", "2": "Team roles and on-site communication", "3": "Plan-based evacuation drill + post-drill summary" }
+            "points": {
+              "1": "Extinguisher demo and correct use practice",
+              "2": "Team roles and on-site communication",
+              "3": "Plan-based evacuation drill + post-drill summary"
+            }
           }
         },
         "compliance": {
@@ -261,9 +466,18 @@
           "desc": "Can be tailored to your organization’s policies and relevant safety guidelines."
         },
         "faq": {
-          "1": { "q": "What should we prepare before training?", "a": "Provide participant count, site layout, evacuation routes, assembly points, and any site constraints (if any)." },
-          "2": { "q": "Can we run multiple sessions?", "a": "Yes — we can split into rounds to fit headcount and operations." },
-          "3": { "q": "Do you provide a post-drill summary?", "a": "Yes — we conduct a debrief and provide recommendations to improve plans/risk points." }
+          "1": {
+            "q": "What should we prepare before training?",
+            "a": "Provide participant count, site layout, evacuation routes, assembly points, and any site constraints (if any)."
+          },
+          "2": {
+            "q": "Can we run multiple sessions?",
+            "a": "Yes — we can split into rounds to fit headcount and operations."
+          },
+          "3": {
+            "q": "Do you provide a post-drill summary?",
+            "a": "Yes — we conduct a debrief and provide recommendations to improve plans/risk points."
+          }
         },
         "final": {
           "title": "Want us to tailor the training format for your site?",
@@ -271,78 +485,169 @@
         }
       }
     },
-
     "ppe": {
       "title_short": "PPE & Fire Tank & Refill Service",
       "title": "Personal Protective Equipment (PPE) + Fire Tank & Refill Service",
       "tagline": "Complete PPE categories + fire extinguishers and refill/inspection services",
       "catalog": "Download Catalog",
       "pain": {
-        "1": { "title": "Choose the right PPE", "desc": "Reduce risk and match standards to your job site" },
-        "2": { "title": "Bundled sets/packages", "desc": "Save time by assembling sets by job type" },
-        "3": { "title": "After-sales support", "desc": "Refill/inspect tanks and usage guidance" }
+        "1": {
+          "title": "Choose the right PPE",
+          "desc": "Reduce risk and match standards to your job site"
+        },
+        "2": {
+          "title": "Bundled sets/packages",
+          "desc": "Save time by assembling sets by job type"
+        },
+        "3": {
+          "title": "After-sales support",
+          "desc": "Refill/inspect tanks and usage guidance"
+        }
       },
       "groups": {
-        "ppe": { "title": "PPE" },
-        "fire": { "title": "Fire Tank & Refill" }
+        "ppe": {
+          "title": "PPE"
+        },
+        "fire": {
+          "title": "Fire Tank & Refill"
+        }
       },
       "items": {
-        "head": { "title": "Head Protection PPE", "desc": "Helmet / Bump cap / Accessories" },
-        "respiratory": { "title": "Respiratory Protection PPE", "desc": "Mask / Respirator / Cartridge" },
-        "eye_face": { "title": "Eye & Face Protection PPE", "desc": "Goggles / Face shield" },
-        "hand_foot": { "title": "Hand & Foot Protection PPE", "desc": "Gloves / Safety shoes" },
-        "fall": { "title": "Fall Protection PPE", "desc": "Harness / Lanyard / Lifeline" },
-        "energy": { "title": "Energy & Electrical PPE", "desc": "Arc / Electrical safety" },
-        "hygiene": { "title": "Hygiene PPE", "desc": "Hygiene / Disposable" },
-        "fire_tank": { "title": "Fire Tank", "desc": "Fire extinguishers and accessories" },
-        "refill_service": { "title": "Refill Service", "desc": "Fire extinguisher refill/inspection service" }
+        "head": {
+          "title": "Head Protection PPE",
+          "desc": "Helmet / Bump cap / Accessories"
+        },
+        "respiratory": {
+          "title": "Respiratory Protection PPE",
+          "desc": "Mask / Respirator / Cartridge"
+        },
+        "eye_face": {
+          "title": "Eye & Face Protection PPE",
+          "desc": "Goggles / Face shield"
+        },
+        "hand_foot": {
+          "title": "Hand & Foot Protection PPE",
+          "desc": "Gloves / Safety shoes"
+        },
+        "fall": {
+          "title": "Fall Protection PPE",
+          "desc": "Harness / Lanyard / Lifeline"
+        },
+        "energy": {
+          "title": "Energy & Electrical PPE",
+          "desc": "Arc / Electrical safety"
+        },
+        "hygiene": {
+          "title": "Hygiene PPE",
+          "desc": "Hygiene / Disposable"
+        },
+        "fire_tank": {
+          "title": "Fire Tank",
+          "desc": "Fire extinguishers and accessories"
+        },
+        "refill_service": {
+          "title": "Refill Service",
+          "desc": "Fire extinguisher refill/inspection service"
+        }
       },
       "process": {
-        "1": { "title": "Tell us your job type", "desc": "Share job type/risks/required standards" },
-        "2": { "title": "Recommend 2–3 options", "desc": "We propose options and price ranges" },
-        "3": { "title": "Quote & delivery", "desc": "Issue a quotation and deliver/schedule service" }
+        "1": {
+          "title": "Tell us your job type",
+          "desc": "Share job type/risks/required standards"
+        },
+        "2": {
+          "title": "Recommend 2–3 options",
+          "desc": "We propose options and price ranges"
+        },
+        "3": {
+          "title": "Quote & delivery",
+          "desc": "Issue a quotation and deliver/schedule service"
+        }
       },
       "faq": {
-        "1": { "q": "Can you recommend based on standards?", "a": "Yes — tell us your job type/risks and we’ll propose suitable categories." },
-        "2": { "q": "Do you provide PPE sets?", "a": "Yes — we can bundle sets by job function." }
+        "1": {
+          "q": "Can you recommend based on standards?",
+          "a": "Yes — tell us your job type/risks and we’ll propose suitable categories."
+        },
+        "2": {
+          "q": "Do you provide PPE sets?",
+          "a": "Yes — we can bundle sets by job function."
+        }
       }
     },
-
     "waste": {
       "title_short": "Waste Management Solution & Technology",
       "title": "Waste Management Solution & Technology",
       "tagline": "End-to-end waste management solutions + operational support technology",
       "pain": {
-        "1": { "title": "Control costs", "desc": "Design a compliant and cost-effective waste system" },
-        "2": { "title": "Compliant", "desc": "Support documents and approaches aligned with regulations" },
-        "3": { "title": "Traceable", "desc": "Track steps and evidence systematically" }
+        "1": {
+          "title": "Control costs",
+          "desc": "Design a compliant and cost-effective waste system"
+        },
+        "2": {
+          "title": "Compliant",
+          "desc": "Support documents and approaches aligned with regulations"
+        },
+        "3": {
+          "title": "Traceable",
+          "desc": "Track steps and evidence systematically"
+        }
       },
       "groups": {
         "31": {
           "title": "Non-Hazardous waste solution",
-          "items": { "1": { "title": "Non-Hazardous Waste", "desc": "Manage general waste in a structured way" } }
+          "items": {
+            "1": {
+              "title": "Non-Hazardous Waste",
+              "desc": "Manage general waste in a structured way"
+            }
+          }
         },
         "32": {
           "title": "Hazardous waste solution",
-          "items": { "1": { "title": "Hazardous Waste", "desc": "Hazardous waste management aligned with requirements" } }
+          "items": {
+            "1": {
+              "title": "Hazardous Waste",
+              "desc": "Hazardous waste management aligned with requirements"
+            }
+          }
         },
         "33": {
           "title": "Waste logistic and transportation",
-          "items": { "1": { "title": "Waste Logistics & Transportation", "desc": "Waste transport and documentation tracking" } }
+          "items": {
+            "1": {
+              "title": "Waste Logistics & Transportation",
+              "desc": "Waste transport and documentation tracking"
+            }
+          }
         }
       },
       "process": {
-        "1": { "title": "Assess", "desc": "Assess waste types, volumes, and site conditions" },
-        "2": { "title": "Design solution", "desc": "Design storage/transport/disposal workflows" },
-        "3": { "title": "Operate & track", "desc": "Operate and track evidence" }
+        "1": {
+          "title": "Assess",
+          "desc": "Assess waste types, volumes, and site conditions"
+        },
+        "2": {
+          "title": "Design solution",
+          "desc": "Design storage/transport/disposal workflows"
+        },
+        "3": {
+          "title": "Operate & track",
+          "desc": "Operate and track evidence"
+        }
       },
       "faq": {
-        "1": { "q": "Do you handle hazardous waste?", "a": "Yes — we need to assess types and supporting documents first." },
-        "2": { "q": "Do you provide transportation?", "a": "Yes — subject to service conditions and coverage area." }
+        "1": {
+          "q": "Do you handle hazardous waste?",
+          "a": "Yes — we need to assess types and supporting documents first."
+        },
+        "2": {
+          "q": "Do you provide transportation?",
+          "a": "Yes — subject to service conditions and coverage area."
+        }
       }
     }
   },
-
   "resources": {
     "title": "Resources",
     "subtitle": "Downloads and useful information",
@@ -369,7 +674,6 @@
     },
     "hint": "If you want our team to help choose what fits your job site, click “Request a Quote”."
   },
-
   "about": {
     "title": "About UPLIX",
     "subtitle": "All 3 Business Units in one place — we tailor the right options for your job site",
@@ -382,35 +686,71 @@
       "desc": "UPLIX combines people development, safety, and waste management services to help organizations operate efficiently and systematically."
     },
     "stats": {
-      "1": { "num": "3", "label": "Business Units" },
-      "2": { "num": "Fast", "label": "Fast response / fast execution" },
-      "3": { "num": "2–3", "label": "recommended options" }
+      "1": {
+        "num": "3",
+        "label": "Business Units"
+      },
+      "2": {
+        "num": "Fast",
+        "label": "Fast response / fast execution"
+      },
+      "3": {
+        "num": "2–3",
+        "label": "recommended options"
+      }
     },
     "values": {
       "title": "How we work",
       "subtitle": "Practical, systematic, and measurable",
       "items": {
-        "1": { "title": "Practical", "desc": "Designed to fit real use and customer context" },
-        "2": { "title": "Systematic", "desc": "Clear steps with traceability" },
-        "3": { "title": "Responsive", "desc": "Fast communication and easy-to-decide options" }
+        "1": {
+          "title": "Practical",
+          "desc": "Designed to fit real use and customer context"
+        },
+        "2": {
+          "title": "Systematic",
+          "desc": "Clear steps with traceability"
+        },
+        "3": {
+          "title": "Responsive",
+          "desc": "Fast communication and easy-to-decide options"
+        }
       }
     },
     "bu": {
       "title": "Business Units",
       "subtitle": "Choose a BU to view products/services and request a quote instantly",
       "items": {
-        "learning": { "title": "Learning", "desc": "Experience Learning / SHE Academy / Fire Drill / HRD Platform" },
-        "ppe": { "title": "PPE + Fire Tank & Refill", "desc": "Complete PPE + fire tanks + refill/inspection" },
-        "waste": { "title": "Waste Management", "desc": "Non-Hazardous / Hazardous / Waste Logistics" }
+        "learning": {
+          "title": "Learning",
+          "desc": "Experience Learning / SHE Academy / Fire Drill / HRD Platform"
+        },
+        "ppe": {
+          "title": "PPE + Fire Tank & Refill",
+          "desc": "Complete PPE + fire tanks + refill/inspection"
+        },
+        "waste": {
+          "title": "Waste Management",
+          "desc": "Non-Hazardous / Hazardous / Waste Logistics"
+        }
       }
     },
     "timeline": {
       "title": "Working with us",
       "subtitle": "From needs → options → quotation → delivery",
       "items": {
-        "1": { "title": "Understand", "desc": "Gather requirements and essential site info" },
-        "2": { "title": "Recommend", "desc": "Propose 2–3 options with pros/price range" },
-        "3": { "title": "Deliver", "desc": "Finalize quotation and schedule delivery/service" }
+        "1": {
+          "title": "Understand",
+          "desc": "Gather requirements and essential site info"
+        },
+        "2": {
+          "title": "Recommend",
+          "desc": "Propose 2–3 options with pros/price range"
+        },
+        "3": {
+          "title": "Deliver",
+          "desc": "Finalize quotation and schedule delivery/service"
+        }
       }
     },
     "final": {
@@ -418,7 +758,6 @@
       "subtitle": "Start with a short form — our team will contact you shortly"
     }
   },
-
   "contact": {
     "title": "Contact Us",
     "subtitle": "Reach the UPLIX team via email or LINE — fast response with tailored recommendations",
@@ -462,7 +801,6 @@
       "subtitle": "Start with the Quote page — we’ll get back to you shortly"
     }
   },
-
   "ppe_catalog": {
     "labels": {
       "standards": "Standards",
@@ -476,7 +814,6 @@
       "title": "Category Not Found",
       "desc": "Please go back and choose another category"
     },
-
     "head": {
       "title": "Head Protection PPE",
       "items": {
@@ -492,37 +829,270 @@
         }
       }
     },
-
     "refill": {
-  "title": "Refill Service",
-  "groups": {
-    "dry": "Dry Chemical Powder",
-    "co2": "Carbon Dioxide (CO2)",
-    "foam": "Foam"
+      "title": "Refill Service",
+      "groups": {
+        "dry": "Dry Chemical Powder",
+        "co2": "Carbon Dioxide (CO2)",
+        "foam": "Foam"
+      },
+      "items": {
+        "dry_2": {
+          "name": "Dry Chemical Refill (2 lb)",
+          "desc": "Refill service for dry chemical powder fire extinguishers."
+        },
+        "dry_5": {
+          "name": "Dry Chemical Refill (5 lb)",
+          "desc": "Refill service for dry chemical powder fire extinguishers."
+        },
+        "dry_10": {
+          "name": "Dry Chemical Refill (10 lb)",
+          "desc": "Refill service for dry chemical powder fire extinguishers."
+        },
+        "dry_15": {
+          "name": "Dry Chemical Refill (15 lb)",
+          "desc": "Refill service for dry chemical powder fire extinguishers."
+        },
+        "dry_20": {
+          "name": "Dry Chemical Refill (20 lb)",
+          "desc": "Refill service for dry chemical powder fire extinguishers."
+        },
+        "co2_10": {
+          "name": "CO2 Refill (10 lb)",
+          "desc": "Refill service for carbon dioxide (CO2) fire extinguishers."
+        },
+        "co2_15": {
+          "name": "CO2 Refill (15 lb)",
+          "desc": "Refill service for carbon dioxide (CO2) fire extinguishers."
+        },
+        "foam_9l": {
+          "name": "Foam Refill (9 L / 20 lb)",
+          "desc": "Refill service for foam fire extinguishers."
+        }
+      },
+      "sizes": {
+        "2lb": "2 lb",
+        "5lb": "5 lb",
+        "10lb": "10 lb",
+        "15lb": "15 lb",
+        "20lb": "20 lb",
+        "9l": "9 L (20 lb equivalent)"
+      },
+      "note": {
+        "price_hint": "Note: Pricing may vary by distance; upcountry service may incur travel adjustments; free pick-up/delivery may apply when minimum quantity conditions are met."
+      }
+    }
   },
-  "items": {
-    "dry_2":  { "name": "Dry Chemical Refill (2 lb)",  "desc": "Refill service for dry chemical powder fire extinguishers." },
-    "dry_5":  { "name": "Dry Chemical Refill (5 lb)",  "desc": "Refill service for dry chemical powder fire extinguishers." },
-    "dry_10": { "name": "Dry Chemical Refill (10 lb)", "desc": "Refill service for dry chemical powder fire extinguishers." },
-    "dry_15": { "name": "Dry Chemical Refill (15 lb)", "desc": "Refill service for dry chemical powder fire extinguishers." },
-    "dry_20": { "name": "Dry Chemical Refill (20 lb)", "desc": "Refill service for dry chemical powder fire extinguishers." },
-
-    "co2_10": { "name": "CO2 Refill (10 lb)", "desc": "Refill service for carbon dioxide (CO2) fire extinguishers." },
-    "co2_15": { "name": "CO2 Refill (15 lb)", "desc": "Refill service for carbon dioxide (CO2) fire extinguishers." },
-
-    "foam_9l": { "name": "Foam Refill (9 L / 20 lb)", "desc": "Refill service for foam fire extinguishers." }
+  "topbar": {
+    "inquiry": "Inquiry Form",
+    "phone": "Call +66 81-749-5566"
   },
-  "sizes": {
-    "2lb": "2 lb",
-    "5lb": "5 lb",
-    "10lb": "10 lb",
-    "15lb": "15 lb",
-    "20lb": "20 lb",
-    "9l": "9 L (20 lb equivalent)"
+  "nav_desc": {
+    "home": "Highlights, updates, and key performance snapshots.",
+    "about": "Company story, values, and milestones.",
+    "products_services": "Explore business units, services, and delivery process.",
+    "investor_relations": "Latest documents, SET announcements, and press releases.",
+    "corporate_governance": "Policies, board structure, and governance practices.",
+    "sustainability": "Social, governance, and environmental commitments.",
+    "news_articles": "Company news, IR updates, and sustainability stories.",
+    "careers": "Openings, benefits, and life at UPLIX.",
+    "information_inquiry": "Ask for information or reach our team quickly."
   },
-  "note": {
-    "price_hint": "Note: Pricing may vary by distance; upcountry service may incur travel adjustments; free pick-up/delivery may apply when minimum quantity conditions are met."
-  }
-}
+  "nav_groups": {
+    "highlights": "Highlights",
+    "company": "Company",
+    "business_units": "Business Units",
+    "services": "Services",
+    "investor": "Investor",
+    "governance": "Governance",
+    "sustainability": "Sustainability",
+    "news": "News",
+    "careers": "Careers",
+    "inquiry": "Inquiry"
+  },
+  "nav_links": {
+    "home": {
+      "kpi": "Key KPIs",
+      "products": "Products & Services",
+      "updates": "Latest Updates"
+    },
+    "about": {
+      "overview": "Overview",
+      "values": "Values",
+      "milestones": "Milestones"
+    },
+    "products": {
+      "learning": "Learning",
+      "ppe": "PPE & Fire",
+      "waste": "Waste Management",
+      "process": "Process",
+      "case": "Case Highlights"
+    },
+    "ir": {
+      "latest_docs": "Latest Documents",
+      "set": "SET Announcements",
+      "press": "IR Press Releases"
+    },
+    "gov": {
+      "policies": "Policies",
+      "board": "Board of Directors",
+      "committees": "Committees"
+    },
+    "sustainability": {
+      "social": "Social",
+      "governance": "Governance & Economic",
+      "environment": "Environmental"
+    },
+    "news": {
+      "company": "Company News",
+      "investor": "Investor Relations",
+      "sustainability": "Sustainability"
+    },
+    "careers": {
+      "openings": "Open Positions",
+      "benefits": "Benefits",
+      "life": "Life at UPLIX"
+    },
+    "inquiry": {
+      "form": "Inquiry Form",
+      "contact": "Contact"
+    }
+  },
+  "products": {
+    "title": "Products & Services",
+    "subtitle": "Overview of business units and service coverage",
+    "cards": {
+      "learning": {
+        "title": "Learning",
+        "desc": "Training, academy, and HRD platforms",
+        "cta": "View Services"
+      },
+      "ppe": {
+        "title": "PPE & Fire",
+        "desc": "Safety equipment, extinguishers, and refill services",
+        "cta": "View Products"
+      },
+      "waste": {
+        "title": "Waste Management",
+        "desc": "Hazardous and non-hazardous waste solutions",
+        "cta": "View Solutions"
+      }
+    },
+    "process": {
+      "title": "Our Process",
+      "items": {
+        "1": "Discover needs and site constraints",
+        "2": "Propose 2?3 tailored options",
+        "3": "Deliver with clear timelines"
+      }
+    },
+    "case": {
+      "title": "Case Highlights",
+      "desc": "Recent delivery highlights and service snapshots."
+    }
+  },
+  "ir": {
+    "title": "Investor Relations",
+    "subtitle": "Corporate disclosures and investor information",
+    "latest_docs": "Latest Documents",
+    "latest_docs_desc": "Browse company reports and regulatory documents.",
+    "request_info": "Request Information",
+    "set": "SET Announcements",
+    "set_desc": "Official filings and stock exchange announcements.",
+    "press": "IR Press Releases",
+    "press_desc": "Investor and corporate communication releases."
+  },
+  "governance": {
+    "title": "Corporate Governance",
+    "subtitle": "Structure, policies, and oversight",
+    "policies": "Policies",
+    "policies_desc": "Governance policies and compliance guidelines.",
+    "board": "Board of Directors",
+    "board_desc": "Board structure and responsibilities.",
+    "committees": "Committees",
+    "committees_desc": "Audit and governance committee overview."
+  },
+  "sustainability": {
+    "title": "Sustainability",
+    "subtitle": "Commitments to society, governance, and environment",
+    "social": {
+      "title": "Social",
+      "desc": "People development and community support."
+    },
+    "governance": {
+      "title": "Governance & Economic",
+      "desc": "Integrity, transparency, and long-term value."
+    },
+    "environment": {
+      "title": "Environmental",
+      "desc": "Responsible waste management and resource efficiency."
+    }
+  },
+  "news": {
+    "title": "News & Articles",
+    "subtitle": "Latest announcements and stories",
+    "company": "Company News",
+    "company_desc": "Updates from UPLIX teams and operations.",
+    "investor": "Investor Relations",
+    "investor_desc": "Investor announcements and disclosures.",
+    "sustainability": "Sustainability",
+    "sustainability_desc": "Environmental and social initiatives."
+  },
+  "careers": {
+    "title": "Careers",
+    "subtitle": "Join the UPLIX team",
+    "openings": "Open Positions",
+    "openings_desc": "See current openings across departments.",
+    "benefits": "Benefits",
+    "benefits_desc": "Culture, benefits, and growth opportunities.",
+    "life": "Life at UPLIX",
+    "life_desc": "How we work and grow together."
+  },
+  "inquiry": {
+    "title": "Information Inquiry",
+    "subtitle": "Share your questions and we will respond promptly",
+    "cta": "Go to Inquiry Form",
+    "contact_title": "Contact",
+    "contact_desc": "Reach us via phone, email, or the inquiry form."
+  },
+  "inquiry_form": {
+    "title": "Inquiry Form",
+    "subtitle": "Tell us what you need and we will get back to you",
+    "fields": {
+      "name": "Full Name",
+      "company": "Company",
+      "email": "Email",
+      "phone": "Phone",
+      "message": "Details"
+    },
+    "placeholders": {
+      "name": "Your name",
+      "company": "Company name",
+      "email": "name@company.com",
+      "phone": "+66 xx-xxx-xxxx",
+      "message": "Describe your request"
+    },
+    "submit": "Submit"
+  },
+  "sitemap": {
+    "title": "Sitemap",
+    "subtitle": "Browse all sections of the site"
+  },
+  "policy": {
+    "terms": {
+      "title": "Terms and Conditions",
+      "subtitle": "Terms for using this website",
+      "body": "Content will be updated with the latest legal terms."
+    },
+    "privacy": {
+      "title": "Personal Data Protection",
+      "subtitle": "Privacy and data handling policy",
+      "body": "Content will be updated with the latest privacy policy."
+    },
+    "cookie": {
+      "title": "Cookie Policy",
+      "subtitle": "How we use cookies",
+      "body": "Content will be updated with the latest cookie policy."
+    }
   }
 }

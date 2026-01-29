@@ -44,6 +44,6 @@
   <div class="container card" style="padding:16px;">
     <h2 style="margin:0;">{{ 'bu.landing.not_found.title' | translate }}</h2>
     <p class="p">{{ 'bu.landing.not_found.desc' | translate }}</p>
-    <a class="btn btn-secondary" routerLink="/">{{ 'bu.landing.not_found.back' | translate }}</a>
+    <a class="btn btn-secondary" [routerLink]="'/home' | langLink">{{ 'bu.landing.not_found.back' | translate }}</a>
   </div>
 </ng-template>

@@ -2,29 +2,29 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+import { NAV_ITEMS, POLICY_LINKS } from '../../navigation/nav.config';
+import { LangLinkPipe } from '../../../shared/pipes/lang-link.pipe';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [CommonModule, RouterLink,TranslateModule],
+  imports: [CommonModule, RouterLink, TranslateModule, LangLinkPipe],
   templateUrl: './footer.html',
   styleUrl: './footer.scss'
 })
 export class FooterComponent {
   year = new Date().getFullYear();
 
-  buLinks = [
-  { label: 'bu.learning.title_short', route: '/bu/learning' },
-  { label: 'bu.ppe.title_short', route: '/bu/ppe' },
-  { label: 'bu.waste.title_short', route: '/bu/waste' },
-];
+  navItems = NAV_ITEMS;
+  policyLinks = POLICY_LINKS;
 
-quickLinks = [
-  { label: 'nav.resources', route: '/resources' },
-  { label: 'nav.about', route: '/about' },
-  { label: 'nav.contact', route: '/contact' },
-  { label: 'nav.quote', route: '/quote' },
-];
   email = 'tana.s@uplix.co.th';
   telephone = '081-749-5566';
+  addressLines = [
+    'footer.address.line1',
+    'footer.address.line2',
+    'footer.address.line3',
+  ];
+  lineUrl = 'https://line.me/R/ti/p/@uplix';
+  facebookUrl = '';
 }

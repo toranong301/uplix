@@ -35,7 +35,7 @@
       </button>
 
       <!-- view cart -->
-      <a class="btn ghost" routerLink="/quote">
+      <a class="btn ghost" [routerLink]="'/quote' | langLink">
         {{ 'quote_cart.actions.view_cart' | translate }}
         <span *ngIf="cart.count() > 0">({{ cart.count() }})</span>
       </a>

@@ -1,33 +1,21 @@
-<div class="container">
-
-  <uplix-hero
-  [title]="'home.hero.title' | translate"
-  [tagline]="'home.hero.tagline' | translate"
-  [heroImage]="hero.heroImage">
-  </uplix-hero>
-
-  <section class="section" id="bu">
-    <div class="row2">
-      <h2 style="margin:0;">{{ 'home.bu.title' | translate }}</h2>
+<main class="home">
+  <section class="hero">
+    <div class="hero-inner">
+      <img class="hero-logo" src="assets/brand/UPLIX_LOGO.png" alt="UPLIX" />
+      <div class="hero-subtitle">{{ 'home.hero.company' | translate }}</div>
+      <h1 class="hero-title">{{ 'home.hero.title' | translate }}</h1>
+      <div class="hero-growth">
+      <span class="hero-growth-line-left" aria-hidden="true"></span>
+      <span class="hero-growth-text">{{ 'home.hero.growth' | translate }}</span>
+      <span class="hero-growth-line-right" aria-hidden="true"></span>
+      </div>
+      <div class="hero-tagline">{{ 'home.hero.tagline' | translate }}</div>
     </div>
-
-    <uplix-card-grid [items]="buCards()"></uplix-card-grid>
   </section>
-
-  <section class="section">
-    <uplix-process
-      [title]="'home.process.title' | translate"
-      [steps]="process">
-    </uplix-process>
+  <section class="home-about">
+    <div class="home-about-inner">
+      <h2 class="home-about-title">{{ 'home.about.title' | translate }}</h2>
+      <p class="home-about-desc">{{ 'home.about.desc' | translate }}</p>
+    </div>
   </section>
-
-  <section class="section">
-    <uplix-final-cta
-      [title]="'home.final.title' | translate"
-      [subtitle]="'home.final.subtitle' | translate"
-      [buttonLabel]="'home.final.button' | translate"
-      buttonLink="/quote">
-    </uplix-final-cta>
-  </section>
-
-</div>
+</main>

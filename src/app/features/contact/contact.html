@@ -5,10 +5,10 @@
       <p class="hero__subtitle">{{ 'contact.subtitle' | translate }}</p>
 
       <div class="hero__actions">
-        <a class="btn btn--ghost" routerLink="/quote">
+        <a class="btn btn--ghost" [routerLink]="'/quote' | langLink">
           {{ 'common.request_quote' | translate }}
         </a>
-        <a class="btn" routerLink="/resources">
+        <a class="btn" [routerLink]="'/resources' | langLink">
           {{ 'contact.actions.view_resources' | translate }}
         </a>
       </div>
@@ -60,8 +60,8 @@
     <h2 class="final__title">{{ 'contact.final.title' | translate }}</h2>
     <p class="final__subtitle">{{ 'contact.final.subtitle' | translate }}</p>
     <div class="final__actions">
-      <a class="btn" routerLink="/quote">{{ 'common.request_quote' | translate }}</a>
-      <a class="btn btn--ghost" routerLink="/bu/ppe">{{ 'contact.actions.view_ppe' | translate }}</a>
+      <a class="btn" [routerLink]="'/quote' | langLink">{{ 'common.request_quote' | translate }}</a>
+      <a class="btn btn--ghost" [routerLink]="'/bu/ppe' | langLink">{{ 'contact.actions.view_ppe' | translate }}</a>
     </div>
   </section>
 </section>

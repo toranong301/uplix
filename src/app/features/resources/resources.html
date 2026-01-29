@@ -5,10 +5,10 @@
       <p class="hero__subtitle">{{ 'resources.subtitle' | translate }}</p>
 
       <div class="hero__actions">
-        <a class="btn btn--ghost" routerLink="/quote">
+        <a class="btn btn--ghost" [routerLink]="'/quote' | langLink">
           {{ 'common.request_quote' | translate }}
         </a>
-        <a class="btn" routerLink="/bu/ppe">
+        <a class="btn" [routerLink]="'/bu/ppe' | langLink">
           {{ 'resources.view_ppe' | translate }}
         </a>
       </div>
@@ -56,13 +56,25 @@
       <p class="card__desc">{{ item.descKey | translate }}</p>
 
       <div class="card__actions">
-        <a
-          class="btn btn--small"
-          [href]="item.href"
-          [attr.target]="item.external ? '_blank' : null"
-          [attr.rel]="item.external ? 'noopener noreferrer' : null">
-          {{ item.ctaKey | translate }}
-        </a>
+        <ng-container *ngIf="isDownloadLink(item.href); else normalLink">
+          <uplix-download-gate
+            [href]="item.href"
+            [labelKey]="item.ctaKey"
+            [titleKey]="item.titleKey"
+            buttonClass="btn dg-btn--compact"
+            source="resources"
+          ></uplix-download-gate>
+        </ng-container>
+
+        <ng-template #normalLink>
+          <a
+            class="btn btn--small"
+            [href]="item.href"
+            [attr.target]="item.external ? '_blank' : null"
+            [attr.rel]="item.external ? 'noopener noreferrer' : null">
+            {{ item.ctaKey | translate }}
+          </a>
+        </ng-template>
       </div>
     </article>
   </section>

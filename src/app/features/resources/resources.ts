@@ -2,6 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component, computed, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+import { LangLinkPipe } from '../../shared/pipes/lang-link.pipe';
+import { DownloadGateComponent } from '../../shared/sections/download-gate/download-gate';
 
 type ResourceItem = {
   titleKey: string;
@@ -16,7 +18,7 @@ type ResourceItem = {
 @Component({
   selector: 'app-resources',
   standalone: true,
-  imports: [CommonModule, RouterLink, TranslateModule],
+  imports: [CommonModule, RouterLink, TranslateModule, DownloadGateComponent, LangLinkPipe],
   templateUrl: './resources.html',
   styleUrl: './resources.scss',
 })
@@ -50,4 +52,8 @@ export class ResourcesComponent {
   }
 
   trackByTitleKey = (_: number, item: ResourceItem) => item.titleKey;
+
+  isDownloadLink(link: string): boolean {
+    return link.endsWith('.pdf') || link.includes('/downloads/');
+  }
 }

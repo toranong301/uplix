@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, computed, effect, inject } from '@angular/core';
 import { ReactiveFormsModule, UntypedFormBuilder, Validators } from '@angular/forms';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { QuoteCartService } from '../../shared/services/quote-cart.service';
 
@@ -16,6 +16,17 @@ type PpeCategoryKey =
   | 'ppe.fire_tank'
   | 'ppe.refill_service';
 
+type BuOption = {
+  key: string;
+  label: string;
+  descKey: string;
+};
+
+type RequestTypeOption = {
+  key: string;
+  labelKey: string;
+};
+
 type QuoteItem = {
   bu?: string;
   category?: string; // เช่น ppe.head
@@ -26,7 +37,7 @@ type QuoteItem = {
 
 @Component({
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, RouterLink, TranslateModule],
+  imports: [CommonModule, ReactiveFormsModule, TranslateModule],
   templateUrl: './quote.html',
   styleUrl: './quote.scss'
 })
@@ -122,10 +133,17 @@ cartTotalQty = computed(() => this.cart.items().reduce((s, x) => s + (Number(x.q
 
 
 
-  buOptions = [
-    { key: 'ppe', label: 'bu.ppe.title_short' },
-    { key: 'experience-innovative', label: 'bu.learning.title_short' },
-    { key: 'waste-management', label: 'bu.waste.title_short' }
+  buOptions: BuOption[] = [
+    { key: 'ppe', label: 'bu.ppe.title_short', descKey: 'home.bu.cards.ppe.desc' },
+    { key: 'experience-innovative', label: 'bu.learning.title_short', descKey: 'home.bu.cards.learning.desc' },
+    { key: 'waste-management', label: 'bu.waste.title_short', descKey: 'home.bu.cards.waste.desc' }
+  ];
+
+  requestTypeOptions: RequestTypeOption[] = [
+    { key: 'quotation', labelKey: 'quote.rfq.types.quotation' },
+    { key: 'solution', labelKey: 'quote.rfq.types.solution' },
+    { key: 'compare', labelKey: 'quote.rfq.types.compare' },
+    { key: 'unsure', labelKey: 'quote.rfq.types.unsure' }
   ];
 
   ppeCategories: PpeCategoryKey[] = [
@@ -148,7 +166,8 @@ cartTotalQty = computed(() => this.cart.items().reduce((s, x) => s + (Number(x.q
     phone: ['', Validators.required],
     email: ['', [Validators.required, Validators.email]],
     quantity: [''],
-    detail: ['']
+    detail: [''],
+    requestType: ['quotation', Validators.required]
   });
 
   ngOnInit(): void {
@@ -256,6 +275,7 @@ cartTotalQty = computed(() => this.cart.items().reduce((s, x) => s + (Number(x.q
 
     return [
       `UPLIX Order/Quote Request`,
+      `Request Type: ${v.requestType || '-'}`,
       `BU: ${v.bu || '-'}`,
       `Category: ${v.category || '-'}`,
       `Company: ${v.company || '-'}`,

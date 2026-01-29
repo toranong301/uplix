@@ -1,0 +1,66 @@
+.dg-backdrop{
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 10, 20, .5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  z-index: 1000;
+}
+
+.dg-modal{
+  width: min(520px, 92vw);
+  padding: 18px;
+}
+
+.dg-head{
+  margin-bottom: 12px;
+}
+.dg-title{
+  margin: 0 0 6px;
+  font-size: 20px;
+}
+.dg-subtitle{
+  margin: 0;
+  color: rgba(0,0,0,.7);
+}
+
+.dg-label{
+  display: block;
+  font-weight: 600;
+  margin-top: 8px;
+}
+.dg-input{
+  width: 100%;
+  margin-top: 6px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,.2);
+  outline: none;
+}
+.dg-input:focus{
+  border-color: rgba(0,0,64,.5);
+  box-shadow: 0 0 0 3px rgba(0,0,64,.08);
+}
+
+.dg-error{
+  margin-top: 8px;
+  color: #b00020;
+  font-size: 13px;
+}
+
+.dg-actions{
+  margin-top: 14px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Compact button override for pages that use smaller CTA sizing */
+.dg-btn--compact{
+  padding: 9px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,.12);
+}

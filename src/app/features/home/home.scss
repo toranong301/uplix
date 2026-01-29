@@ -1,8 +1,182 @@
-.section { margin-top: 18px; }
+.home{
+  min-height: calc(100vh - 72px);
+}
+.hero{
+  background: linear-gradient(180deg, #efefef 40%, #ffd775 80%, #000042 100%);
+  min-height: 70vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 60px 16px 80px;
+}
+.hero-inner{
+  display: grid;
+  gap: 18px;
+  justify-items: center;
+}
+.hero-logo{
+  width: 140px;
+  height: auto;
+}
+.hero-subtitle{
+  font-size: 13px;
+  letter-spacing: .25em;
+  color: #504f4f;
+}
+.hero-title{
+  font-size: clamp(30px, 4.8vw, 56px);
+  color: #000000;
+  margin: 0;
+}
+.hero-growth{
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-size: clamp(36px, 5.2vw, 64px);
+  letter-spacing: .35em;
+  color: #fdb201;
+  font-weight: 700;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.hero-growth-text{
+  display: inline-block;
+}
+.hero-growth-line-left,
+.hero-growth-line-right {
+  display: inline-block;
+  width: clamp(140px, 14vw, 240px);
+  height: 8px;
+  border-radius: 999px;
+  box-shadow: 0 2px 6px rgba(253, 178, 1, 0.35);
+}
 
-.row2{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
+/* ซ้าย: สว่าง -> มืด */
+.hero-growth-line-left {
+  background: linear-gradient(90deg, #ffd775 0%, #fdb201 100%);
+}
+
+/* ขวา: มืด -> สว่าง */
+.hero-growth-line-right {
+  background: linear-gradient(90deg, #fdb201 0%, #ffd775 100%);
+}
+
+.hero-tagline{
+  font-size: clamp(18px, 3vw, 34px);
+  color: #000000;
+}
+.home-about{
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding: clamp(86px, 13.33vw, 187px) 16px;
+  background:
+    radial-gradient(900px 500px at 50% -10%, rgba(253,178,1,.18), transparent 60%),
+    radial-gradient(700px 420px at 15% 35%, rgba(253,120,0,.12), transparent 60%),
+    radial-gradient(700px 420px at 85% 55%, rgba(255,215,117,.10), transparent 60%),
+    linear-gradient(180deg, #000042 0%, #000035 100%);
+}
+
+/* top transition overlay (ทำรอยต่อให้เนียน) */
+.home-about::before{
+  content:"";
+  position:absolute;
+  left: 0;
+  right: 0;
+  top: -80px;
+  height: 140px;
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0) 0%,
+    rgba(0,0,66,0.45) 45%,
+    rgba(0,0,66,1) 100%
+  );
+  pointer-events:none;
+}
+
+/* glow blob (เอาไว้ก้อนเดียวพอ) */
+.home-about::after{
+  content:"";
+  position:absolute;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  right: -200px;
+  bottom: -220px;
+  background: radial-gradient(circle, rgba(253,120,0,.42) 0%, rgba(253,120,0,0) 65%);
+  filter: blur(48px);
+  opacity: .55;
+  pointer-events:none;
+}
+.home-about-inner{
+  position: relative;
+  max-width: 920px;
+  margin: 0 auto;
+  display: grid;
+  gap: 18px;
+  justify-items: center;
+
+  /* เอาการ์ดออก */
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+.home-about-title{
+  margin: 0;
+  font-size: clamp(34px, 5vw, 64px);
+  color: #fff;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  text-wrap: balance;
+}
+
+.home-about-title::after{
+  content:"";
+  display:block;
+  margin-top: 14px;
+  width: clamp(110px, 16vw, 180px);
+  height: 8px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #ffd775 0%, #fdb201 55%, #fd7800 100%);
+  box-shadow: 0 8px 22px rgba(253,178,1,0.20);
+}
+
+.home-about-desc{
+  margin: 0;
+  max-width: 760px;
+  font-size: clamp(15px, 2.1vw, 20px);
+  color: rgba(255,255,255,0.88);
+  line-height: 1.75;
+  font-weight: 400;
+  text-wrap: pretty;
+}
+
+@media (max-width: 520px){
+  .home-about-inner{ border-radius: 22px; gap: 14px; }
+  .home-about-title::after{ height: 7px; margin-top: 12px; }
+}
+
+@media (max-width: 600px){
+  .hero{
+    min-height: 60vh;
+    padding: 40px 14px 60px;
+  }
+  .hero-logo{ width: 110px; }
+  .hero-subtitle{ font-size: 12px; letter-spacing: .2em; }
+  .hero-title{ font-size: clamp(24px, 7vw, 34px); }
+  .hero-growth{
+    gap: 10px;
+    letter-spacing: .25em;
+    font-size: clamp(28px, 8vw, 40px);
+  }
+  .hero-growth-line-left,
+  .hero-growth-line-right{
+    width: clamp(90px, 30vw, 140px);
+    height: 6px;
+  }
+  .hero-tagline{ font-size: clamp(14px, 4vw, 20px); }
 }

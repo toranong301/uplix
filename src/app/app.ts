@@ -11,7 +11,7 @@ import { HeaderComponent } from './core/layout/header/header';
   imports: [RouterOutlet, HeaderComponent, FooterComponent],
   template: `
     <app-header />
-    <main style="padding: 18px 0 56px;">
+    <main>
       <router-outlet />
     </main>
     <app-footer />

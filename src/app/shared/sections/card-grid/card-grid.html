@@ -6,7 +6,7 @@
     <a
       *ngIf="item.link"
       class="btn btn-secondary"
-      [routerLink]="item.link"
+      [routerLink]="item.link | langLink"
       [queryParams]="item.queryParams"
       style="margin-top:10px;"
     >

@@ -1,0 +1,18 @@
+<section class="page">
+  <div class="container">
+    <h1 class="page-title">{{ 'sitemap.title' | translate }}</h1>
+    <p class="page-subtitle">{{ 'sitemap.subtitle' | translate }}</p>
+
+    <div class="grid">
+      <div class="card" *ngFor="let item of navItems">
+        <h3>{{ item.labelKey | translate }}</h3>
+        <a class="link" [routerLink]="item.path | langLink">{{ 'nav.view_overview' | translate }}</a>
+        <div class="sub-links">
+          <a class="link" *ngFor="let group of item.groups" [routerLink]="item.path | langLink">
+            {{ group.titleKey | translate }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

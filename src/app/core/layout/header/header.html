@@ -1,55 +1,120 @@
-<header class="uplix-header">
-  <div class="uplix-header__inner container">
-    <!-- Brand -->
-    <a routerLink="/" class="uplix-brand" aria-label="UPLIX Home">
-      <img class="uplix-brand__logo" src="assets/brand/UPLIX_LOGO.png" alt="UPLIX" />
-    </a>
-
-    <!-- Nav -->
-    <nav class="uplix-nav">
-  <a class="uplix-nav__link" routerLink="/" routerLinkActive="is-active" [routerLinkActiveOptions]="{ exact: true }">
-    {{ 'nav.home' | translate }}
-  </a>
-
-  <div class="uplix-nav__dropdown">
-    <button class="uplix-nav__link uplix-nav__btn"
-            type="button"
-            [class.is-active]="isBuRoute()">
-      {{ 'nav.bu' | translate }} <span class="uplix-nav__chev">▾</span>
-    </button>
-
-    <div class="uplix-nav__panel">
-      <a class="menu-item" *ngFor="let item of buItems" [routerLink]="item.route">
-        <span class="title">{{ item.label }}</span>
+<header class="simple-header" [class.is-sticky]="sticky()">
+  <div class="container-fluid header-inner">
+    <div class="header-left">
+      <a class="brand" [routerLink]="'/home' | langLink" aria-label="UPLIX Home">
+        <img class="brand-logo" src="assets/brand/UPLIX_LOGO.png" alt="UPLIX" />
       </a>
+    </div>
+
+    <div class="header-right">
+      <nav class="nav-desktop" aria-label="Primary">
+        <a class="nav-link" [routerLink]="'/home' | langLink">{{ 'nav.home' | translate }}</a>
+
+      <div
+        class="nav-item"
+        [class.is-open]="showProductsMenu()"
+        (mouseenter)="openProductsMenu()"
+        (mouseleave)="closeProductsMenu()"
+        (focusin)="openProductsMenu()"
+        (focusout)="closeProductsMenu()"
+      >
+        <a class="nav-link" [routerLink]="'/bu/learning' | langLink">
+          {{ 'nav.products_services' | translate }}
+          <span class="nav-caret" aria-hidden="true"></span>
+        </a>
+        <div
+          class="products-menu"
+          [class.is-open]="showProductsMenu()"
+          (mouseenter)="openProductsMenu()"
+          (mouseleave)="closeProductsMenu()"
+        >
+          <div class="products-left">
+            <div class="products-title">{{ productsMenu.titleKey | translate }}</div>
+            <p class="products-desc">{{ productsMenu.descKey | translate }}</p>
+          </div>
+          <div class="products-columns">
+            <div class="products-col">
+              <div class="products-col-title">{{ 'nav.products.learning_title' | translate }}</div>
+              <a class="products-link" *ngFor="let item of productsMenu.learning" [routerLink]="item.link | langLink">
+                {{ item.labelKey | translate }}
+              </a>
+            </div>
+            <div class="products-col">
+              <div class="products-col-title">{{ 'nav.products.ppe_title' | translate }}</div>
+              <a class="products-link" *ngFor="let item of productsMenu.ppe" [routerLink]="item.link | langLink">
+                {{ item.labelKey | translate }}
+              </a>
+            </div>
+            <div class="products-col">
+              <div class="products-col-title">{{ 'nav.products.waste_title' | translate }}</div>
+              <a class="products-link" *ngFor="let item of productsMenu.waste" [routerLink]="item.link | langLink">
+                {{ item.labelKey | translate }}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+        <a class="nav-link" [routerLink]="'/resources' | langLink">{{ 'nav.resources' | translate }}</a>
+        <a class="nav-link" [routerLink]="'/about' | langLink">{{ 'nav.about' | translate }}</a>
+        <a class="nav-link" [routerLink]="'/contact' | langLink">{{ 'nav.contact' | translate }}</a>
+        <a class="nav-link cta" [routerLink]="'/quote' | langLink">{{ 'nav.quote' | translate }}</a>
+      </nav>
+
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button type="button" class="lang-btn" [class.is-active]="currentLang() === 'en'" (click)="switchLang('en')">
+          EN
+        </button>
+        <button type="button" class="lang-btn" [class.is-active]="currentLang() === 'th'" (click)="switchLang('th')">
+          TH
+        </button>
+      </div>
+
+      <button class="hamburger" type="button" aria-label="Open menu" (click)="toggleMobile()">
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </div>
 
-  <a class="uplix-nav__link" routerLink="/resources" routerLinkActive="is-active">
-    {{ 'nav.resources' | translate }}
-  </a>
-  <a class="uplix-nav__link" routerLink="/about" routerLinkActive="is-active">
-    {{ 'nav.about' | translate }}
-  </a>
-  <a class="uplix-nav__link" routerLink="/contact" routerLinkActive="is-active">
-    {{ 'nav.contact' | translate }}
-  </a>
-
-  <div class="lang-switch" role="group" aria-label="Language">
-    <button type="button" class="lang-btn" [class.is-active]="lang==='th'" (click)="setLang('th')">TH</button>
-    <button type="button" class="lang-btn" [class.is-active]="lang==='en'" (click)="setLang('en')">EN</button>
-  </div>
-</nav>
-
-<a class="btn btn-primary uplix-cta-btn" routerLink="/quote">
-  {{ 'nav.quote' | translate }}
-</a>
-
-<a class="cart" routerLink="/quote">
-  {{ 'quote_cart.title' | translate }}
-  <span class="badge" *ngIf="cartCount() > 0">{{ cartCount() }}</span>
-</a>
-
-
-  </div>
+  <div class="drawer-backdrop" [class.is-open]="mobileOpen()" (click)="closeMobile()"></div>
+  <aside class="drawer" [class.is-open]="mobileOpen()">
+    <div class="drawer-header">
+      <img class="drawer-logo" src="assets/brand/UPLIX_LOGO.png" alt="UPLIX" />
+      <button class="drawer-close" type="button" (click)="closeMobile()" aria-label="Close menu">✕</button>
+    </div>
+    <div class="drawer-links">
+      <a class="drawer-link" [routerLink]="'/home' | langLink" (click)="closeMobile()">{{ 'nav.home' | translate }}</a>
+      <div class="drawer-accordion-group">
+        <button
+          type="button"
+          class="drawer-link drawer-accordion"
+          [class.is-open]="mobileProductsOpen()"
+          (click)="toggleMobileProducts()"
+          aria-expanded="{{ mobileProductsOpen() }}"
+        >
+          {{ 'nav.products_services' | translate }}
+          <span class="drawer-caret" aria-hidden="true"></span>
+        </button>
+        <div class="drawer-submenu" [class.is-open]="mobileProductsOpen()">
+          <a class="drawer-sublink" [routerLink]="'/bu/learning' | langLink" (click)="closeMobile()">
+            {{ 'nav.products.learning_title' | translate }}
+            <span class="drawer-arrow" aria-hidden="true"></span>
+          </a>
+          <a class="drawer-sublink" [routerLink]="'/bu/ppe' | langLink" (click)="closeMobile()">
+            {{ 'nav.products.ppe_title' | translate }}
+            <span class="drawer-arrow" aria-hidden="true"></span>
+          </a>
+          <a class="drawer-sublink" [routerLink]="'/bu/waste' | langLink" (click)="closeMobile()">
+            {{ 'nav.products.waste_title' | translate }}
+            <span class="drawer-arrow" aria-hidden="true"></span>
+          </a>
+        </div>
+      </div>
+      <a class="drawer-link" [routerLink]="'/resources' | langLink" (click)="closeMobile()">{{ 'nav.resources' | translate }}</a>
+      <a class="drawer-link" [routerLink]="'/about' | langLink" (click)="closeMobile()">{{ 'nav.about' | translate }}</a>
+      <a class="drawer-link" [routerLink]="'/contact' | langLink" (click)="closeMobile()">{{ 'nav.contact' | translate }}</a>
+      <a class="drawer-link cta" [routerLink]="'/quote' | langLink" (click)="closeMobile()">{{ 'nav.quote' | translate }}</a>
+    </div>
+  </aside>
 </header>

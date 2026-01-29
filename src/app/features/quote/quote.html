@@ -4,17 +4,49 @@
     <p class="p">{{ 'quote.subtitle' | translate }}</p>
 
     <form class="form" [formGroup]="form" (ngSubmit)="sendEmail()">
-      <div class="row">
-        <div class="field">
-          <label>{{ 'quote.fields.bu' | translate }}</label>
-          <select formControlName="bu">
-            <option *ngFor="let b of buOptions" [value]="b.key">
-              {{ b.label | translate }}
-            </option>
-          </select>
+      <section class="rfq">
+        <div class="rfq__head">
+          <span class="rfq__badge">{{ 'quote.rfq.badge' | translate }}</span>
+          <h2 class="rfq__title">{{ 'quote.rfq.title' | translate }}</h2>
+          <p class="rfq__desc">{{ 'quote.rfq.desc' | translate }}</p>
+        </div>
+        <div class="rfq__type">
+          <label class="rfq__label">{{ 'quote.rfq.type_label' | translate }}</label>
+          <div class="rfq__segmented">
+            <label class="rfq__segmented-item" *ngFor="let t of requestTypeOptions">
+              <input type="radio" formControlName="requestType" [value]="t.key" />
+              <span>{{ t.labelKey | translate }}</span>
+            </label>
+          </div>
+        </div>
+        <ul class="rfq__list">
+          <li>{{ 'quote.rfq.points.1' | translate }}</li>
+          <li>{{ 'quote.rfq.points.2' | translate }}</li>
+          <li>{{ 'quote.rfq.points.3' | translate }}</li>
+        </ul>
+      </section>
+
+      <section class="bu-section">
+        <div class="bu-head">
+          <div>
+            <h3 class="bu-title">{{ 'quote.bu_section.title' | translate }}</h3>
+            <p class="bu-desc">{{ 'quote.bu_section.desc' | translate }}</p>
+          </div>
         </div>
 
-        <div class="field" *ngIf="isPpe">
+        <div class="bu-grid">
+          <label class="bu-card" *ngFor="let b of buOptions">
+            <input type="radio" formControlName="bu" [value]="b.key" />
+            <div class="bu-card__body">
+              <div class="bu-card__title">{{ b.label | translate }}</div>
+              <div class="bu-card__desc">{{ b.descKey | translate }}</div>
+            </div>
+          </label>
+        </div>
+      </section>
+
+      <div class="row" *ngIf="isPpe">
+        <div class="field">
           <label>{{ 'quote.fields.category_ppe' | translate }}</label>
           <select formControlName="category">
             <option value="">{{ 'quote.placeholders.select_category' | translate }}</option>
@@ -134,9 +166,6 @@
           {{ 'quote.actions.line' | translate }}
         </button>
 
-        <a class="btn btn-secondary" routerLink="/bu/ppe">
-          {{ 'quote.actions.back_ppe' | translate }}
-        </a>
       </div>
     </form>
   </div>

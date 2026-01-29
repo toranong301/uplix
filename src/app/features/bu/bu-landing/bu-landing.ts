@@ -6,6 +6,7 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { BU } from '../bu.config';
 
 import { TranslateModule } from '@ngx-translate/core';
+import { LangLinkPipe } from '../../../shared/pipes/lang-link.pipe';
 import { CardGridComponent, GridCard } from '../../../shared/sections/card-grid/card-grid';
 import { FaqComponent } from '../../../shared/sections/faq/faq';
 import { FinalCtaComponent } from '../../../shared/sections/final-cta/final-cta';
@@ -22,7 +23,8 @@ import { ProcessComponent } from '../../../shared/sections/process/process';
     ProcessComponent,
     FaqComponent,
     FinalCtaComponent,
-    TranslateModule
+    TranslateModule,
+    LangLinkPipe
   ],
   templateUrl: './bu-landing.html',
   styleUrl: './bu-landing.scss',

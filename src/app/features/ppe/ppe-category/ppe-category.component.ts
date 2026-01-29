@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, computed, inject, signal } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+import { LangLinkPipe } from '../../../shared/pipes/lang-link.pipe';
 import { QuoteCartService } from '../../../shared/services/quote-cart.service';
 
 type PpeItem = {
@@ -24,7 +25,7 @@ type SelectedLine = {
 @Component({
   selector: 'uplix-ppe-category',
   standalone: true,
-  imports: [CommonModule, RouterLink, TranslateModule],
+  imports: [CommonModule, RouterLink, TranslateModule, LangLinkPipe],
   templateUrl: './ppe-category.component.html',
   styleUrls: ['./ppe-category.component.scss'],
 })

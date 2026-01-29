@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, computed } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+import { LangLinkPipe } from '../../shared/pipes/lang-link.pipe';
 
 type ContactCard = {
   titleKey: string;
@@ -15,7 +16,7 @@ type ContactCard = {
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, RouterLink, TranslateModule],
+  imports: [CommonModule, RouterLink, TranslateModule, LangLinkPipe],
   templateUrl: './contact.html',
   styleUrl: './contact.scss',
 })

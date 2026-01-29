@@ -4,6 +4,7 @@ import { Component, DestroyRef, computed, inject, signal } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+import { LangLinkPipe } from '../../../shared/pipes/lang-link.pipe';
 
 import { BU } from '../bu.config';
 import type { BuKey, ServiceItem } from '../bu.types';
@@ -32,7 +33,7 @@ type TwoCol = { titleKey: string; descKey: string; image: string; ctaKey: string
 @Component({
   selector: 'uplix-service-detail',
   standalone: true,
-  imports: [CommonModule, RouterLink, TranslateModule],
+  imports: [CommonModule, RouterLink, TranslateModule, LangLinkPipe],
   templateUrl: './service-detail.component.html',
   styleUrl: './service-detail.component.scss',
 })

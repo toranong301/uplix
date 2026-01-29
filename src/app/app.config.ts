@@ -4,23 +4,13 @@ import { routes } from './app.routes';
 
 import { provideHttpClient, withFetch } from '@angular/common/http';
 
-import { provideTranslateService, TranslateService } from '@ngx-translate/core';
+import { provideTranslateService } from '@ngx-translate/core';
 import { provideTranslateHttpLoader } from '@ngx-translate/http-loader';
-import { firstValueFrom } from 'rxjs';
+import { LanguageService } from './core/i18n/language.service';
 
 export function initI18nFactory() {
-  const t = inject(TranslateService);
-
-  return async () => {
-    t.addLangs(['th', 'en']);
-
-    const saved = typeof window !== 'undefined' ? localStorage.getItem('uplix_lang') : null;
-    const browser = t.getBrowserLang();
-    const lang = (saved as 'th' | 'en') ?? (browser === 'th' ? 'th' : 'en');
-
-    await firstValueFrom(t.use(lang));
-    if (typeof document !== 'undefined') document.documentElement.lang = lang;
-  };
+  const lang = inject(LanguageService);
+  return () => lang.init();
 }
 
 export const appConfig: ApplicationConfig = {

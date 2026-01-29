@@ -1,0 +1,27 @@
+<section class="page">
+  <div class="container">
+    <h1 class="page-title">{{ 'ir.title' | translate }}</h1>
+    <p class="page-subtitle">{{ 'ir.subtitle' | translate }}</p>
+
+    <div class="anchor" id="latest-docs"></div>
+    <div class="section">
+      <h2>{{ 'ir.latest_docs' | translate }}</h2>
+      <p>{{ 'ir.latest_docs_desc' | translate }}</p>
+      <a class="link" [routerLink]="'/information-inquiry/inquiry-form' | langLink">
+        {{ 'ir.request_info' | translate }}
+      </a>
+    </div>
+
+    <div class="anchor" id="set"></div>
+    <div class="section">
+      <h2>{{ 'ir.set' | translate }}</h2>
+      <p>{{ 'ir.set_desc' | translate }}</p>
+    </div>
+
+    <div class="anchor" id="press"></div>
+    <div class="section">
+      <h2>{{ 'ir.press' | translate }}</h2>
+      <p>{{ 'ir.press_desc' | translate }}</p>
+    </div>
+  </div>
+</section>

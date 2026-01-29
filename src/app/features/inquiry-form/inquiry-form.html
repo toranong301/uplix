@@ -1,0 +1,32 @@
+<section class="page">
+  <div class="container">
+    <h1 class="page-title">{{ 'inquiry_form.title' | translate }}</h1>
+    <p class="page-subtitle">{{ 'inquiry_form.subtitle' | translate }}</p>
+
+    <form class="form">
+      <div class="field">
+        <label>{{ 'inquiry_form.fields.name' | translate }}</label>
+        <input type="text" [placeholder]="'inquiry_form.placeholders.name' | translate" />
+      </div>
+      <div class="field">
+        <label>{{ 'inquiry_form.fields.company' | translate }}</label>
+        <input type="text" [placeholder]="'inquiry_form.placeholders.company' | translate" />
+      </div>
+      <div class="field">
+        <label>{{ 'inquiry_form.fields.email' | translate }}</label>
+        <input type="email" [placeholder]="'inquiry_form.placeholders.email' | translate" />
+      </div>
+      <div class="field">
+        <label>{{ 'inquiry_form.fields.phone' | translate }}</label>
+        <input type="text" [placeholder]="'inquiry_form.placeholders.phone' | translate" />
+      </div>
+      <div class="field full">
+        <label>{{ 'inquiry_form.fields.message' | translate }}</label>
+        <textarea rows="5" [placeholder]="'inquiry_form.placeholders.message' | translate"></textarea>
+      </div>
+      <button type="button" class="btn btn-primary">
+        {{ 'inquiry_form.submit' | translate }}
+      </button>
+    </form>
+  </div>
+</section>

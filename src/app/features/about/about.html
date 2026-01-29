@@ -5,10 +5,10 @@
       <p class="hero__subtitle">{{ 'about.subtitle' | translate }}</p>
 
       <div class="hero__actions">
-        <a class="btn btn--ghost" routerLink="/resources">
+        <a class="btn btn--ghost" [routerLink]="'/resources' | langLink">
           {{ 'about.actions.view_resources' | translate }}
         </a>
-        <a class="btn" routerLink="/quote">
+        <a class="btn" [routerLink]="'/quote' | langLink">
           {{ 'common.request_quote' | translate }}
         </a>
       </div>
@@ -55,19 +55,19 @@
       <article class="card">
         <h3 class="card__title">{{ 'about.bu.items.learning.title' | translate }}</h3>
         <p class="card__desc">{{ 'about.bu.items.learning.desc' | translate }}</p>
-        <a class="link" routerLink="/bu/learning">{{ 'common.view_detail' | translate }}</a>
+        <a class="link" [routerLink]="'/bu/learning' | langLink">{{ 'common.view_detail' | translate }}</a>
       </article>
 
       <article class="card">
         <h3 class="card__title">{{ 'about.bu.items.ppe.title' | translate }}</h3>
         <p class="card__desc">{{ 'about.bu.items.ppe.desc' | translate }}</p>
-        <a class="link" routerLink="/bu/ppe">{{ 'common.view_detail' | translate }}</a>
+        <a class="link" [routerLink]="'/bu/ppe' | langLink">{{ 'common.view_detail' | translate }}</a>
       </article>
 
       <article class="card">
         <h3 class="card__title">{{ 'about.bu.items.waste.title' | translate }}</h3>
         <p class="card__desc">{{ 'about.bu.items.waste.desc' | translate }}</p>
-        <a class="link" routerLink="/bu/waste">{{ 'common.view_detail' | translate }}</a>
+        <a class="link" [routerLink]="'/bu/waste' | langLink">{{ 'common.view_detail' | translate }}</a>
       </article>
     </div>
   </section>
@@ -91,8 +91,8 @@
     <h2 class="final__title">{{ 'about.final.title' | translate }}</h2>
     <p class="final__subtitle">{{ 'about.final.subtitle' | translate }}</p>
     <div class="final__actions">
-      <a class="btn" routerLink="/quote">{{ 'common.request_quote' | translate }}</a>
-      <a class="btn btn--ghost" routerLink="/bu/ppe">{{ 'about.actions.view_ppe' | translate }}</a>
+      <a class="btn" [routerLink]="'/quote' | langLink">{{ 'common.request_quote' | translate }}</a>
+      <a class="btn btn--ghost" [routerLink]="'/bu/ppe' | langLink">{{ 'about.actions.view_ppe' | translate }}</a>
     </div>
   </section>
 </section>

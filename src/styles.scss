@@ -1,14 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 :root{
-  --uplix-navy: #000040;   /* Trust */
-  --uplix-orange: #F8B000; /* Creative / CTA */
-  --uplix-bg: #F8F8F8;
-  --uplix-ink: #111127;
-  --uplix-muted: #A1A1B5;
-  --uplix-soft: #4F4B6F;
+  --uplix-ink: #0b0c1c;
+  --uplix-slate: #2f3348;
+  --uplix-muted: #6b6f86;
+  --uplix-accent: #f2b43a;
+  --uplix-accent-dark: #d99c24;
+  --uplix-bg: #f6f6fb;
+  --uplix-surface: #ffffff;
 
-  --radius: 16px;
-  --shadow: 0 10px 30px rgba(0,0,0,.08);
+  --radius: 18px;
+  --shadow: 0 14px 38px rgba(0,0,0,.10);
 }
 html { scroll-behavior: smooth; }
 
@@ -16,9 +17,9 @@ html { scroll-behavior: smooth; }
 html,body{ height:100%; }
 body{
   margin:0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans Thai", sans-serif;
+  font-family: "Space Grotesk", "Noto Sans Thai", "Helvetica Neue", sans-serif;
   color: var(--uplix-ink);
-  background: var(--uplix-bg);
+  background: radial-gradient(circle at top, #ffffff 0%, #f4f5fb 45%, #eef0f8 100%);
 }
 
 .container{
@@ -43,11 +44,14 @@ body{
   text-decoration:none;
   font-weight:600;
 }
-.btn-primary{ background:var(--uplix-orange); color:#151515; }
-.btn-secondary{ background:transparent; border-color:var(--uplix-navy); color:var(--uplix-navy); }
-.btn-ghost{ background:transparent; color:var(--uplix-navy); }
+.btn-primary{ background:var(--uplix-accent); color:#151515; }
+.btn-primary:hover{ background: var(--uplix-accent-dark); }
+.btn-secondary{ background:transparent; border-color:var(--uplix-ink); color:var(--uplix-ink); }
+.btn-ghost{ background:transparent; color:var(--uplix-ink); }
 
 .h1{ font-size: clamp(28px, 4vw, 44px); line-height:1.1; margin:0; }
+.h2{ font-size: 36px; line-height:1.6; margin: 8px 0 0; color: rgba(17,17,39,.85); }
+.h3{ font-size: clamp(28px, 4vw, 44px); line-height:1.1; margin:0; }
 .p{ font-size: 16px; line-height:1.6; margin: 8px 0 0; color: rgba(17,17,39,.85); }
 
 .grid-3{ display:grid; gap:16px; grid-template-columns: repeat(3, minmax(0, 1fr)); }

@@ -2,6 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+import { DownloadGateComponent } from '../download-gate/download-gate';
+import { LangLinkPipe } from '../../pipes/lang-link.pipe';
 
 export interface Cta {
   label: string;
@@ -12,7 +14,7 @@ export interface Cta {
 @Component({
   selector: 'uplix-hero',
   standalone: true,
-  imports: [CommonModule, RouterLink, TranslateModule],
+  imports: [CommonModule, RouterLink, TranslateModule, DownloadGateComponent, LangLinkPipe],
   templateUrl: './hero.html',
   styleUrl: './hero.scss'
 })
@@ -22,6 +24,7 @@ export class HeroComponent {
   @Input({ required: true }) heroImage!: string;
   @Input() primaryCta?: Cta;
   @Input() secondaryCta?: Cta;
+  @Input() overlay = false;
 
   isDownloadLink(link: string): boolean {
     return link.endsWith('.pdf') || link.includes('/downloads/');

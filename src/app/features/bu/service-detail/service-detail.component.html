@@ -9,7 +9,7 @@
         <p class="ft-subtitle">{{ 'bu.learning.fire_training.hero.subtitle' | translate }}</p>
 
         <div class="ft-actions">
-          <a class="btn primary" [routerLink]="quoteLink().link" [queryParams]="quoteLink().queryParams">
+          <a class="btn primary" [routerLink]="quoteLink().link | langLink" [queryParams]="quoteLink().queryParams">
             {{ 'common.request_quote' | translate }}
           </a>
           <a class="btn ghost" href="#outline">{{ 'bu.learning.fire_training.actions.view_outline' | translate }}</a>
@@ -120,7 +120,7 @@
           <h2>{{ 'bu.learning.fire_training.final.title' | translate }}</h2>
           <p>{{ 'bu.learning.fire_training.final.subtitle' | translate }}</p>
         </div>
-        <a class="btn primary" [routerLink]="quoteLink().link" [queryParams]="quoteLink().queryParams">
+        <a class="btn primary" [routerLink]="quoteLink().link | langLink" [queryParams]="quoteLink().queryParams">
           {{ 'common.request_quote' | translate }}
         </a>
       </div>
@@ -133,9 +133,9 @@
   <section class="page" *ngIf="vm() as v; else notFound">
     <div class="container">
       <nav class="crumbs">
-        <a class="crumb" routerLink="/">{{ 'nav.home' | translate }}</a>
+        <a class="crumb" [routerLink]="'/home' | langLink">{{ 'nav.home' | translate }}</a>
         <span class="sep">/</span>
-        <a class="crumb" [routerLink]="backToBuLink()">{{ v.buTitleKey | translate }}</a>
+        <a class="crumb" [routerLink]="backToBuLink() | langLink">{{ v.buTitleKey | translate }}</a>
         <span class="sep">/</span>
         <span class="current">{{ v.titleKey | translate }}</span>
       </nav>
@@ -147,10 +147,10 @@
           <p class="p">{{ v.descKey | translate }}</p>
 
           <div class="actions">
-            <a class="btn primary" routerLink="/quote" [queryParams]="quoteQueryParams()">
+            <a class="btn primary" [routerLink]="'/quote' | langLink" [queryParams]="quoteQueryParams()">
               {{ 'common.request_quote' | translate }}
             </a>
-            <a class="btn ghost" [routerLink]="backToBuLink()">
+            <a class="btn ghost" [routerLink]="backToBuLink() | langLink">
               {{ 'common.view_detail' | translate }}
             </a>
           </div>
@@ -180,10 +180,10 @@
       <p class="p">{{ 'bu.landing.not_found.desc' | translate }}</p>
 
       <div class="actions">
-        <a class="btn primary" [routerLink]="backToBuLink()">
+        <a class="btn primary" [routerLink]="backToBuLink() | langLink">
           {{ 'common.view_detail' | translate }}
         </a>
-        <a class="btn ghost" routerLink="/">{{ 'nav.home' | translate }}</a>
+        <a class="btn ghost" [routerLink]="'/home' | langLink">{{ 'nav.home' | translate }}</a>
       </div>
     </div>
   </ng-template>

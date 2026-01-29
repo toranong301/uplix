@@ -1,7 +1,7 @@
-<section class="hero card">
+<section class="hero card" [class.hero--overlay]="overlay">
   <div class="hero-text">
-    <h1 class="h1">{{ title | translate }}</h1>
-    <p class="p">{{ tagline | translate }}</p>
+    <h1 class="h3">{{ title | translate }}</h1>
+    <p class="h2 hero-tagline">{{ tagline | translate }}</p>
     <div class="cta" *ngIf="primaryCta as pc">
       <!-- primary -->
       <a
@@ -15,7 +15,7 @@
       <ng-template #primaryRouter>
         <a
           class="btn btn-primary"
-          [routerLink]="pc.link"
+          [routerLink]="pc.link | langLink"
           [queryParams]="pc.queryParams"
         >
           {{ pc.label | translate }}
@@ -27,22 +27,19 @@
         <a
           *ngIf="!isDownloadLink(sc.link); else downloadBtn"
           class="btn btn-secondary"
-          [routerLink]="sc.link"
+          [routerLink]="sc.link | langLink"
           [queryParams]="sc.queryParams"
         >
           {{ sc.label | translate }}
         </a>
 
         <ng-template #downloadBtn>
-          <a
-            class="btn btn-secondary"
-            [attr.href]="sc.link"
-            download
-            target="_blank"
-            rel="noopener"
-          >
-            {{ sc.label | translate }}
-          </a>
+          <uplix-download-gate
+            [href]="sc.link"
+            [labelKey]="sc.label"
+            buttonClass="btn btn-secondary"
+            source="hero"
+          ></uplix-download-gate>
         </ng-template>
       </ng-container>
     </div>

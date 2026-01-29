@@ -1,61 +1,78 @@
 <footer class="uplix-footer">
   <div class="container">
-
     <div class="footer-card">
-      <!-- Left: brand -->
       <div class="brand">
         <img class="logo" src="assets/brand/UPLIX_LOGO.png" alt="UPLIX" />
-        <p class="tagline">
-          {{ 'footer.tagline' | translate }}
-        </p>
+        <p class="tagline">{{ 'footer.tagline' | translate }}</p>
+        <div class="address">
+          <div class="meta" *ngFor="let line of addressLines">{{ line | translate }}</div>
+        </div>
       </div>
 
-      <!-- BU -->
       <div class="col">
-        <h4 class="h">{{ 'footer.bu' | translate }}</h4>
-        <a class="link" *ngFor="let x of buLinks" [routerLink]="x.route">
-          {{ x.label | translate }}
+        <h4 class="h">{{ 'footer.sitemap' | translate }}</h4>
+        <a class="link" *ngFor="let item of navItems" [routerLink]="item.path | langLink">
+          {{ item.labelKey | translate }}
         </a>
       </div>
 
-      <!-- Quick Links -->
       <div class="col">
         <h4 class="h">{{ 'footer.quick' | translate }}</h4>
-        <a class="link" *ngFor="let x of quickLinks" [routerLink]="x.route">
-          {{ x.label | translate }}
+        <a class="link" [routerLink]="'/information-inquiry/inquiry-form' | langLink">
+          {{ 'topbar.inquiry' | translate }}
         </a>
+        <a class="link" [routerLink]="'/contact' | langLink">{{ 'nav.contact' | translate }}</a>
+        <a class="link" [routerLink]="'/resources' | langLink">{{ 'nav.resources' | translate }}</a>
+        <a class="link" [routerLink]="'/sitemap' | langLink">{{ 'footer.sitemap' | translate }}</a>
       </div>
 
-      <!-- Contact -->
       <div class="col">
         <h4 class="h">{{ 'footer.contact' | translate }}</h4>
-
         <div class="meta">
           {{ 'footer.email' | translate }}:
           <span class="mono">{{ email }}</span>
         </div>
-
         <div class="meta">
           {{ 'footer.telephone' | translate }}: {{ telephone }}
         </div>
-
-        <a class="link helper" routerLink="/contact">
+        <a class="link helper" [routerLink]="'/contact' | langLink">
           {{ 'footer.contact_team' | translate }}
         </a>
+
+        <div class="social">
+          <a
+            class="social-link"
+            [class.is-disabled]="!lineUrl"
+            [attr.href]="lineUrl || null"
+            [attr.target]="lineUrl ? '_blank' : null"
+            [attr.rel]="lineUrl ? 'noopener noreferrer' : null"
+            [attr.aria-label]="'LINE'">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 5h16a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H9l-5 4v-4H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z" fill="currentColor"/>
+            </svg>
+          </a>
+          <a
+            class="social-link"
+            [class.is-disabled]="!facebookUrl"
+            [attr.href]="facebookUrl || null"
+            [attr.target]="facebookUrl ? '_blank' : null"
+            [attr.rel]="facebookUrl ? 'noopener noreferrer' : null"
+            [attr.aria-label]="'Facebook'">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M18 3h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V8a1 1 0 0 1 1-1h3z" fill="currentColor"/>
+            </svg>
+          </a>
+        </div>
       </div>
     </div>
 
     <div class="footer-bottom">
-      <div class="copy">
-        © {{ year }} {{ 'footer.rights' | translate }}
-      </div>
-
+      <div class="copy">© {{ year }} {{ 'footer.rights' | translate }}</div>
       <div class="mini">
-        <a class="mini-link" routerLink="/privacy">{{ 'footer.privacy' | translate }}</a>
-        <span class="dot">•</span>
-        <a class="mini-link" routerLink="/terms">{{ 'footer.terms' | translate }}</a>
+        <a class="mini-link" *ngFor="let link of policyLinks" [routerLink]="link.path | langLink">
+          {{ link.labelKey | translate }}
+        </a>
       </div>
     </div>
-
   </div>
 </footer>
