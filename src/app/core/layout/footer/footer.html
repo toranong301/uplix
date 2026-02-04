@@ -1,6 +1,13 @@
 <footer class="uplix-footer">
   <div class="container">
-    <div class="footer-card">
+    <a class="footer-top" href="#" aria-label="Back to top">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 4l7 7-1.4 1.4L13 7.8V20h-2V7.8l-4.6 4.6L5 11l7-7z" fill="currentColor"/>
+      </svg>
+      <span>TOP</span>
+    </a>
+
+    <div class="footer-content">
       <div class="brand">
         <img class="logo" src="assets/brand/UPLIX_LOGO.png" alt="UPLIX" />
         <p class="tagline">{{ 'footer.tagline' | translate }}</p>
@@ -9,21 +16,19 @@
         </div>
       </div>
 
-      <div class="col">
-        <h4 class="h">{{ 'footer.sitemap' | translate }}</h4>
-        <a class="link" *ngFor="let item of navItems" [routerLink]="item.path | langLink">
-          {{ item.labelKey | translate }}
-        </a>
+      <div class="col footer-menu">
+        <h4 class="h">Menu</h4>
+        <a class="link" [routerLink]="'/' | langLink">Home</a>
+        <a class="link" [routerLink]="'/resources' | langLink">Resources</a>
+        <a class="link" [routerLink]="'/about' | langLink">About Us</a>
+        <a class="link" [routerLink]="'/contact' | langLink">Contact</a>
       </div>
 
-      <div class="col">
-        <h4 class="h">{{ 'footer.quick' | translate }}</h4>
-        <a class="link" [routerLink]="'/information-inquiry/inquiry-form' | langLink">
-          {{ 'topbar.inquiry' | translate }}
-        </a>
-        <a class="link" [routerLink]="'/contact' | langLink">{{ 'nav.contact' | translate }}</a>
-        <a class="link" [routerLink]="'/resources' | langLink">{{ 'nav.resources' | translate }}</a>
-        <a class="link" [routerLink]="'/sitemap' | langLink">{{ 'footer.sitemap' | translate }}</a>
+      <div class="col footer-products">
+        <h4 class="h">Products &amp; Services</h4>
+        <a class="link" [routerLink]="'/' | langLink">Experience and Innovative Learning</a>
+        <a class="link" [routerLink]="'/' | langLink">PPE and Fire Tank &amp; Refill Service</a>
+        <a class="link" [routerLink]="'/' | langLink">Waste Management Solution &amp; Technology</a>
       </div>
 
       <div class="col">

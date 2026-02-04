@@ -34,20 +34,41 @@
           </div>
           <div class="products-columns">
             <div class="products-col">
-              <div class="products-col-title">{{ 'nav.products.learning_title' | translate }}</div>
-              <a class="products-link" *ngFor="let item of productsMenu.learning" [routerLink]="item.link | langLink">
+              <a class="products-col-title link" [routerLink]="productsMenu.learningTitleLink | langLink">
+                {{ 'nav.products.learning_title' | translate }}
+              </a>
+              <a
+                class="products-link"
+                *ngFor="let item of productsMenu.learning"
+                [routerLink]="item.link | langLink"
+                [queryParams]="item.queryParams"
+              >
                 {{ item.labelKey | translate }}
               </a>
             </div>
             <div class="products-col">
-              <div class="products-col-title">{{ 'nav.products.ppe_title' | translate }}</div>
-              <a class="products-link" *ngFor="let item of productsMenu.ppe" [routerLink]="item.link | langLink">
+              <a class="products-col-title link" [routerLink]="productsMenu.ppeTitleLink | langLink">
+                {{ 'nav.products.ppe_title' | translate }}
+              </a>
+              <a
+                class="products-link"
+                *ngFor="let item of productsMenu.ppe"
+                [routerLink]="item.link | langLink"
+                [queryParams]="item.queryParams"
+              >
                 {{ item.labelKey | translate }}
               </a>
             </div>
             <div class="products-col">
-              <div class="products-col-title">{{ 'nav.products.waste_title' | translate }}</div>
-              <a class="products-link" *ngFor="let item of productsMenu.waste" [routerLink]="item.link | langLink">
+              <a class="products-col-title link" [routerLink]="productsMenu.wasteTitleLink | langLink">
+                {{ 'nav.products.waste_title' | translate }}
+              </a>
+              <a
+                class="products-link"
+                *ngFor="let item of productsMenu.waste"
+                [routerLink]="item.link | langLink"
+                [queryParams]="item.queryParams"
+              >
                 {{ item.labelKey | translate }}
               </a>
             </div>
@@ -97,16 +118,51 @@
           <span class="drawer-caret" aria-hidden="true"></span>
         </button>
         <div class="drawer-submenu" [class.is-open]="mobileProductsOpen()">
-          <a class="drawer-sublink" [routerLink]="'/bu/learning' | langLink" (click)="closeMobile()">
-            {{ 'nav.products.learning_title' | translate }}
+          <div class="drawer-subtitle">
+            <a [routerLink]="productsMenu.learningTitleLink | langLink" (click)="closeMobile()">
+              {{ 'nav.products.learning_title' | translate }}
+            </a>
+          </div>
+          <a
+            class="drawer-sublink"
+            *ngFor="let item of productsMenu.learning"
+            [routerLink]="item.link | langLink"
+            [queryParams]="item.queryParams"
+            (click)="closeMobile()"
+          >
+            {{ item.labelKey | translate }}
             <span class="drawer-arrow" aria-hidden="true"></span>
           </a>
-          <a class="drawer-sublink" [routerLink]="'/bu/ppe' | langLink" (click)="closeMobile()">
-            {{ 'nav.products.ppe_title' | translate }}
+
+          <div class="drawer-subtitle">
+            <a [routerLink]="productsMenu.ppeTitleLink | langLink" (click)="closeMobile()">
+              {{ 'nav.products.ppe_title' | translate }}
+            </a>
+          </div>
+          <a
+            class="drawer-sublink"
+            *ngFor="let item of productsMenu.ppe"
+            [routerLink]="item.link | langLink"
+            [queryParams]="item.queryParams"
+            (click)="closeMobile()"
+          >
+            {{ item.labelKey | translate }}
             <span class="drawer-arrow" aria-hidden="true"></span>
           </a>
-          <a class="drawer-sublink" [routerLink]="'/bu/waste' | langLink" (click)="closeMobile()">
-            {{ 'nav.products.waste_title' | translate }}
+
+          <div class="drawer-subtitle">
+            <a [routerLink]="productsMenu.wasteTitleLink | langLink" (click)="closeMobile()">
+              {{ 'nav.products.waste_title' | translate }}
+            </a>
+          </div>
+          <a
+            class="drawer-sublink"
+            *ngFor="let item of productsMenu.waste"
+            [routerLink]="item.link | langLink"
+            [queryParams]="item.queryParams"
+            (click)="closeMobile()"
+          >
+            {{ item.labelKey | translate }}
             <span class="drawer-arrow" aria-hidden="true"></span>
           </a>
         </div>

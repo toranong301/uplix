@@ -1,30 +1,29 @@
 import { CommonModule } from '@angular/common';
-import { Component, computed, DestroyRef, inject, signal } from '@angular/core';
+import { Component, DestroyRef, computed, inject, signal } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, RouterLink } from '@angular/router';
-
-import { BU } from '../bu.config';
-
 import { TranslateModule } from '@ngx-translate/core';
 import { LangLinkPipe } from '../../../shared/pipes/lang-link.pipe';
-import { CardGridComponent, GridCard } from '../../../shared/sections/card-grid/card-grid';
-import { FaqComponent } from '../../../shared/sections/faq/faq';
-import { FinalCtaComponent } from '../../../shared/sections/final-cta/final-cta';
-import { HeroComponent } from '../../../shared/sections/hero/hero';
-import { ProcessComponent } from '../../../shared/sections/process/process';
+import { DownloadGateComponent } from '../../../shared/sections/download-gate/download-gate';
+import { BU } from '../bu.config';
+
+type ServiceCard = {
+  title: string;
+  desc: string;
+  link?: string;
+  queryParams?: Record<string, any>;
+  ctaLabel?: string;
+  badge?: string;
+};
 
 @Component({
   standalone: true,
   imports: [
     CommonModule,
     RouterLink,
-    HeroComponent,
-    CardGridComponent,
-    ProcessComponent,
-    FaqComponent,
-    FinalCtaComponent,
     TranslateModule,
-    LangLinkPipe
+    LangLinkPipe,
+    DownloadGateComponent,
   ],
   templateUrl: './bu-landing.html',
   styleUrl: './bu-landing.scss',
@@ -37,28 +36,34 @@ export class BuLandingComponent {
 
   bu = computed(() => BU[this.key()]);
 
-  // ✅ แปลง serviceGroups -> ให้ CardGrid ใช้ได้
- serviceGroups = computed(() => {
-  const b = this.bu();
-  if (!b) return [];
+  serviceGroups = computed(() => {
+    const b = this.bu();
+    if (!b) return [];
 
-  return (b.serviceGroups ?? []).map(g => ({
-    title: g.title,
-    items: (g.items ?? []).map((x: any) => {
-      const link = x.link ?? `/bu/${b.key}/service/${x.key}`;
+    return (b.serviceGroups ?? [])
+      .map(g => ({
+        title: g.title,
+        items: (g.items ?? [])
+          .filter(x => x.enabled !== false)
+          .map((x: any) => {
+            const link = x.link ?? `/bu/${b.key}/service/${x.key}`;
 
-      return {
-        title: x.title,
-        desc: x.desc,
-        link,
-        queryParams: x.queryParams,
-        ctaLabel: x.ctaLabel ?? 'common.view_detail',
-        badge: x.badge
-      } as GridCard;
-    })
-  }));
-});
+            return {
+              title: x.title,
+              desc: x.desc,
+              link,
+              queryParams: x.queryParams,
+              ctaLabel: x.ctaLabel ?? 'common.view_detail',
+              badge: x.badge,
+            } as ServiceCard;
+          }),
+      }))
+      .filter(g => g.items.length > 0);
+  });
 
+  isDownloadLink(link: string): boolean {
+    return link.endsWith('.pdf') || link.includes('/downloads/');
+  }
 
   constructor() {
     this.route.paramMap

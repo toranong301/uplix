@@ -1,49 +1,141 @@
-<div class="container" *ngIf="bu() as b; else notFound">
-  <uplix-hero
-    [title]="b.title | translate"
-    [tagline]="b.tagline | translate"
-    [heroImage]="b.heroImage"
-    [primaryCta]="b.primaryCta"
-    [secondaryCta]="b.secondaryCta">
-  </uplix-hero>
+<main class="bu-landing" *ngIf="bu() as b; else notFound" [attr.data-bu]="b.key">
+  <section class="bu-hero">
+    <div class="bu-hero-inner">
+      <div class="bu-hero-copy">
+        <h1 class="bu-hero-title">{{ b.title | translate }}</h1>
+        <p class="bu-hero-tagline">{{ b.tagline | translate }}</p>
 
-  <section style="margin-top:18px;">
-    <uplix-card-grid [items]="b.painSolutions"></uplix-card-grid>
+        <div class="bu-hero-actions" *ngIf="b.primaryCta || b.secondaryCta">
+          <ng-container *ngIf="b.primaryCta as pc">
+            <a *ngIf="pc.link.startsWith('#'); else primaryRouter" class="btn btn-primary" [attr.href]="pc.link">
+              {{ pc.label | translate }}
+            </a>
+            <ng-template #primaryRouter>
+              <a class="btn btn-primary" [routerLink]="pc.link | langLink" [queryParams]="pc.queryParams">
+                {{ pc.label | translate }}
+              </a>
+            </ng-template>
+          </ng-container>
+
+          <ng-container *ngIf="b.secondaryCta as sc">
+            <a
+              *ngIf="!isDownloadLink(sc.link); else downloadBtn"
+              class="btn btn-secondary"
+              [routerLink]="sc.link | langLink"
+              [queryParams]="sc.queryParams"
+            >
+              {{ sc.label | translate }}
+            </a>
+
+            <ng-template #downloadBtn>
+              <uplix-download-gate
+                [href]="sc.link"
+                [labelKey]="sc.label"
+                buttonClass="btn btn-secondary"
+                [source]="'bu_hero_' + b.key"
+                [titleKey]="sc.label"
+              ></uplix-download-gate>
+            </ng-template>
+          </ng-container>
+        </div>
+      </div>
+
+      <div class="bu-hero-media">
+        <img [src]="b.heroImage" [alt]="(b.title | translate)" />
+      </div>
+    </div>
   </section>
 
-  <!-- ✅ Services -->
-  <section style="margin-top:18px;">
-    <h2 style="margin:0;">{{ 'bu.landing.services' | translate }}</h2>
-
-    <section *ngFor="let g of serviceGroups()" style="margin-top:12px;">
-      <h3 style="margin:0 0 10px 0;">{{ g.title | translate }}</h3>
-      <uplix-card-grid [items]="g.items"></uplix-card-grid>
-    </section>
-  </section>
-  <!-- ✅ /Services -->
-
-  <section style="margin-top:18px;">
-    <uplix-process [steps]="b.process"></uplix-process>
+  <section class="bu-section bu-highlights bu-section--alt" *ngIf="b.painSolutions.length">
+    <div class="bu-section-inner">
+      <div class="bu-highlight-grid">
+        <article class="bu-highlight-card" *ngFor="let p of b.painSolutions">
+          <h3 class="bu-highlight-title">{{ p.title | translate }}</h3>
+          <p class="bu-highlight-desc">{{ p.desc | translate }}</p>
+        </article>
+      </div>
+    </div>
   </section>
 
-  <section style="margin-top:18px;">
-    <uplix-faq [faqs]="b.faqs"></uplix-faq>
+  <section class="bu-section bu-services" *ngIf="serviceGroups().length">
+    <div class="bu-section-inner">
+      <h2 class="bu-section-title">{{ 'bu.landing.services' | translate }}</h2>
+
+      <div class="bu-groups">
+        <section class="bu-group" *ngFor="let g of serviceGroups()">
+          <h3 class="bu-group-title">{{ g.title | translate }}</h3>
+
+          <div class="bu-service-grid">
+            <article class="bu-service-card" *ngFor="let item of g.items">
+              <div class="bu-service-badge" *ngIf="item.badge">{{ item.badge | translate }}</div>
+              <h4 class="bu-service-title">{{ item.title | translate }}</h4>
+              <p class="bu-service-desc">{{ item.desc | translate }}</p>
+
+              <div class="bu-service-actions" *ngIf="item.link">
+                <a
+                  class="btn btn-secondary"
+                  [routerLink]="item.link | langLink"
+                  [queryParams]="item.queryParams"
+                >
+                  {{ (item.ctaLabel || 'common.view_detail') | translate }}
+                </a>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+    </div>
   </section>
 
-  <section style="margin-top:18px;">
-    <uplix-final-cta
-      [title]="'bu.landing.final.title' | translate"
-      [subtitle]="'bu.landing.final.subtitle' | translate"
-      [buttonLabel]="'bu.landing.final.button' | translate"
-      buttonLink="/quote">
-    </uplix-final-cta>
+  <section class="bu-section bu-process bu-section--alt" *ngIf="b.process.length">
+    <div class="bu-section-inner">
+      <h2 class="bu-section-title">{{ 'common.process' | translate }}</h2>
+
+      <ol class="bu-steps">
+        <li class="bu-step" *ngFor="let s of b.process">
+          <div class="bu-step-title">{{ s.title | translate }}</div>
+          <div class="bu-step-desc">{{ s.desc | translate }}</div>
+        </li>
+      </ol>
+    </div>
   </section>
-</div>
+
+  <section class="bu-section bu-faq" *ngIf="b.faqs.length">
+    <div class="bu-section-inner">
+      <h2 class="bu-section-title">{{ 'common.faq' | translate }}</h2>
+
+      <div class="bu-faq-list">
+        <details class="bu-faq-item" *ngFor="let f of b.faqs">
+          <summary>{{ f.q | translate }}</summary>
+          <p>{{ f.a | translate }}</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="bu-section bu-final">
+    <div class="bu-section-inner">
+      <div class="bu-final-card">
+        <div class="bu-final-copy">
+          <h2>{{ 'bu.landing.final.title' | translate }}</h2>
+          <p>{{ 'bu.landing.final.subtitle' | translate }}</p>
+        </div>
+        <a class="btn btn-primary" [routerLink]="'/quote' | langLink">
+          {{ 'bu.landing.final.button' | translate }}
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
 
 <ng-template #notFound>
-  <div class="container card" style="padding:16px;">
-    <h2 style="margin:0;">{{ 'bu.landing.not_found.title' | translate }}</h2>
-    <p class="p">{{ 'bu.landing.not_found.desc' | translate }}</p>
-    <a class="btn btn-secondary" [routerLink]="'/home' | langLink">{{ 'bu.landing.not_found.back' | translate }}</a>
+  <div class="bu-not-found">
+    <div class="bu-not-found-inner">
+      <h2 class="bu-section-title">{{ 'bu.landing.not_found.title' | translate }}</h2>
+      <p class="p">{{ 'bu.landing.not_found.desc' | translate }}</p>
+      <a class="btn btn-secondary" [routerLink]="'/home' | langLink">
+        {{ 'bu.landing.not_found.back' | translate }}
+      </a>
+    </div>
   </div>
 </ng-template>

@@ -13,9 +13,147 @@
     </div>
   </section>
   <section class="home-about">
-    <div class="home-about-inner">
-      <h2 class="home-about-title">{{ 'home.about.title' | translate }}</h2>
-      <p class="home-about-desc">{{ 'home.about.desc' | translate }}</p>
+  <div class="home-about-inner">
+    <h2 class="home-about-title">{{ 'home.about.title' | translate }}</h2>
+
+    <p class="home-about-lead">
+      {{ 'home.about.lead' | translate }}
+    </p>
+
+    <ul class="home-about-list">
+      <li>{{ 'home.about.b1' | translate }}</li>
+      <li>{{ 'home.about.b2' | translate }}</li>
+      <li>{{ 'home.about.b3' | translate }}</li>
+    </ul>
+  </div>
+</section>
+
+<section class="home-why">
+  <div class="home-why-inner">
+    <h2 class="home-why-title">{{ 'home.why.title' | translate }}</h2>
+
+    <div class="home-why-grid">
+      <article class="why-card">
+        <div class="experience-icon" aria-hidden="true">
+          <mat-icon>verified_user</mat-icon>
+        </div>
+        <h3 class="why-heading">{{ 'home.why.items.experience.title' | translate }}</h3>
+        <p class="why-desc">{{ 'home.why.items.experience.desc' | translate }}</p>
+      </article>
+
+      <article class="why-card">
+        <div class="experience-icon" aria-hidden="true">
+          <mat-icon>analytics</mat-icon>
+        </div>
+        <h3 class="why-heading">{{ 'home.why.items.impact.title' | translate }}</h3>
+        <p class="why-desc">{{ 'home.why.items.impact.desc' | translate }}</p>
+      </article>
+
+      <article class="why-card">
+        <div class="experience-icon" aria-hidden="true">
+          <mat-icon>hub</mat-icon>
+        </div>
+        <h3 class="why-heading">{{ 'home.why.items.one_partner.title' | translate }}</h3>
+        <p class="why-desc">{{ 'home.why.items.one_partner.desc' | translate }}</p>
+      </article>
+
+      <article class="why-card">
+        <div class="experience-icon" aria-hidden="true">
+          <mat-icon>verified</mat-icon>
+        </div>
+        <h3 class="why-heading">{{ 'home.why.items.trusted.title' | translate }}</h3>
+        <p class="why-desc">{{ 'home.why.items.trusted.desc' | translate }}</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+  <section class="home-experience">
+    <div class="home-experience-inner">
+      <div class="home-experience-content">
+        <h2 class="home-experience-title">Experience and Innovative Learning</h2>
+        <span class="home-experience-accent" aria-hidden="true"></span>
+        <div class="home-experience-list">
+          <li>Experience Learning Program</li>
+          <li>SHE Academy</li>
+          <li>Fire drill and evacuation Academy</li>
+          <li>HRD Solution platform</li>
+        </div>
+        <a class="home-experience-cta" [routerLink]="lang.link('quote')">Request a Quote</a>
+      </div>
+      <div class="home-experience-image">
+        <img src="assets/hero/learning.png" alt="Experience and innovative learning" />
+      </div>
     </div>
   </section>
+
+  
+
+  <section class="home-ppe">
+    <div class="home-ppe-inner">
+      <div class="home-ppe-image">
+        <img src="assets/hero/ppe.jpg" alt="PPE Catalogue" />
+      </div>
+      <div class="home-ppe-content">
+        <h2 class="home-ppe-title">PPE and Fire Tank &amp; Refill Service</h2>
+        <span class="home-ppe-accent" aria-hidden="true"></span>
+        <div class="home-ppe-list">
+          <li>Head Protection PPE</li>
+          <li>Respiratory Protection PPE</li>
+          <li>Eye &amp; Face Protection PPE</li>
+          <li>Hand &amp; Foot Protection PPE</li>
+          <li>Energy &amp; Electrical PPE</li>
+          <li>Fire Tank</li>
+          <li>Refill Service</li>
+        </div>
+        <div class="home-ppe-actions">
+          <a class="home-ppe-cta" [routerLink]="lang.link('quote')">Request a Quote</a>
+          <uplix-download-gate
+            href="/downloads/2025-PPE-Catalogue-UPLIX-Safety.pdf"
+            labelKey="resources.items.ppe_catalog.cta"
+            buttonClass="home-ppe-cta outline"
+            source="home_ppe"
+            titleKey="resources.items.ppe_catalog.title"
+          ></uplix-download-gate>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-waste">
+    <div class="home-waste-inner">
+      <div class="home-waste-content">
+        <h2 class="home-waste-title">Waste Management Solution &amp; Technology</h2>
+        <span class="home-waste-accent" aria-hidden="true"></span>
+        <div class="home-waste-list">
+          <li>Non-Hazardous waste solution</li>
+          <li>Hazardous waste solution</li>
+          <li>Waste Logistics &amp; Transportation</li>
+        </div>
+        <a class="home-waste-cta" [routerLink]="lang.link('quote')">Request a Quote</a>
+      </div>
+      <div class="home-waste-image">
+        <img src="assets/hero/waste.png" alt="Waste management solutions" />
+      </div>
+    </div>
+  </section>
+
+  <section class="home-promotions">
+    <div class="home-promotions-inner">
+      <div class="home-promotions-header">
+        <h2 class="home-promotions-title">Promotions</h2>
+        <p class="home-promotions-subtitle">โปรโมชันโดดเด่นจาก UPLIX</p>
+      </div>
+      <div class="home-promotions-grid">
+        <article class="promo-card">
+          <div class="promo-tag">Best Deal</div>
+          <h3 class="promo-title">ซื้อ PPE รับสิทธิ์อบรมฟรี</h3>
+          <p class="promo-desc">เมื่อสั่งซื้อ PPE ตามเงื่อนไข รับคอร์สอบรมความปลอดภัยฟรีสำหรับทีมงาน</p>
+          <a class="promo-cta" [routerLink]="lang.link('quote')">Request a Quote</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
 </main>

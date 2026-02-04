@@ -168,5 +168,4 @@ export const POLICY_LINKS: NavLink[] = [
   { labelKey: 'footer.terms', path: '/terms' },
   { labelKey: 'footer.privacy', path: '/privacy' },
   { labelKey: 'footer.cookie', path: '/cookie-policy' },
-  { labelKey: 'footer.sitemap', path: '/sitemap' },
 ];

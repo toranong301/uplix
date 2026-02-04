@@ -41,10 +41,6 @@ export const routes: Routes = [
         loadComponent: () => import('./features/inquiry-form/inquiry-form').then(m => m.InquiryFormComponent),
       },
       {
-        path: 'sitemap',
-        loadComponent: () => import('./features/sitemap/sitemap').then(m => m.SitemapComponent),
-      },
-      {
         path: 'terms',
         loadComponent: () => import('./features/policy/terms').then(m => m.TermsComponent),
       },

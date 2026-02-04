@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, computed, inject, signal } from '@angular/core';
+import { Component, DestroyRef, computed, inject, signal } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { LangLinkPipe } from '../../../shared/pipes/lang-link.pipe';
@@ -30,9 +31,19 @@ type SelectedLine = {
   styleUrls: ['./ppe-category.component.scss'],
 })
 export class PpeCategoryComponent {
-  constructor(private route: ActivatedRoute) {}
+  private route = inject(ActivatedRoute);
+  private destroyRef = inject(DestroyRef);
 
-  cat = computed(() => this.route.snapshot.paramMap.get('cat') ?? '');
+  private catKey = signal('');
+  cat = computed(() => this.catKey());
+
+  constructor() {
+    this.route.paramMap
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe(pm => {
+        this.catKey.set(pm.get('cat') ?? '');
+      });
+  }
 
   // ✅ ใช้ signal (แก้ error find/some)
   selected = signal<SelectedLine[]>([]);

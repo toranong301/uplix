@@ -1,172 +1,177 @@
-<div class="container">
-  <div class="card pad">
-    <h1 class="h1" style="font-size:32px;">{{ 'quote.title' | translate }}</h1>
-    <p class="p">{{ 'quote.subtitle' | translate }}</p>
+<main class="quote-page">
+  <section class="quote-hero">
+    <div class="quote-hero-inner">
+      <h1 class="quote-hero-title">{{ 'quote.title' | translate }}</h1>
+      <p class="quote-hero-subtitle">{{ 'quote.subtitle' | translate }}</p>
+    </div>
+  </section>
 
-    <form class="form" [formGroup]="form" (ngSubmit)="sendEmail()">
-      <section class="rfq">
-        <div class="rfq__head">
-          <span class="rfq__badge">{{ 'quote.rfq.badge' | translate }}</span>
-          <h2 class="rfq__title">{{ 'quote.rfq.title' | translate }}</h2>
-          <p class="rfq__desc">{{ 'quote.rfq.desc' | translate }}</p>
-        </div>
-        <div class="rfq__type">
-          <label class="rfq__label">{{ 'quote.rfq.type_label' | translate }}</label>
-          <div class="rfq__segmented">
-            <label class="rfq__segmented-item" *ngFor="let t of requestTypeOptions">
-              <input type="radio" formControlName="requestType" [value]="t.key" />
-              <span>{{ t.labelKey | translate }}</span>
-            </label>
-          </div>
-        </div>
-        <ul class="rfq__list">
-          <li>{{ 'quote.rfq.points.1' | translate }}</li>
-          <li>{{ 'quote.rfq.points.2' | translate }}</li>
-          <li>{{ 'quote.rfq.points.3' | translate }}</li>
-        </ul>
-      </section>
-
-      <section class="bu-section">
-        <div class="bu-head">
-          <div>
-            <h3 class="bu-title">{{ 'quote.bu_section.title' | translate }}</h3>
-            <p class="bu-desc">{{ 'quote.bu_section.desc' | translate }}</p>
-          </div>
-        </div>
-
-        <div class="bu-grid">
-          <label class="bu-card" *ngFor="let b of buOptions">
-            <input type="radio" formControlName="bu" [value]="b.key" />
-            <div class="bu-card__body">
-              <div class="bu-card__title">{{ b.label | translate }}</div>
-              <div class="bu-card__desc">{{ b.descKey | translate }}</div>
+  <section class="quote-body">
+    <div class="container">
+      <div class="quote-card card">
+        <form class="form" [formGroup]="form" (ngSubmit)="sendEmail()">
+          <section class="rfq">
+            <div class="rfq__head">
+              <span class="rfq__badge">{{ 'quote.rfq.badge' | translate }}</span>
+              <h2 class="rfq__title">{{ 'quote.rfq.title' | translate }}</h2>
+              <p class="rfq__desc">{{ 'quote.rfq.desc' | translate }}</p>
             </div>
-          </label>
-        </div>
-      </section>
+            <div class="rfq__type">
+              <label class="rfq__label">{{ 'quote.rfq.type_label' | translate }}</label>
+              <div class="rfq__segmented">
+                <label class="rfq__segmented-item" *ngFor="let t of requestTypeOptions">
+                  <input type="radio" formControlName="requestType" [value]="t.key" />
+                  <span>{{ t.labelKey | translate }}</span>
+                </label>
+              </div>
+            </div>
+            <ul class="rfq__list">
+              <li>{{ 'quote.rfq.points.1' | translate }}</li>
+              <li>{{ 'quote.rfq.points.2' | translate }}</li>
+              <li>{{ 'quote.rfq.points.3' | translate }}</li>
+            </ul>
+          </section>
 
-      <div class="row" *ngIf="isPpe">
-        <div class="field">
-          <label>{{ 'quote.fields.category_ppe' | translate }}</label>
-          <select formControlName="category">
-            <option value="">{{ 'quote.placeholders.select_category' | translate }}</option>
-            <option *ngFor="let c of ppeCategories" [value]="c">
-              {{ c | translate }}
-            </option>
-          </select>
-        </div>
-      </div>
-
-      <!-- ✅ Quote Cart Summary -->
-      <div class="cart-summary" *ngIf="cartItems().length">
-        <div class="cart-head">
-          <h3 class="cart-title">{{ 'quote_cart.summary.title' | translate }}</h3>
-          <button type="button" class="cart-clear" (click)="clearCart()">
-  {{ 'quote_cart.actions.clear' | translate }}
-</button>
-
-        </div>
-
-        <div class="cart-line" *ngFor="let it of cartItems()">
-          <div class="cart-left">
-            <div class="cart-main">
-              <strong>{{ it.titleKey | translate }}</strong>
+          <section class="bu-section">
+            <div class="bu-head">
+              <div>
+                <h3 class="bu-title">{{ 'quote.bu_section.title' | translate }}</h3>
+                <p class="bu-desc">{{ 'quote.bu_section.desc' | translate }}</p>
+              </div>
             </div>
 
-            <div class="cart-sub">
-              <span *ngIf="it.sku">{{ it.sku }}</span>
-              <span *ngIf="it.colorKey"> • {{ it.colorKey | translate }}</span>
-              <span *ngIf="it.categoryKey"> • {{ it.categoryKey | translate }}</span>
+            <div class="bu-grid">
+              <label class="bu-card" *ngFor="let b of buOptions">
+                <input type="radio" formControlName="bu" [value]="b.key" />
+                <div class="bu-card__body">
+                  <div class="bu-card__title">{{ b.label | translate }}</div>
+                  <div class="bu-card__desc">{{ b.descKey | translate }}</div>
+                </div>
+              </label>
+            </div>
+          </section>
+
+          <div class="row" *ngIf="isPpe">
+            <div class="field">
+              <label>{{ 'quote.fields.category_ppe' | translate }}</label>
+              <select formControlName="category">
+                <option value="">{{ 'quote.placeholders.select_category' | translate }}</option>
+                <option *ngFor="let c of ppeCategories" [value]="c">
+                  {{ c | translate }}
+                </option>
+              </select>
             </div>
           </div>
 
-          <div class="cart-right">
-            <input
-              class="cart-qty"
-              type="number"
-              min="1"
-              step="1"
-              inputmode="numeric"
-              [value]="it.qty"
-              (input)="cart.updateQty(it.id, $any($event.target).valueAsNumber)"
-            />
+          <div class="cart-summary" *ngIf="cartItems().length">
+            <div class="cart-head">
+              <h3 class="cart-title">{{ 'quote_cart.summary.title' | translate }}</h3>
+              <button type="button" class="cart-clear" (click)="clearCart()">
+                {{ 'quote_cart.actions.clear' | translate }}
+              </button>
+            </div>
 
-            <button type="button" class="cart-remove" (click)="cart.remove(it.id)">
-              {{ 'quote_cart.actions.remove' | translate }}
+            <div class="cart-line" *ngFor="let it of cartItems()">
+              <div class="cart-left">
+                <div class="cart-main">
+                  <strong>{{ it.titleKey | translate }}</strong>
+                </div>
+
+                <div class="cart-sub">
+                  <span *ngIf="it.sku">{{ it.sku }}</span>
+                  <span *ngIf="it.colorKey"> - {{ it.colorKey | translate }}</span>
+                  <span *ngIf="it.categoryKey"> - {{ it.categoryKey | translate }}</span>
+                </div>
+              </div>
+
+              <div class="cart-right">
+                <input
+                  class="cart-qty"
+                  type="number"
+                  min="1"
+                  step="1"
+                  inputmode="numeric"
+                  [value]="it.qty"
+                  (input)="cart.updateQty(it.id, $any($event.target).valueAsNumber)"
+                />
+
+                <button type="button" class="cart-remove" (click)="cart.remove(it.id)">
+                  {{ 'quote_cart.actions.remove' | translate }}
+                </button>
+              </div>
+            </div>
+
+            <div class="cart-footer">
+              <span class="cart-total">
+                {{ 'quote_cart.summary.total' | translate }}: {{ cartTotalQty() }}
+              </span>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="field">
+              <label>{{ 'quote.fields.company' | translate }}</label>
+              <input
+                type="text"
+                formControlName="company"
+                [placeholder]="'quote.placeholders.company' | translate">
+            </div>
+
+            <div class="field">
+              <label>{{ 'quote.fields.quantity' | translate }}</label>
+              <input
+                type="text"
+                formControlName="quantity"
+                [placeholder]="'quote.placeholders.quantity' | translate">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="field">
+              <label>{{ 'quote.fields.name' | translate }} *</label>
+              <input
+                type="text"
+                formControlName="name"
+                [placeholder]="'quote.placeholders.name' | translate">
+            </div>
+
+            <div class="field">
+              <label>{{ 'quote.fields.phone' | translate }} *</label>
+              <input
+                type="text"
+                formControlName="phone"
+                [placeholder]="'quote.placeholders.phone' | translate">
+            </div>
+
+            <div class="field">
+              <label>{{ 'quote.fields.email' | translate }} *</label>
+              <input
+                type="email"
+                formControlName="email"
+                [placeholder]="'quote.placeholders.email' | translate">
+            </div>
+          </div>
+
+          <div class="field">
+            <label>{{ 'quote.fields.detail' | translate }}</label>
+            <textarea
+              rows="5"
+              formControlName="detail"
+              [placeholder]="'quote.placeholders.detail' | translate">
+            </textarea>
+          </div>
+
+          <div class="actions">
+            <button class="btn btn-primary" type="submit" [disabled]="form.invalid">
+              {{ 'quote.actions.email' | translate }}
+            </button>
+
+            <button class="btn btn-secondary" type="button" (click)="sendLine()" [disabled]="form.invalid">
+              {{ 'quote.actions.line' | translate }}
             </button>
           </div>
-        </div>
-
-        <div class="cart-footer">
-          <span class="cart-total">
-            {{ 'quote_cart.summary.total' | translate }}: {{ cartTotalQty() }}
-          </span>
-        </div>
+        </form>
       </div>
-
-      <div class="row">
-        <div class="field">
-          <label>{{ 'quote.fields.company' | translate }}</label>
-          <input
-            type="text"
-            formControlName="company"
-            [placeholder]="'quote.placeholders.company' | translate">
-        </div>
-
-        <div class="field">
-          <label>{{ 'quote.fields.quantity' | translate }}</label>
-          <input
-            type="text"
-            formControlName="quantity"
-            [placeholder]="'quote.placeholders.quantity' | translate">
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="field">
-          <label>{{ 'quote.fields.name' | translate }} *</label>
-          <input
-            type="text"
-            formControlName="name"
-            [placeholder]="'quote.placeholders.name' | translate">
-        </div>
-
-        <div class="field">
-          <label>{{ 'quote.fields.phone' | translate }} *</label>
-          <input
-            type="text"
-            formControlName="phone"
-            [placeholder]="'quote.placeholders.phone' | translate">
-        </div>
-
-        <div class="field">
-          <label>{{ 'quote.fields.email' | translate }} *</label>
-          <input
-            type="email"
-            formControlName="email"
-            [placeholder]="'quote.placeholders.email' | translate">
-        </div>
-      </div>
-
-      <div class="field">
-        <label>{{ 'quote.fields.detail' | translate }}</label>
-        <textarea
-          rows="5"
-          formControlName="detail"
-          [placeholder]="'quote.placeholders.detail' | translate">
-        </textarea>
-      </div>
-
-      <div class="actions">
-        <button class="btn btn-primary" type="submit" [disabled]="form.invalid">
-          {{ 'quote.actions.email' | translate }}
-        </button>
-
-        <button class="btn btn-secondary" type="button" (click)="sendLine()" [disabled]="form.invalid">
-          {{ 'quote.actions.line' | translate }}
-        </button>
-
-      </div>
-    </form>
-  </div>
-</div>
+    </div>
+  </section>
+</main>

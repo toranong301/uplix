@@ -61,7 +61,6 @@
     "privacy": "Privacy",
     "terms": "Terms and Conditions",
     "cookie": "Cookie Policy",
-    "sitemap": "Sitemap",
     "address": {
       "line1": "UPLIX (Thailand) Co., Ltd.",
       "line2": "Bangkok, Thailand",
@@ -212,7 +211,31 @@
     "certifications": "Certifications",
     "about": {
       "title": "About Us",
-      "desc": "Founded in 2025,\nAffiliated company of P.S.P. SPECIALTIES PUBLIC COMPANY LIMITED.\n\nUPLIX is a professional learning and organization development partner specializing in Human Resource & Organization Development.\n\nWe design and deliver practical, experience-based learning solutions that help individuals and organizations adapt, perform, and grow in a rapidly changing world.\n\nOur approach transforms knowledge into actionable experience, ensuring measurable impact at both individual and organizational levels."
+      "lead": "Founded in 2025, Affiliated company of P.S.P. SPECIALTIES PUBLIC COMPANY LIMITED.",
+      "b1": "UPLIX is a professional learning and organization development partner specializing in Human Resource & Organization Development.",
+      "b2": "We design and deliver practical, experience-based learning solutions that help individuals and organizations adapt, perform, and grow in a rapidly changing world.",
+      "b3": "Our approach transforms knowledge into actionable experience, ensuring measurable impact at both individual and organizational levels."
+    },
+    "why": {
+      "title": "Why UPLIX",
+      "items": {
+        "experience": {
+          "title": "Experience-Based",
+          "desc": "Hands-on learning focused on doing, not just listening."
+        },
+        "impact": {
+          "title": "Measurable Impact",
+          "desc": "Clear before/after results with tangible KPIs."
+        },
+        "one_partner": {
+          "title": "One Partner, Multiple Solutions",
+          "desc": "Complete Learning + Safety + Waste in one place."
+        },
+        "trusted": {
+          "title": "Trusted & Professional",
+          "desc": "Credibility and standards backed by the PSP network."
+        }
+      }
     }
   },
   "quote": {
@@ -1074,10 +1097,6 @@
     },
     "submit": "Submit"
   },
-  "sitemap": {
-    "title": "Sitemap",
-    "subtitle": "Browse all sections of the site"
-  },
   "policy": {
     "terms": {
       "title": "Terms and Conditions",
@@ -1093,6 +1112,19 @@
       "title": "Cookie Policy",
       "subtitle": "How we use cookies",
       "body": "Content will be updated with the latest cookie policy."
+    }
+  },
+  "download_gate": {
+    "title": "Download catalog",
+    "subtitle": "Enter your email to receive the file.",
+    "label": "Email",
+    "placeholder": "you@email.com",
+    "actions": {
+      "cancel": "Cancel",
+      "submit": "Download"
+    },
+    "errors": {
+      "email": "Please enter a valid email."
     }
   }
 }
